@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+
+<title>EdgeVersioning - Revctrl Wiki</title>
+<script type="text/javascript" src="/static184/common/js/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/static184/modern/css/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="/static184/modern/css/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="/static184/modern/css/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="/static184/modern/css/projection.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/static184/modern/css/msie.css">
+<![endif]-->
+
+
+
+
+
+<link rel="Start" href="/FrontPage">
+<link rel="Alternate" title="Wiki Markup" href="/EdgeVersioning?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="/EdgeVersioning?action=print">
+<link rel="Appendix" title="edge-versioning.png" href="/EdgeVersioning?action=AttachFile&amp;do=view&amp;target=edge-versioning.png">
+<link rel="Search" href="/FindPage">
+<link rel="Index" href="/TitleIndex">
+<link rel="Glossary" href="/WordIndex">
+<link rel="Help" href="/HelpOnFormatting">
+</head>
+
+<body  lang="en" dir="ltr">
+
+<div id="header">
+
+
+<form id="searchform" method="get" action="/EdgeVersioning">
+<div>
+<input type="hidden" name="action" value="fullsearch">
+<input type="hidden" name="context" value="180">
+<label for="searchinput">Search:</label>
+<input id="searchinput" type="text" name="value" value="" size="20"
+    onfocus="searchFocus(this)" onblur="searchBlur(this)"
+    onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search">
+<input id="titlesearch" name="titlesearch" type="submit"
+    value="Titles" alt="Search Titles">
+<input id="fullsearch" name="fullsearch" type="submit"
+    value="Text" alt="Search Full Text">
+</div>
+</form>
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script>
+
+<ul id="username"><li><a href="/EdgeVersioning?action=login" id="login" rel="nofollow">Login</a></li></ul>
+<div id="locationline">
+<div id="interwiki"><span><a href="/FrontPage" rel="nofollow">Revctrl Wiki</a></span></div>
+
+<ul id="pagelocation">
+<li><a class="backlink" href="/EdgeVersioning?action=fullsearch&amp;context=180&amp;value=linkto%3A%22EdgeVersioning%22" rel="nofollow" title="Click to do a full-text search for this title">EdgeVersioning</a></li>
+</ul>
+
+</div>
+
+
+<ul id="navibar">
+<li class="wikilink"><a href="/FrontPage">FrontPage</a></li><li class="wikilink"><a href="/RecentChanges">RecentChanges</a></li><li class="wikilink"><a href="/FindPage">FindPage</a></li><li class="wikilink"><a href="/HelpContents">HelpContents</a></li><li class="current"><a href="/EdgeVersioning">EdgeVersioning</a></li>
+</ul>
+
+<div id="pageline"><hr style="display:none;"></div>
+
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onClick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="/EdgeVersioning?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="/EdgeVersioning?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="/EdgeVersioning">
+<div>
+    <label>More Actions:</label>
+    <select name="action"
+        onchange="if ((this.selectedIndex != 0) &&
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="RenamePage" disabled class="disabled">Rename Page</option>
+<option value="DeletePage" disabled class="disabled">Delete Page</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Subscribe User</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Remove Spam</option>
+<option value="show" disabled class="disabled">Revert to this revision</option>
+<option value="show" disabled class="disabled">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+    </select>
+    <input type="submit" value="Do">
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line867"><a class="nonexistent" href="/BramCohen">BramCohen</a> said: <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><ul><li style="list-style-type:none"><p class="line862">the basic idea is that if you have XY -&gt; XAY and XY -&gt; XBY and XAY, XBY -&gt; XABY and XAY -&gt; XCY and XCY, XBY -&gt; XCY, then XABY, XCY -&gt; X&lt;AB=C&gt;Y on the grounds that AB never appeared next to each other in the history of the other side <span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span></li></ul><p class="line874">Or, to put it graphically: <span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><p class="line874">attachment:edge-versioning.png <span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><p class="line874">In this case, the user has indicated that C beats A and that C beats B, but never that C beats AB, so presenting the conflict "AB" vs. "C" makes more sense than silently picking C. <span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><p class="line862">The motivating case for edge versioning is when there's a conflict between A and B which one user resolves as XABY and another resolves as XBAY. When their resolutions are merged together, <a href="/SimpleWeaveMerge">SimpleWeaveMerge</a> will arbitrarily pick either XABY or XBAY, without a conflict, depending on the weave ordering. With edge versioning, a conflict such as X&lt;A=&gt;BAY will be given, which while arguably not the best conflict to give in this situation is at least a conflict rather than an arbitrary erroneous clean merge. <span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><p class="line862">The word "edge" in the name refers to a boundary between sections of text.  For example, if "ABC" and "DEF" are merged to create "ABCDEF", then something <strong>new</strong> has happened because "CD" was created.  "CD" is an <em>edge</em> between two regions of text which were not previously adjacent.  With edge versioning, "CD" would be versioned just as lines are in <a href="/CodevilleMerge">CodevilleMerge</a>. <span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span><p class="line862">Another simpler case that illustrates this is ABC -&gt; AC being merged with ABC -&gt; AXC (i.e. deleting a line vs. editing the same line).  Without edge versioning the result would be a clean merge to AXC, as "B" was deleted on both sides.  With edge versioning the result would be  A&lt;=X&gt;C (i.e. a conflict between an empty region and the inserted "X"). <span class="anchor" id="line-20"></span><span class="anchor" id="bottom"></span></div><p id="pageinfo" class="info" lang="en" dir="ltr">Revctrl Wiki: EdgeVersioning  (last edited 2007-05-10 21:24:02 by <span title="KenSchalk @ hdfwpr02.hd.intel.com[192.52.57.34]"><a href="/KenSchalk" title="KenSchalk @ hdfwpr02.hd.intel.com[192.52.57.34]">KenSchalk</a></span>)</p>
+
+<div id="pagebottom"></div>
+</div>
+
+
+<div id="footer">
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onClick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="/EdgeVersioning?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="/EdgeVersioning?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="/EdgeVersioning">
+<div>
+    <label>More Actions:</label>
+    <select name="action"
+        onchange="if ((this.selectedIndex != 0) &&
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="RenamePage" disabled class="disabled">Rename Page</option>
+<option value="DeletePage" disabled class="disabled">Delete Page</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Subscribe User</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Remove Spam</option>
+<option value="show" disabled class="disabled">Revert to this revision</option>
+<option value="show" disabled class="disabled">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+    </select>
+    <input type="submit" value="Do">
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+<ul id="credits">
+<li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li><li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li><li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li><li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li>
+</ul>
+
+
+</div>
+</body>
+</html>
+

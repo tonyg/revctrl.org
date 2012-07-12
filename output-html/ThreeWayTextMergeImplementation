@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+
+<title>ThreeWayTextMergeImplementation - Revctrl Wiki</title>
+<script type="text/javascript" src="/static184/common/js/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/static184/modern/css/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="/static184/modern/css/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="/static184/modern/css/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="/static184/modern/css/projection.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/static184/modern/css/msie.css">
+<![endif]-->
+
+
+
+
+
+<link rel="Start" href="/FrontPage">
+<link rel="Alternate" title="Wiki Markup" href="/ThreeWayTextMergeImplementation?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="/ThreeWayTextMergeImplementation?action=print">
+<link rel="Search" href="/FindPage">
+<link rel="Index" href="/TitleIndex">
+<link rel="Glossary" href="/WordIndex">
+<link rel="Help" href="/HelpOnFormatting">
+</head>
+
+<body  lang="en" dir="ltr">
+
+<div id="header">
+
+
+<form id="searchform" method="get" action="/ThreeWayTextMergeImplementation">
+<div>
+<input type="hidden" name="action" value="fullsearch">
+<input type="hidden" name="context" value="180">
+<label for="searchinput">Search:</label>
+<input id="searchinput" type="text" name="value" value="" size="20"
+    onfocus="searchFocus(this)" onblur="searchBlur(this)"
+    onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search">
+<input id="titlesearch" name="titlesearch" type="submit"
+    value="Titles" alt="Search Titles">
+<input id="fullsearch" name="fullsearch" type="submit"
+    value="Text" alt="Search Full Text">
+</div>
+</form>
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script>
+
+<ul id="username"><li><a href="/ThreeWayTextMergeImplementation?action=login" id="login" rel="nofollow">Login</a></li></ul>
+<div id="locationline">
+<div id="interwiki"><span><a href="/FrontPage" rel="nofollow">Revctrl Wiki</a></span></div>
+
+<ul id="pagelocation">
+<li><a class="backlink" href="/ThreeWayTextMergeImplementation?action=fullsearch&amp;context=180&amp;value=linkto%3A%22ThreeWayTextMergeImplementation%22" rel="nofollow" title="Click to do a full-text search for this title">ThreeWayTextMergeImplementation</a></li>
+</ul>
+
+</div>
+
+
+<ul id="navibar">
+<li class="wikilink"><a href="/FrontPage">FrontPage</a></li><li class="wikilink"><a href="/RecentChanges">RecentChanges</a></li><li class="wikilink"><a href="/FindPage">FindPage</a></li><li class="wikilink"><a href="/HelpContents">HelpContents</a></li><li class="current"><a href="/ThreeWayTextMergeImplementation">ThreeWayTex...lementation</a></li>
+</ul>
+
+<div id="pageline"><hr style="display:none;"></div>
+
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onClick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="/ThreeWayTextMergeImplementation?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="/ThreeWayTextMergeImplementation?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="/ThreeWayTextMergeImplementation">
+<div>
+    <label>More Actions:</label>
+    <select name="action"
+        onchange="if ((this.selectedIndex != 0) &&
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="RenamePage" disabled class="disabled">Rename Page</option>
+<option value="DeletePage" disabled class="disabled">Delete Page</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Subscribe User</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Remove Spam</option>
+<option value="show" disabled class="disabled">Revert to this revision</option>
+<option value="show" disabled class="disabled">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+    </select>
+    <input type="submit" value="Do">
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line874">Three way merge is the old workhorse of version control systems. When a merge is to be done between THIS and OTHER, it picks a common ancestor, BASE, and uses it as a guide in determining how the merge should be done. <span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line862">Selecting BASE can be very tricky, and sometimes there isn't any single correct ancestor, especially in the case of <a href="/CrissCrossMerge">CrissCrossMerge</a>. <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line874">There are several ways to implement three-way merging. <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><p class="line867">
+<h1 id="Inexact_Patching">Inexact Patching</h1>
+<span class="anchor" id="line-8"></span><p class="line874">Since the goal of merging is to apply the changes made in another branch to your own, a fairly direct approach is to diff BASE and OTHER, and apply the resulting patch to THIS. <span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><p class="line874">Since this approach uses context diffs, it can sometimes apply patches to the wrong place, a problem fixed by exact patching. <span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><p class="line874">This has the failing that it does not recognize when THIS and OTHER have both made the same change, thus it will produce more conflicts than other approaches. <span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><p class="line867">
+<h1 id="Exact_patching">Exact patching</h1>
+<span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><p class="line862">Exact patching is similar to inexact patching, except it makes two diffs, one from BASE to THIS, and one from BASE to OTHER, then uses the patch from BASE to OTHER to determine the line offsets to apply the patch from BASE to THIS to. It doesn't have to use context lines like inexact patching does, and can recognize <a href="/AccidentalCleanMerge">AccidentalCleanMerge</a> as a special case (especially important for 3way, since it runs into lots of erroneous accidental clean merges when BASE is selected too conservatively).  This is known in the subversion world as [<a class="http" href="http://subversion.tigris.org/variance-adjusted-patching.html">http://subversion.tigris.org/variance-adjusted-patching.html</a> Variance Adjusted Patching].  The same concept can also be extended to work with binary diffs.  In the binary case you usually want a 'buffer' around the edges of the patch that is used to catch conflicts.  Interestingly, this buffer could be extended using the semantics of the file being edited - either to the nearest newline, or the nearest set of braces, etc. <span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span><p class="line867">
+<h1 id="Three-way_compare">Three-way compare</h1>
+<span class="anchor" id="line-20"></span><p class="line874">This approach compares all three texts, and divides them up into sections where <span class="anchor" id="line-21"></span><span class="anchor" id="line-22"></span><ul><li>all agree <span class="anchor" id="line-23"></span></li><li>this and other agree <span class="anchor" id="line-24"></span></li><li>this and base agree <span class="anchor" id="line-25"></span></li><li>base and other agree <span class="anchor" id="line-26"></span></li><li>none agree <span class="anchor" id="line-27"></span><span class="anchor" id="line-28"></span></li></ul><p class="line874">A drawback of this approach is that it is hard to determine section breaks;  If none agree, and later THIS and OTHER agree, which lines of BASE belong in the first section, and which in the second?  As a result, this case is treated as a single 'none agree' section, increasing the number of conflict lines. <span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span><p class="line874">In some sense all these techniques are variants of three way compare, but with the details fleshed out in different ways. <span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span><p class="line867">
+<h1 id="Two-way_tie-break">Two-way tie-break</h1>
+<span class="anchor" id="line-33"></span><p class="line874">This approach first compares THIS and OTHER.  Only the differences are processed further.  In areas where THIS and OTHER differ, the THIS and OTHER texts are both compared to the BASE text to break the tie.  If THIS text is the same as the BASE text, it loses.  If the OTHER text is the same as the BASE text, it loses.  If neither matches BASE, it is considered a conflict. <span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><p class="line874">A drawback of this approach is that conflicts are not clearly associated with particular lines in Base. <span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span><p class="line867">
+<h1 id="Bzr_implementation_of_three-way_compare">Bzr implementation of three-way compare</h1>
+<span class="anchor" id="line-38"></span><p class="line874">The bzr implementation does a three-way comparison like so: <span class="anchor" id="line-39"></span><ol type="1"><li>Compare BASE to OTHER <span class="anchor" id="line-40"></span></li><li>Compare BASE to THIS <span class="anchor" id="line-41"></span></li><li>Combine the comparisons so that the section breaks happen in the same places, relative to BASE <span class="anchor" id="line-42"></span></li><li>In sections where THIS and BASE coincide, pick OTHER <span class="anchor" id="line-43"></span></li><li>In sections where OTHER and BASE coincide, pick THIS <span class="anchor" id="line-44"></span></li><li>Sections in which both OTHER and THIS differ from BASE are treated as conflicts <span class="anchor" id="line-45"></span></li><li>(Optional) a two-way merge is performed in conflict regions, to reduce conflicts.  (This step is optional, because it loses the connection between BASE and conflict regions) <span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span></li></ol><p class="line867"><a class="http" href="http://pacquiaovsmarquez3live.com/">Hopkins vs Dawson</a> <span class="anchor" id="line-48"></span><a class="http" href="http://mayweatherversusortiz.com/">Hopkins vs Dawson</a> <span class="anchor" id="line-49"></span><a class="http" href="http://pacquiaovsmarquez3live.com/">Donaire vs Narvaez</a> <span class="anchor" id="line-50"></span><a class="http" href="http://mayweatherversusortiz.com/">Donaire vs Narvaez</a> <span class="anchor" id="line-51"></span><a class="http" href="http://pacquiaovsmarquez3live.com/2011/10/watch-hopkins-vs-dawson-live-streaming-online/">Hopkins vs Dawson Live Streaming</a> <span class="anchor" id="line-52"></span><a class="http" href="http://mayweatherversusortiz.com/2011/10/watch-donaire-vs-narvaez-live-streaming-online/">Donaire vs Narvaez Live Streaming</a> <span class="anchor" id="line-53"></span><span class="anchor" id="bottom"></span></div><p id="pageinfo" class="info" lang="en" dir="ltr">Revctrl Wiki: ThreeWayTextMergeImplementation  (last edited 2011-10-04 17:22:30 by <span title="AllenSmith @ 203.177.74.143[203.177.74.143]"><a class="nonexistent" href="/AllenSmith" title="AllenSmith @ 203.177.74.143[203.177.74.143]">AllenSmith</a></span>)</p>
+
+<div id="pagebottom"></div>
+</div>
+
+
+<div id="footer">
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onClick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="/ThreeWayTextMergeImplementation?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="/ThreeWayTextMergeImplementation?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="/ThreeWayTextMergeImplementation">
+<div>
+    <label>More Actions:</label>
+    <select name="action"
+        onchange="if ((this.selectedIndex != 0) &&
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="RenamePage" disabled class="disabled">Rename Page</option>
+<option value="DeletePage" disabled class="disabled">Delete Page</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Subscribe User</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Remove Spam</option>
+<option value="show" disabled class="disabled">Revert to this revision</option>
+<option value="show" disabled class="disabled">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+    </select>
+    <input type="submit" value="Do">
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+<ul id="credits">
+<li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li><li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li><li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li><li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li>
+</ul>
+
+
+</div>
+</body>
+</html>
+

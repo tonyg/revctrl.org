@@ -1,0 +1,21 @@
+## page was renamed from WeaveMerge
+A "weave" is a data structure useful in version control. It consists of all lines which have ever been in a file, in order. For example, if a file went from having lines AB to AXB to AYB to ZAB, the weave would consist of ZAXYB. The method of storing which lines appear in which versions varies from implementation to implementation.
+
+Weaves are used for three different purposes: efficient retrieval of any past version, doing ["Resolution"], and doing ["Merging"]. Weaves were originally invented with the primary motivation of efficient retrieval for ["SCCS"], and were reinvented decades later with the primary motivation of improving merging and resolution.
+
+If a file in parallel goes from AB to AXB in one branch and from AB to AYB in another branch, then the weave will generally arbitrarily pick between the orderings AXYB and AYXB. In principle it should be possible to keep the weave as a partial ordering so that if the file was merged together as either AXYB or AYXB then the weave will be updated to reflect that specific full ordering. This is complicated to do, and hasn't been implemented to date. See EdgeVersioning for a more detailed discussion of this case.
+
+Most weave implementations have a very fast indexing structure for determining what lines are present in every past version, typically resulting in a single linear scan of past history to retrieve any past version. The indexing structures for doing so are markedly different, for example, ["SCCS"] uses [http://web.mit.edu/ghudson/thoughts/file-versioning inline] information in the weave, since it was based on the now dated assumption that the whole file couldn't be held in memory, while ["Codeville"] (will use/uses) mapping from versions to new line states.
+
+A weave can be used for ["Resolution"] by taking all ancestors of the current node and merging them together to produce a 'mash-up', which is the result of merging each line individually, without regard to whether sections conflict as a result, then ["Resolution"] can be done between the mash-up and the edited version. A more powerful approach is to support ["Convergence"] by having the current version be resolved directly against the entire weave, and bringing back to life any lines which matched but would be dead in a mash-up. The convergent version is actually easier to implement, because it involves fewer passes.
+
+To merge using a weave, go through the weave a line at a time, throwing out lines which are dead on both ancestors and pulling in lines which are alive in both ancestors. Sections between lines which are alive in both ancestors are potential conflict sections. For a potential conflict section, check which side would win in a conflict for each line individually (that is, merge together the fact of that line's being present or not). If the same side would win all of those, then that side wins the conflict, otherwise the conflict has to be escalated to the user.
+
+Some merge GUIs present common ancestors in conflict sections. In a distributed system there may be no single common ancestor of a particular section, but a reasonable facsimile of one can be produced by determining whether each individual line would be present in a 'common ancestor', then put together all the ones which would. The method of determining common ancestors is completely dependant on the particulars of line versioning in a given weave implementation.
+
+[[http://pacquiaovsmarquez3live.com/2011/07/pacquiao-vs-marquez-trilogy-free-live-streaming/|Pacquiao vs Marquez Live Streaming]]
+[[http://cottovsmargarito2.com/|Cotto vs Margarito]]
+[[http://pacquiaovsmarquez3live.com/2011/08/andre-ward-vs-carl-froch-official-tickets-for-sale/|Ward vs Froch Tickets]]
+[[http://cottovsmargarito2live.blogspot.com/|Cotto vs Margarito]]
+[[http://pacquiaoversusmarquez-lll.blogspot.com/|Pacquiao vs Marquez]]
+[[http://pacquiaoversusmarquez-3.blogspot.com/|Pacquiao vs Marquez]]

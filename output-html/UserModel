@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+
+<title>UserModel - Revctrl Wiki</title>
+<script type="text/javascript" src="/static184/common/js/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/static184/modern/css/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="/static184/modern/css/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="/static184/modern/css/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="/static184/modern/css/projection.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/static184/modern/css/msie.css">
+<![endif]-->
+
+
+
+
+
+<link rel="Start" href="/FrontPage">
+<link rel="Alternate" title="Wiki Markup" href="/UserModel?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="/UserModel?action=print">
+<link rel="Search" href="/FindPage">
+<link rel="Index" href="/TitleIndex">
+<link rel="Glossary" href="/WordIndex">
+<link rel="Help" href="/HelpOnFormatting">
+</head>
+
+<body  lang="en" dir="ltr">
+
+<div id="header">
+
+
+<form id="searchform" method="get" action="/UserModel">
+<div>
+<input type="hidden" name="action" value="fullsearch">
+<input type="hidden" name="context" value="180">
+<label for="searchinput">Search:</label>
+<input id="searchinput" type="text" name="value" value="" size="20"
+    onfocus="searchFocus(this)" onblur="searchBlur(this)"
+    onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search">
+<input id="titlesearch" name="titlesearch" type="submit"
+    value="Titles" alt="Search Titles">
+<input id="fullsearch" name="fullsearch" type="submit"
+    value="Text" alt="Search Full Text">
+</div>
+</form>
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script>
+
+<ul id="username"><li><a href="/UserModel?action=login" id="login" rel="nofollow">Login</a></li></ul>
+<div id="locationline">
+<div id="interwiki"><span><a href="/FrontPage" rel="nofollow">Revctrl Wiki</a></span></div>
+
+<ul id="pagelocation">
+<li><a class="backlink" href="/UserModel?action=fullsearch&amp;context=180&amp;value=linkto%3A%22UserModel%22" rel="nofollow" title="Click to do a full-text search for this title">UserModel</a></li>
+</ul>
+
+</div>
+
+
+<ul id="navibar">
+<li class="wikilink"><a href="/FrontPage">FrontPage</a></li><li class="wikilink"><a href="/RecentChanges">RecentChanges</a></li><li class="wikilink"><a href="/FindPage">FindPage</a></li><li class="wikilink"><a href="/HelpContents">HelpContents</a></li><li class="current"><a href="/UserModel">UserModel</a></li>
+</ul>
+
+<div id="pageline"><hr style="display:none;"></div>
+
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onClick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="/UserModel?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="/UserModel?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="/UserModel">
+<div>
+    <label>More Actions:</label>
+    <select name="action"
+        onchange="if ((this.selectedIndex != 0) &&
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="RenamePage" disabled class="disabled">Rename Page</option>
+<option value="DeletePage" disabled class="disabled">Delete Page</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Subscribe User</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Remove Spam</option>
+<option value="show" disabled class="disabled">Revert to this revision</option>
+<option value="show" disabled class="disabled">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+    </select>
+    <input type="submit" value="Do">
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867">
+<h1 id="Concept">Concept</h1>
+<span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line862">A User Model is formal model of how a user understands their changes, and what they expect to cause a clean merge or a conflict.  This concept was first defined and articulated in the original <a href="/MarkMerge">MarkMerge</a> paper: <a class="http" href="http://article.gmane.org/gmane.comp.version-control.codeville.devel/6">http://article.gmane.org/gmane.comp.version-control.codeville.devel/6</a> <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line874">As that paper states: <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span><span class="anchor" id="line-20"></span><span class="anchor" id="line-21"></span><span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span><pre>Traditionally, merge algorithms are evaluated by coming up with some
+set of examples, eyeballing them to make some guess as to what the
+"correct" answer was, comparing that to the algorithm's output, and
+then arguing with people whose intuitions were different.
+Fundamentally, merging is about deterministically guessing the user's
+intent in situations where the user has not expressed any intent.
+Humans are very good at guessing intent; we have big chunks of squishy
+hardware designed to form sophisticated models of others intents, and
+it's completely impossible for a VCS to try and duplicate that in
+full.  My suggestion here, with my "user model", is to seriously and
+explicitly study this part of the problem.  There are complicated
+trade-offs between accuracy (correctly modeling intention),
+conservatism (avoiding incorrectly modeling intention), and
+implementability (describing the user's thought processes exactly
+isn't so useful if you can't apply it in practice).  It's hard to make
+an informed judgement when we don't have a name for the thing we're
+trying to optimize, and hard to evaluate an algorithm when we can't
+even say what it's supposed to be doing.</pre><span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span><p class="line862">In short, if we're going to have to make guesses about squishy things like "intention", we had better be very explicit about our assumptions.  Otherwise, we continue to invent algorithms that look great, until someone suggests a new example.  This is fundamentally non-viable, because we never know whether we've seen "all the bad examples" (especially since historically, every time we think this someone has come up with new ones).  If we keep progressing from one example to another, we're doomed, because there are infinitely many examples.  The hope is that by defining our assumptions about the user, critiques of merge algorithms can be reduced to arguments that the algorithm implements a user model that does not accurately reflect users (example: <a href="/MarkMerge">MarkMerge</a>'s failure to handle <a href="/StaircaseMerge">StaircaseMerge</a>), or arguments that the algorithm does not properly implement its user model (example: unique-<a href="/MarkMerge">MarkMerge</a>'s failure to handle <a href="/AccidentalCleanMerge">AccidentalCleanMerge</a>). <span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><p class="line862">If this works, then every nasty example will turn out to be signaling a general problem of one of these two types.  We like general problems <em>much</em> more than specific problems. <span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span><p class="line867">
+<h1 id="Practice">Practice</h1>
+<span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span><p class="line862">The only merge algorithm so far to adopt this approach explicitly is <a href="/MarkMerge">MarkMerge</a>, and the only developer or analyst to have used the concept in writing is <a href="/NathanielSmith">NathanielSmith</a>.  He earnestly (and third-person-ly) hopes that future work will find the concept useful. <span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><p class="line862">The user model used by <a href="/MarkMerge">MarkMerge</a> is: <span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span><span class="anchor" id="line-39"></span><span class="anchor" id="line-40"></span><span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span><span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span><span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span><pre>  1) whenever a user explicitly sets the value, they express a claim
+     that their setting is superior to the old setting
+  2) whenever a user chooses to commit a new revision, they implicitly
+     affirm the validity of the decisions that led to that revision's
+     parents
+    Corollary of (1) and (2): whenever a user explicitly sets the
+     value, they express that they consider their new setting to be
+     superior to _all_ old settings
+  3) A "conflict" should occur if, and only if, the settings on each
+     side of the merge express parallel claims.</pre><span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><p class="line862">This language is necessarily pretty fuzzy, which opens the whole concept of a user model to objections.  Especially since, ideally, a user model should entirely determine the results of a full algorithm implementing it... it might be claimed that a user model is simply a fuzzy high-level description of the algorithm proper.  Nonetheless, it has shown some practical benefits in at least the <a href="/MarkMerge">MarkMerge</a> case. <span class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span><p class="line874">This model described is for scalar merge.  No potential user model has been formulated for textual merge, which may be part of why we have no predictably reliable textual mergers... <span class="anchor" id="line-52"></span><span class="anchor" id="bottom"></span></div><p id="pageinfo" class="info" lang="en" dir="ltr">Revctrl Wiki: UserModel  (last edited 2007-03-27 17:33:29 by <span title="ManpreetSingh @ scaea-http-1.sun.com[192.18.43.10]"><a class="nonexistent" href="/ManpreetSingh" title="ManpreetSingh @ scaea-http-1.sun.com[192.18.43.10]">ManpreetSingh</a></span>)</p>
+
+<div id="pagebottom"></div>
+</div>
+
+
+<div id="footer">
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onClick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="/UserModel?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="/UserModel?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="/UserModel">
+<div>
+    <label>More Actions:</label>
+    <select name="action"
+        onchange="if ((this.selectedIndex != 0) &&
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="RenamePage" disabled class="disabled">Rename Page</option>
+<option value="DeletePage" disabled class="disabled">Delete Page</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Subscribe User</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Remove Spam</option>
+<option value="show" disabled class="disabled">Revert to this revision</option>
+<option value="show" disabled class="disabled">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+    </select>
+    <input type="submit" value="Do">
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+<ul id="credits">
+<li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li><li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li><li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li><li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li>
+</ul>
+
+
+</div>
+</body>
+</html>
+

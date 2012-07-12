@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+
+<title>StaircaseMerge - Revctrl Wiki</title>
+<script type="text/javascript" src="/static184/common/js/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/static184/modern/css/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="/static184/modern/css/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="/static184/modern/css/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="/static184/modern/css/projection.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/static184/modern/css/msie.css">
+<![endif]-->
+
+
+
+
+
+<link rel="Start" href="/FrontPage">
+<link rel="Alternate" title="Wiki Markup" href="/StaircaseMerge?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="/StaircaseMerge?action=print">
+<link rel="Search" href="/FindPage">
+<link rel="Index" href="/TitleIndex">
+<link rel="Glossary" href="/WordIndex">
+<link rel="Help" href="/HelpOnFormatting">
+</head>
+
+<body  lang="en" dir="ltr">
+
+<div id="header">
+
+
+<form id="searchform" method="get" action="/StaircaseMerge">
+<div>
+<input type="hidden" name="action" value="fullsearch">
+<input type="hidden" name="context" value="180">
+<label for="searchinput">Search:</label>
+<input id="searchinput" type="text" name="value" value="" size="20"
+    onfocus="searchFocus(this)" onblur="searchBlur(this)"
+    onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search">
+<input id="titlesearch" name="titlesearch" type="submit"
+    value="Titles" alt="Search Titles">
+<input id="fullsearch" name="fullsearch" type="submit"
+    value="Text" alt="Search Full Text">
+</div>
+</form>
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script>
+
+<ul id="username"><li><a href="/StaircaseMerge?action=login" id="login" rel="nofollow">Login</a></li></ul>
+<div id="locationline">
+<div id="interwiki"><span><a href="/FrontPage" rel="nofollow">Revctrl Wiki</a></span></div>
+
+<ul id="pagelocation">
+<li><a class="backlink" href="/StaircaseMerge?action=fullsearch&amp;context=180&amp;value=linkto%3A%22StaircaseMerge%22" rel="nofollow" title="Click to do a full-text search for this title">StaircaseMerge</a></li>
+</ul>
+
+</div>
+
+
+<ul id="navibar">
+<li class="wikilink"><a href="/FrontPage">FrontPage</a></li><li class="wikilink"><a href="/RecentChanges">RecentChanges</a></li><li class="wikilink"><a href="/FindPage">FindPage</a></li><li class="wikilink"><a href="/HelpContents">HelpContents</a></li><li class="current"><a href="/StaircaseMerge">StaircaseMerge</a></li>
+</ul>
+
+<div id="pageline"><hr style="display:none;"></div>
+
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onClick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="/StaircaseMerge?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="/StaircaseMerge?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="/StaircaseMerge">
+<div>
+    <label>More Actions:</label>
+    <select name="action"
+        onchange="if ((this.selectedIndex != 0) &&
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="RenamePage" disabled class="disabled">Rename Page</option>
+<option value="DeletePage" disabled class="disabled">Delete Page</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Subscribe User</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Remove Spam</option>
+<option value="show" disabled class="disabled">Revert to this revision</option>
+<option value="show" disabled class="disabled">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+    </select>
+    <input type="submit" value="Do">
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line874">Name for the following merge example: <span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line867"><span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><pre>    a
+   / \
+  b   c
+   \ / \
+    c   d</pre><span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><p class="line862">An algorithm that supports StaircaseMerge will cleanly merge c and d to d.  The reasoning is that d, when created, defeated c; therefore, it should win cleanly. <span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><p class="line862">This behavior is similar to <a href="/ImplicitUndo">ImplicitUndo</a> because b was added and reverted, but while <a href="/ImplicitUndo">ImplicitUndo</a> appears to be quite dangerous and tricky to implement, StaircaseMerge doesn't appear to cause any nasty edge cases and at least one technique for implementing it straightforwardly is known. <span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><p class="line867">
+<h2 id="Example:_Repeated_Staircase_Merge">Example: Repeated Staircase Merge</h2>
+<span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><p class="line874">It's possible to have a repeated staircase merge <span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span><p class="line867"><span class="anchor" id="line-20"></span><span class="anchor" id="line-21"></span><span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span><pre>    a
+   / \
+  b   c
+   \ / \
+    c   d
+     \ / \
+      d   e</pre><span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><p class="line874">Note that this can easily continue as you repeatedly merge changes to a development branch into an unaltered branch. Most people agree that the user shouldn't have to repeatedly fix conflicts in this case, so it creates a compelling argument for clean merging of staircase. <span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span><p class="line867">
+<h2 id="Example:_Staircase_vs._Convergence">Example: Staircase vs. Convergence</h2>
+<span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span><p class="line874">This related case illustrates interesting complications which can arise: <span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><p class="line867"><span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span><span class="anchor" id="line-39"></span><span class="anchor" id="line-40"></span><span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span><span class="anchor" id="line-43"></span><pre>    a
+   / \
+  b   c
+   \ / \
+    c   b
+     \ / \
+      b   e</pre><span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span><p class="line862">Note that this is the same as the previous examples but with the "<tt>d</tt>"s changed to "<tt>b</tt>"s. Analogy with the previous example indicates that e should win cleanly, but <a href="/GenerationCounting">GenerationCounting</a> raises a conflict, because on the left "<tt>b</tt>" has been resurrected, and on the right it's alive for the first time). The theory behind this can be seen by comparing to the following case: <span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span><p class="line867"><span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><span class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span><span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span><span class="anchor" id="line-54"></span><span class="anchor" id="line-55"></span><pre>    a
+   / \
+  b   c
+   \   \
+    c   b
+     \   \
+      b   e</pre><span class="anchor" id="line-56"></span><span class="anchor" id="line-57"></span><p class="line862">By ["Convergence"] we can ignore the "<tt>c</tt>"s, but since "<tt>b</tt>" was born, died, and re-born on the left, that's ["Convergence"] plus further history with the single birth of "<tt>b</tt>" on the right, so we have a conflict. <span class="anchor" id="line-58"></span><span class="anchor" id="line-59"></span><p class="line867">
+<h2 id="Example:_Convergence_gets_confused_by_Staircase">Example: Convergence gets confused by Staircase</h2>
+<span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span><p class="line874">The following example illustrates a potential ambiguity in the semantics of Convergence when mixed with Staircase: <span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span><p class="line867"><span class="anchor" id="line-64"></span><span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span><span class="anchor" id="line-67"></span><span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span><span class="anchor" id="line-70"></span><span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span><span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span><span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span><span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span><pre>    a
+    |\
+    | \
+    |  b
+    |  |
+    |  c
+    d  |
+    |\ |
+    | \|
+    |  d
+    |  |
+    c  |
+    |  |
+    b  c</pre><span class="anchor" id="line-79"></span><span class="anchor" id="line-80"></span><p class="line862">In this case the decision of the branch on the right to go with d indicates that d wins over all of its history, so intuitively it would make sense for b to cleanly win at the bottom, because after d there is strictly convergent history with b winning. However, if <a href="/GenerationCounting">GenerationCounting</a> is used, then c wins cleanly. <span class="anchor" id="line-81"></span><span class="anchor" id="line-82"></span><p class="line874">Fixing this problem for a general text merger doesn't appear to be impossible. The following example clearly illustrates how this case should affect a boolean value, as is the case for line include/exclude as used in generation counting of text files: <span class="anchor" id="line-83"></span><span class="anchor" id="line-84"></span><p class="line867"><span class="anchor" id="line-85"></span><span class="anchor" id="line-86"></span><span class="anchor" id="line-87"></span><span class="anchor" id="line-88"></span><span class="anchor" id="line-89"></span><span class="anchor" id="line-90"></span><span class="anchor" id="line-91"></span><span class="anchor" id="line-92"></span><span class="anchor" id="line-93"></span><span class="anchor" id="line-94"></span><span class="anchor" id="line-95"></span><span class="anchor" id="line-96"></span><span class="anchor" id="line-97"></span><span class="anchor" id="line-98"></span><pre>    a
+    |\
+    | \
+    |  b
+    |  |
+    b  a
+    |\ |
+    | \|
+    |  b
+    |  |
+    a  |
+    |  |
+    b  a</pre><span class="anchor" id="line-99"></span><span class="anchor" id="line-100"></span><p class="line874">A general algorithm for getting this right is unknown, although it feels notably similar to the problem of supporting staircase in a non-convergent scalar merge, which also doesn't have a good known algorithm. <span class="anchor" id="line-101"></span><span class="anchor" id="line-102"></span><p class="line867">
+<h1 id="Supported_by">Supported by</h1>
+<span class="anchor" id="line-103"></span><span class="anchor" id="line-104"></span><p class="line867"><a href="/CodevilleMerge">CodevilleMerge</a>, <a href="/ThreeWayMerge">ThreeWayMerge</a> <span class="anchor" id="line-105"></span><span class="anchor" id="line-106"></span><p class="line867">
+<h1 id="Not_supported_by">Not supported by</h1>
+<span class="anchor" id="line-107"></span><span class="anchor" id="line-108"></span><p class="line867"><a href="/MarkMerge">MarkMerge</a> <span class="anchor" id="line-109"></span><span class="anchor" id="line-110"></span><p class="line867"><hr /><p class="line874"> <span class="anchor" id="line-111"></span><span class="anchor" id="line-112"></span><p class="line867"><a href="/CategoryMergeExample">CategoryMergeExample</a> <span class="anchor" id="line-113"></span><span class="anchor" id="bottom"></span></div><p id="pageinfo" class="info" lang="en" dir="ltr">Revctrl Wiki: StaircaseMerge  (last edited 2007-03-27 17:37:18 by <span title="ManpreetSingh @ scaea-http-1.sun.com[192.18.43.10]"><a class="nonexistent" href="/ManpreetSingh" title="ManpreetSingh @ scaea-http-1.sun.com[192.18.43.10]">ManpreetSingh</a></span>)</p>
+
+<div id="pagebottom"></div>
+</div>
+
+
+<div id="footer">
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onClick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="/StaircaseMerge?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="/StaircaseMerge?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="/StaircaseMerge">
+<div>
+    <label>More Actions:</label>
+    <select name="action"
+        onchange="if ((this.selectedIndex != 0) &&
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="RenamePage" disabled class="disabled">Rename Page</option>
+<option value="DeletePage" disabled class="disabled">Delete Page</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Subscribe User</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Remove Spam</option>
+<option value="show" disabled class="disabled">Revert to this revision</option>
+<option value="show" disabled class="disabled">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+    </select>
+    <input type="submit" value="Do">
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+<ul id="credits">
+<li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li><li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li><li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li><li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li>
+</ul>
+
+
+</div>
+</body>
+</html>
+

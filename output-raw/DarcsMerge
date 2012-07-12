@@ -1,0 +1,48 @@
+For every patch P to be merged in the tree,
+
+ 1. Find a patch T_n in the current tree whose context is identical to that of P
+ 2. Bring all the patches T_(n+1)..T_(max n) that have been recorded after that patch into the context of P (creating patch P')
+ 3. If some patch T_x cannot be brought to P's context, change P into a conflict patch that cancels P and T_x, and continue bringing the rest of the patches into P's context
+ 4. Apply patch P'
+
+It's that simple!
+
+There is a [http://www.abridgegame.org/pipermail/darcs-users/2003/000221.html thread] on the darcs users mailing list comparing DarcsMerge and the exact patching form of ThreeWayTextMergeImplementation.
+
+= Strengths =
+
+ * Is always able to apply patches that don't really conflict.
+ * Merging branches with many changes on both sides does not make it less probable that the merge will succeed
+ * Patches never apply "wrong".
+ * A tree with the same set of patches always has the same content.
+ * Allows orthogonal change types (e.g. identifier renames and hunks) to merge cleanly.
+ * Does not lose patch identity in merge
+ * Handles all merge "problems", such as CrissCrossMerge, AccidentalCleanMerge or StaircaseMerge.  (These problems simply don't exist with this algorithm.)
+
+= Weaknesses =
+
+ * You cannot use "traditional" diffs internally.  They cannot accommodate conflict patches.
+ * Conflict becomes a repository state, not a working-tree state.  (Some would consider this a pro)
+ * The "same" patch may have a different content in different trees, if it has different context (i.e. patches are ordered differently in those trees)
+ * Nobody has proved that the performance of conflict-conflict merge corner cases can be improved from O(exp n)
+ * Requires additional work if you want to record who merged what and when.  (This is because the merge algorithm itself does not need this information.)
+
+= Used by =
+
+Darcs.
+
+= Related =
+
+Any merge algorithm that deals directly with patches.
+
+----
+
+CategoryMergeAlgorithm
+
+[[http://pacquiaovsmarquez3live.com/2011/07/pacquiao-vs-marquez-tickets-for-sale/|Pacquiao vs Marquez Tickets]]
+[[http://cottovsmargarito2.com/2011/09/buy-cotto-vs-margarito-tickets-official-tickets-for-sale-here/|Cotto vs Margarito Tickets]]
+[[http://mayweatherversusortiz.com/2011/09/pacquiao-vs-marquez-official-tickets-for-sale/|Pacquiao vs Marquez Tickets]]
+[[http://pacquiaovsmarquez3live.com/2011/08/bernard-hopkins-vs-chad-dawson-official-tickets-for-sale/|Hopkins vs Dawson Tickets]]
+[[http://mayweatherversusortiz.com/2011/09/nonito-donaire-vs-omar-narvaez-official-tickets-for-sale/|Donaire vs Narvaez Tickets]]
+[[http://pacquiaovsmarquez3live.com/|Pacquiao vs Marquez]]
+[[http://donairevsnarvaezlive.blogspot.com/|Donaire vs Narvaez]]

@@ -1,0 +1,91 @@
+#!/usr/bin/env python
+from __future__ import with_statement
+from urllib2 import urlopen
+from urllib import urlencode
+import re
+import os
+import time
+
+with open('roots') as f:
+    roots = set((s.strip() for s in f.read().split('\n') if s.strip()))
+    params = {}
+    for r in roots:
+        if ' ' in r:
+            pieces = r.split()
+            roots.remove(r)
+            roots.add(pieces[0])
+            params[pieces[0]] = pieces[1]
+with open('rejects') as f:
+    rejects = set((s.strip() for s in f.read().split('\n') if s.strip()))
+
+def _fetch(page, extra):
+    if page in params:
+        p = params[page]
+        if extra:
+            extra = extra + '&' + p
+        else:
+            extra = '?' + p
+    url = 'http://revctrl.org/%s%s' % (page, extra)
+    print '  ' + url
+    fp = urlopen(url)
+    body = fp.read()
+    fp.close()
+    time.sleep(2)
+    return body
+
+def raw(page):
+    return _fetch(page, '?action=raw')
+
+def html(page):
+    return _fetch(page, '')
+
+def fetch_if_missing(page, directory, fetcher):
+    path = '%s/%s' % (directory, page)
+    if os.access(path, os.F_OK):
+        print path, 'exists'
+    else:
+        print 'Fetching', directory, page
+        body = fetcher(page)
+        with open(path, 'wt') as f:
+            f.write(body)
+
+pseudolink_re = re.compile(r'\["([^"]+)"\]')
+pagelink_re = re.compile(r'href="/([^"]+)"')
+
+def links_in(page, directory, matcher):
+    scraped = set()
+    path = '%s/%s' % (directory, page)
+    with open(path) as f:
+        body = f.read()
+    found_pages = matcher.findall(body)
+    for x in found_pages:
+        if '?' in x: continue
+        if '#' in x: continue
+        if '%28' in x: continue
+        if x.endswith('.css'): continue
+        if not x[0].isupper(): continue
+        scraped.add(x)
+    return scraped
+
+def single_pass():
+    of_interest = roots - rejects
+    for page in of_interest: fetch_if_missing(page, 'output-raw', raw)
+    for page in of_interest: fetch_if_missing(page, 'output-html', html)
+
+    scraped = set()
+    for page in of_interest:
+        scraped.update(links_in(page, 'output-html', pagelink_re))
+        scraped.update(links_in(page, 'output-raw', pseudolink_re))
+
+    print
+    print 'Already rejected:'
+    print
+    for x in sorted(scraped.intersection(rejects)):
+        print x
+    print
+    print 'Not yet seen:'
+    print
+    for x in sorted(scraped - roots - rejects):
+        print x
+
+single_pass()
