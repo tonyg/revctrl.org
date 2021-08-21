@@ -10,19 +10,19 @@ The main use is for modeling lifecycles of things like files.  A file's dead/ali
 
 It may also be interesting theoretically, given the relation between [BooleanMergeAlgorithm](BooleanMergeAlgorithm.md)s and general [ScalarMergeAlgorithm](ScalarMergeAlgorithm.md)s.
 
-= Strengths =
+## Strengths
 
 Very simple (simplest natural lifecycle model), gives very strong properties that ease design of other parts of the system.
 
-= Weaknesses =
+## Weaknesses
 
 Only appropriate in very restricted cases.
 
-= Used by =
+## Used by
 
 [Monotone](Monotone.md), [Codeville](Codeville.md), others?
 
-= Related =
+## Related
 
 [SimpleWeaveMerge](SimpleWeaveMerge.md) uses this algorithm for the lifecycle of individual lines.
 

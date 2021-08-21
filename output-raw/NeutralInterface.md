@@ -5,12 +5,12 @@ I propose creating an intermediary program (or programs or libraries) to present
 SCM data to the GUI application in an easily parsed, neutral format.
 This will simultaneously make things easier for the GUI and make it work for more users.
 
-=== Sample implementations ===
+## Sample implementations
 
 Tiny sample GIT implementation is available at
 http://pasky.or.cz/~xpasky/neutral.sh
 
-=== Strawman functionality ===
+### Strawman functionality
 
 ```
 $ scm identify
@@ -50,7 +50,7 @@ type:3:GIT
 $ 
 ```
 
-=== Proposed format ===
+### Proposed format
 
 Output consists of zero or more tag/value pairs. Some tags are optional, some tags may be repeated.
 Each pair is output as `<tag>:<value length>:<value>\n`. This allows values to contain embedded newlines.
@@ -63,7 +63,7 @@ always list all the fields they want here, since various field values may be
 expensive to compute based on the particular underlying SCM (e.g. in
 Git, it is relatively expensive to get the value of the 'file' field).
 
-=== Suggested commands and associated output fields ===
+### Suggested commands and associated output fields
 
 version:
 
@@ -88,7 +88,7 @@ changeset:
 
  ...
 
-=== shell mode (-i) ===
+### shell mode (-i)
 
 It'd be nice to have a shell mode, where a client can open a pipe to a subprocess and pass commands.
 This would reduce fork and other setup overhead.
@@ -119,6 +119,6 @@ no field list means empty field list) is parsed in the same way as the `-s`
 argument, and the same considerations apply - it is recommended to always
 specify the field list.
 
-=== library (future) ===
+### library (future)
 
 Once some implementations exist, it should be easy to wrap all calls into a library. This library can initially call the stand-alone command, or possibly shell mode if available. Once the interface is well-established, the shim library can be replaced with direct calls to the SCM backend for improved performance.

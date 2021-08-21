@@ -30,11 +30,11 @@ added to identical trees. Ideally, one would like to be able to clean up
 such conflicts with a suture command (if the files were in fact the same),
 but nothing currently supports that feature.
 
-= Supported by =
+## Supported by
 
 Many implementations of [ThreeWayMerge](ThreeWayMerge.md) (as a special case); multi-[MarkMerge](MarkMerge.md)
 
-= Not supported by =
+## Not supported by
 
 [DarcsMerge](DarcsMerge.md) sees this as a conflict.
 

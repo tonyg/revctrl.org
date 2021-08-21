@@ -6,7 +6,7 @@ Most version control systems have to do some kind of resolution to do regular me
 
 Resolution is generally done against either one or two ancestors. When there are two ancestors, it's frequently done as separate diffs against either one, or sometimes as a single diff against a combination of the two (or a combination of all ancestors, in the case of a weave). As a result, most version control systems manage to have a single function for comparing two line-delimited files against each other and pairing up matching lines. Many of them literally use an external diff program.
 
-== approaches to diff ==
+## approaches to diff
 
 There are two basic approaches to doing a diff. One is to find a longest common substring on the two files, then fix that substring as a match and do divide and conquer on the sections before and after. This approach can be led very astray if there are two files with a lot of short matching sequences throughout but a single slightly longer matching sequence at the beginning of one and the end of the other.
 
@@ -15,7 +15,7 @@ This can sometimes result in very bad matches which pair up lots of unrelated op
 
 _(Is there a diff algorithm that recognizes "moves" of entire paragraphs (or functions) from one location to another as "less of a change" than a delete followed by an insert?)_
 
-== further reading ==
+## further reading
 
   * the [longest common subsequence](http://en.wikipedia.org/wiki/longest_common_subsequence_problem) is the longest sequence of items that is present in both original sequences in the same order.
   * the longest common substring is the longest *consecutive* sequence of items that is present in both original sequences.

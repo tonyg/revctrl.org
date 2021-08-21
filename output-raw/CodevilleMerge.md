@@ -15,22 +15,22 @@ If rC - lA is non-empty, then the right side should win.[[BR]]
 If both sides should win, then it's a conflict.[[BR]]
 If _neither_ side should win, it's also a conflict. This is almost certainly non-obvious at first blush, but this situation can occur, albiet somewhat infrequently. This is what's known as an [AmbiguousCleanMerge](AmbiguousCleanMerge.md).
 
-= Strengths =
+## Strengths
 
  * handles arbitrary history topologies
  * handles [StaircaseMerge](StaircaseMerge.md)
  * supports [AccidentalCleanMerge](AccidentalCleanMerge.md)
 
-= Weaknesses =
+## Weaknesses
 
  * [Resolution](Resolution.md) can be inconsistent
  * susceptible to [AmbiguousCleanMerge](AmbiguousCleanMerge.md), which in turn can cause merge conflicts to repeat on every branch
 
-= Used by =
+## Used by
 
 Codeville
 
-= Related =
+## Related
 
 [PreciseCodevilleMerge](PreciseCodevilleMerge.md)
 

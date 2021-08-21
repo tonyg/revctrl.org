@@ -19,7 +19,7 @@ Note that this can happen equally well with a textual merger -- they have each e
 This is one of the key examples that has driven development of merge algorithms; there is currently no textual merge algorithm that fully handles this case (probably - see below).
 
 
-= Three way merge =
+## Three way merge
 
 [ThreeWayMerge](ThreeWayMerge.md) has obvious problems here -- there are two "least" (or more properly, "minimal") common ancestors it could use.
 
@@ -27,7 +27,7 @@ Furthermore, using _either_ of them as a base for the merge will give an incorre
 
 One possible solution is to use 'a' as the common ancestor for the merge; this is the approach taken by [Monotone](Monotone.md), when it uses the [LCA+DOM](LCA+DOM.md) rather than [LCA](LCA.md) as a merge base.  However, this approach has its own problems.
 
-== Recursive three-way merge ==
+### Recursive three-way merge
 
 Another possible solution is to first merge 'b1' and 'c1' to a temporary node (basically, imagine that the 'X' in the diagram is actually a revision, not just edges crossing) and then use that as a base for merging 'b2' and 'c2'. The interesting part is when merging 'b1' and 'c1' results in conflicts - the trick is that in that case, 'X' is included _with the conflicts recorded inside_ (e.g. using the classical conflict markers). Since both 'b2' and 'c2' had to resolve the same conflict, in the case they resolved it the same way they both remove the conflicts from 'X' in the same way and a clean merge results; if they resolved it in different ways, the conflicts from 'X' get propagated to the final merge result. If a merge would result in more than two bases ('b1', 'c1, 'd1'), they are merged consecutively - first 'b1' with 'c1' and then the result with 'd1' .
 
@@ -40,7 +40,7 @@ Also, recursive merge can do some of the same invalid merges as [SimpleWeaveMerg
 Finally, recursive three-way merge has all the inherent problems of [ImplicitUndo](ImplicitUndo.md). In particular, merging together multiple things which merge cleanly will sometimes give different answers depending on the order in which the merges happen. In fact, it's possible in a never-ending criss-cross case for a value to flip-flop until the end of time without ever getting a single unclean merge. This is a very fundamental problem, and fixing it requires first deciding what one wants to have happen in such cases, because what is appropriate behavior is unclear.
 
 
-= Scalar codeville merge =
+## Scalar codeville merge
 Traditional [CodevilleMerge](CodevilleMerge.md) on scalar values gives an [AmbiguousCleanMerge](AmbiguousCleanMerge.md) here -- the last-changed revision for b2 is b1, which is an ancestor of c2, and thus c2 should win cleanly; similarly, the last-changed revision for c2 is c1, which is an ancestor of b2, and thus b2 should win cleanly.
 
 This somewhat anomalous case is normally presented to the user as a conflict (what else can one do?), which is the right result.  But there is a more subtle problem:
@@ -76,7 +76,7 @@ This is yet another conflict.  These conflicts continue so long as new versions 
 
 (Of course, if at any point someone resolves one of these repeated conflicts in favor of c, then things get even more complicated.
 
-= *-merge =
+## \*-merge
 [MarkMerge](MarkMerge.md) *-merge handles this case well.  The graph, annotated with *s, is:
 
 ```
@@ -126,7 +126,8 @@ Here it reports a conflict, rather than merging cleanly to d.  However, this is 
 
 [[Anchor(orderingambiguities)]]
 
-= Simple weave merge =
+## Simple weave merge
+
 [SimpleWeaveMerge](SimpleWeaveMerge.md) handles the simple form of criss-cross correctly.  However, it runs into problems on a slightly different example, that only arise in the textual merging case:
 
 ```
@@ -144,7 +145,7 @@ Here Bob and Claire have managed to overcome their differences somewhat -- they 
 
 [SimpleWeaveMerge](SimpleWeaveMerge.md) will silently clean merge this to either `xcby` or `xbcy` -- which it picks is somewhat random, and depends on the details of the [Resolution](Resolution.md) and global ordering it uses.
 
-= DARCS merge =
+## DARCS merge
 
 The DARCS merge algorithm would generate something like this:
 

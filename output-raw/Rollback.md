@@ -8,7 +8,7 @@ To go into more detail: Imagine you have two branches, let's call them "stable" 
   * Continue to work on the ultragizmo branch, fixing the bugs.
   * Eventually repeat the merge from ultragizmo->stable.
 
-= The problem =
+## The problem
 
 So suppose we do this naively:
 ```
@@ -58,9 +58,9 @@ Support rollback can create some counter-intuitive properties.  For instance, if
 ```
 which violates a rule of thumb used when evaluating merge algorithms -- that when merging A and B, where A is an ancestor of B, B should win unconditionally.
 
-= Workarounds =
+## Workarounds
 
-== Double-revert ==
+### Double-revert
 
 One way to work around this problem is to:
   * revert the changes to stable
@@ -176,15 +176,15 @@ S4' | /   \
     S4 (everyone ignore this!  use S4' instead!)
 ```
 
-== Other ==
+## Other
 
 BramCohen says he has a way to punt on supporting this inside the merge algorithm, and can get the desired behavior entirely outside.  The purpose of this paragraph is to shame him into sharing it on the wiki ;-).
 
-= Supported by =
+## Supported by
 
 DARCS.
 
-= Not supported by =
+## Not supported by
 
 Everything but DARCS.
 

@@ -25,7 +25,7 @@ To make things trickier, the case:
 ```
 should also be a clean merge, but with `a` winning.  The intuition is that if I undo some changes back to an earlier version, the undo should beat all the things that are undone, but should lose to all the things that beat the earlier version.
 
-= Discussion =
+## Discussion
 
 This is a problem that has arisen only with the development of more advanced merge algorithms; 3-way merge does not have this problem, because it simply ignores almost all historical information.  However, there is a direct trade-off -- 3-way merge faces more [resolution](Resolution.md) ambiguities as a result. More disturbingly, a series of clean merges using 3-way merge can cause an undo of a change to silently disappear, with no user editing whatsoever.
 
@@ -122,11 +122,11 @@ This is sort of like an ambiguous clean merge for implicit undo - each side has 
 
 The above examples in aggregate seem to indicate that supporting implicit undo is a fairly sketchy proposition. Perhaps it's better to support explicit undo, by having a command which rewrites local history (which hasn't been commited elsewhere) to pretend that a particular section of code never got changed in the first place.
 
-= Supported by =
+## Supported by
 
 [ThreeWayMerge](ThreeWayMerge.md)
 
-= Not supported by =
+## Not supported by
 
 [DarcsMerge](DarcsMerge.md), [MarkMerge](MarkMerge.md), [SimpleWeaveMerge](SimpleWeaveMerge.md), others
 

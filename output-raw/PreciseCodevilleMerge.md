@@ -14,23 +14,23 @@ attachment:nofrillsprecisemerge.py
 
 An even less featureful merge algorithm than no frills is [SimpleWeaveMerge](SimpleWeaveMerge.md), which, oddly, is more complicated to implement than no frills.
 
-= Strengths =
+## Strengths
 
   * supports [Convergence](Convergence.md)
   * supports [StaircaseMerge](StaircaseMerge.md)
   * supports [EdgeVersioning](EdgeVersioning.md)
 
-= Weaknesses =
+## Weaknesses
 
   * doesn't support [ImplicitUndo](ImplicitUndo.md)
 
-= Used by =
+## Used by
 
   * will be used by [Codeville](Codeville.md)
   * available for [Mercurial](Mercurial.md)
   * has been prototyped for [Vesta](Vesta.md)
 
-= Related =
+## Related
 
 This uses the [Patience sorting](http://en.wikipedia.org/wiki/Patience_sorting) algorithm  to find the longest common subset.
 
