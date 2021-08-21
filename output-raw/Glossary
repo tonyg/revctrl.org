@@ -6,7 +6,7 @@
 }}} See AccidentalCleanMerge.
 
  <<Anchor(aliasing)>>
- aliasing:: aliasing is taking two logically distinct entities and causing them to be treated as equivalent, at least in certain contexts.  Aliasing is similar to suturing, but the assertion is weaker ({{{x == y}}}, not {{{x is y}}}), and is trivial to undo. [[http://www.solidlineproducts.com/|best cases for ipad]]
+ aliasing:: aliasing is taking two logically distinct entities and causing them to be treated as equivalent, at least in certain contexts.  Aliasing is similar to suturing, but the assertion is weaker ({{{x == y}}}, not {{{x is y}}}), and is trivial to undo.
 
  <<Anchor(ambiguouscleanmerge)>>
  ambiguous clean merge:: See AmbiguousCleanMerge.
@@ -15,9 +15,7 @@
  branch:: A named line of development.  May be viewed either as a sequence of [[#changeset|changesets]] or as a sequence of [[#snapshot|snapshots]] (but see the warning about the non-duality of these representations under [[#snapshot|snapshot]]).  In the context of a [[#repository|repository]], a branch may be viewed as a subgraph of the repository [[#DAG|DAG]] with two distinguished vertices; the branch point where it diverges from other lines of development, and a [[#tip|tip]]. Often branches are tied to a [[#repository|repository]] in a many-to-one relationship. But other implementations are possible, for instance, [[Monotone]] supports fully distributed branches which do not exist exclusively on top of any particular [[#repository|repository]], while other systems such as [[Darcs]] and [[Bzr]] tie branches to repositories in a one-to-one fashion.
 
  <<Anchor(changeset)>>
- changeset:: A collection of [[#delta|deltas]] to a set of files, considered as a unit and (in modern VCSes) with metadata including a change comment and a timestamp attached.  To fully capture the history of a line of development, changesets must also record file additions (which may be modeled as a delta from an empty file), file deletions, and file renames.  See also [[#weave|weave]] and [[#snapshot|snapshot]]. [[http://pacquiaovsmarquez3live.com/2011/07/pacquiao-vs-marquez-tickets-for-sale/|Pacquiao vs Marquez Tickets]] [[http://www.sweetrexies.com/|gift baskets]] [[http://www.aeg.cc|fiber to the home construction firms]]
-[[http://www.onlyexclusivetravel.com/2428/1124/objects/resorts/soneva-kiri-by-six-senses.html|Soneva Kiri]]
-
+ changeset:: A collection of [[#delta|deltas]] to a set of files, considered as a unit and (in modern VCSes) with metadata including a change comment and a timestamp attached.  To fully capture the history of a line of development, changesets must also record file additions (which may be modeled as a delta from an empty file), file deletions, and file renames.  See also [[#weave|weave]] and [[#snapshot|snapshot]].
 
  <<Anchor(checkin)>>
  checkin:: Synonym for [[#commit|commit]] used in older VCSes (SCCS, RCS, CVS). This is why "ci" sometime appears as an alias for the commit operation in the command-line interfaces of VCSes that emulate CVS/Subversions's UI.
@@ -44,7 +42,7 @@
  convergent scalar merge:: A scalar merge algorithm related to PreciseCodevilleMerge. See ConvergentScalarMerge.
 
  <<Anchor(DAG)>>
- Directed Acyclic Graph (DAG):: A diagram (graph) made up of points connected by arrows (directed), where no arrow can lead back to an earlier point; in other words, the arrows cannot form a loop (acyclic).  [[#revision|Revisions]] in a VCS may be viewed as nodes in a DAG and the [[#changeset|changesets]] connecting them as links expressing the "parent-of" relationship. [[#tip|Tip]] revisions will have valence 1, most ordinary revisions will have valence 2, and revisions representing a branch point [[http://www.contentrules.com/|global content]] or merge will have valence 3. [[http://cottovsmargarito2.com/2011/09/buy-cotto-vs-margarito-tickets-official-tickets-for-sale-here/|Cotto vs Margarito Tickets]]
+ Directed Acyclic Graph (DAG):: A diagram (graph) made up of points connected by arrows (directed), where no arrow can lead back to an earlier point; in other words, the arrows cannot form a loop (acyclic).  [[#revision|Revisions]] in a VCS may be viewed as nodes in a DAG and the [[#changeset|changesets]] connecting them as links expressing the "parent-of" relationship. [[#tip|Tip]] revisions will have valence 1, most ordinary revisions will have valence 2, and revisions representing a branch point or merge will have valence 3.
 
  <<Anchor(delta)>>
  delta:: A description of changes between two versions of a file, usually as a sequence of line-oriented additions and deletions and replacements.  Such line-oriented deltas are often represented in a standard notation derived from the output format of the Unix '''diff(1)''' command.  There is a well-defined concept of deltas between binary files as well, but no standard notation for expressiong them.
@@ -56,10 +54,7 @@
  implicit undo:: See ImplicitUndo.
 
  <<Anchor(locking)>>
- locking:: Early VCSes (SCCS, RCS) avoided the merging problem by awarding developers temporary but exclusive write locks on files. This approach did not scale well and was abandoned in second- and third-generation VCSes. [[http://mayweatherversusortiz.com/2011/09/pacquiao-vs-marquez-official-tickets-for-sale/|Pacquiao vs Marquez Tickets]]
-[[http://pacquiaovsmarquez3live.com/2011/08/bernard-hopkins-vs-chad-dawson-official-tickets-for-sale/|Hopkins vs Dawson Tickets]]
-[[http://mayweatherversusortiz.com/2011/09/nonito-donaire-vs-omar-narvaez-official-tickets-for-sale/|Donaire vs Narvaez Tickets]]
-
+ locking:: Early VCSes (SCCS, RCS) avoided the merging problem by awarding developers temporary but exclusive write locks on files. This approach did not scale well and was abandoned in second- and third-generation VCSes.
 
 
  <<Anchor(markmerge)>>
@@ -93,7 +88,7 @@
  second-generation:: See [[#vcsgenerations|generations]].
 
  <<Anchor(snapshot)>>
- snapshot:: A collection of files and directories considered as a timestamped unit, possibly with metadata such as a revision comment attached.  The revision history of a project may be considered either as a sequence of snapshots or as a sequence of the [[#changeset|changesets]] connecting them.  However, these representations are not perfectly dual [[http://www.casinobonuscity.net/|no deposit casino bonus codes 2012]].  Notably, moving from a changeset-sequence representation to a snapshot-sequence representation loses information about file and directory add, delete, and rename operations. While additions and deletions can be reliably inferred by comparing snapshots, renames cannot be; this has some subtle and occasionally nasty ripple effects. [[http://pacquiaovsmarquez3live.com/|Pacquiao vs Marquez]]
+ snapshot:: A collection of files and directories considered as a timestamped unit, possibly with metadata such as a revision comment attached.  The revision history of a project may be considered either as a sequence of snapshots or as a sequence of the [[#changeset|changesets]] connecting them.  However, these representations are not perfectly dual.  Notably, moving from a changeset-sequence representation to a snapshot-sequence representation loses information about file and directory add, delete, and rename operations. While additions and deletions can be reliably inferred by comparing snapshots, renames cannot be; this has some subtle and occasionally nasty ripple effects.
 
  <<Anchor(staircasemerge)>>
  staircase merge:: A simple merge example: {{{
@@ -123,26 +118,10 @@
  VCS:: Version-Control System. The most common of a handful of competing acronyms for the software this site is about.  Others include SCM for Source Code Manager and (rarely) SCCS for Source Code Control System.  The latter is also the proper name of the original VCS.
 
  <<Anchor(vcsgenerations)>>
- VCS generations:: There have, broadly speaking, been three generations of VCSes.  The first was exemplified by SCCS and RCS -- centralized and [[#locking|locking]], without support for development distributed across a network.  The second generation was exemplified by CVS and Subversion, which introduced merging and added support for distributed development but retained the centralized model based on one master repository per project.  Third-generation VCSes support a fully decentralized model; master repositories may exist as a matter of per-project policy, but the tools are all designed to support history merges between peer repositories. [[http://donairevsnarvaezlive.blogspot.com/|Donaire vs Narvaez]]
+ VCS generations:: There have, broadly speaking, been three generations of VCSes.  The first was exemplified by SCCS and RCS -- centralized and [[#locking|locking]], without support for development distributed across a network.  The second generation was exemplified by CVS and Subversion, which introduced merging and added support for distributed development but retained the centralized model based on one master repository per project.  Third-generation VCSes support a fully decentralized model; master repositories may exist as a matter of per-project policy, but the tools are all designed to support history merges between peer repositories.
 
  <<Anchor(weave)>>
  weave:: A data structure representing a full ordering of lines for a particular file along with information about which lines exist for each historical revision. [[SCCS]] is the classic example. A number of merge algorithms are based on weaves. See [[Weave]], WeaveMerge.  One of the fundamental design desisions in a VCS is whether change history will be represented as a weave or a sequence of [[#delta|deltas]].
 
  <<Anchor(workspace)>>
  workspace:: An editable copy of the state of a repository at a particular revision (or merge of several revisions) where a user can resolve conflicts and make new changes, then record them as a new revision. Also "working copy".
-[[http://www.pressurewashingmariettaga.net|pressure washing marietta ga]]
-[[http://pacquiaovsmarquez3live.com/|Hopkins vs Dawson]]
-[[http://mayweatherversusortiz.com/|Hopkins vs Dawson]]
-[[http://pacquiaovsmarquez3live.com/|Donaire vs Narvaez]]
-[[http://mayweatherversusortiz.com/|Donaire vs Narvaez]]
-[[http://pacquiaovsmarquez3live.com/2011/10/watch-hopkins-vs-dawson-live-streaming-online/|Hopkins vs Dawson Live Streaming]]
-[[http://mayweatherversusortiz.com/2011/10/watch-donaire-vs-narvaez-live-streaming-online/|Donaire vs Narvaez Live Streaming]]
-[[http://encoredj.org|grand rapids djs]]
-
-Thanks to Angel - [[http://pacquiaovsmarquez3live.com/2011/07/pacquiao-vs-marquez-trilogy-free-live-streaming/|Pacquiao vs Marquez Live Streaming]]
-[[http://cottovsmargarito2.com/|Cotto vs Margarito]]
-[[http://www.oilfieldwiki.com/wiki/Asphaltenes|asphaltene]]
-[[http://pacquiaovsmarquez3live.com/2011/08/andre-ward-vs-carl-froch-official-tickets-for-sale/|Ward vs Froch Tickets]]
-[[http://cottovsmargarito2live.blogspot.com/|Cotto vs Margarito]]
-[[http://pacquiaoversusmarquez-lll.blogspot.com/|Pacquiao vs Marquez]]
-[[http://pacquiaoversusmarquez-3.blogspot.com/|Pacquiao vs Marquez]]

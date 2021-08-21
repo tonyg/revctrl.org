@@ -43,10 +43,3 @@ The bzr implementation does a three-way comparison like so:
  1. In sections where OTHER and BASE coincide, pick THIS
  1. Sections in which both OTHER and THIS differ from BASE are treated as conflicts
  1. (Optional) a two-way merge is performed in conflict regions, to reduce conflicts.  (This step is optional, because it loses the connection between BASE and conflict regions)
-
-[[http://pacquiaovsmarquez3live.com/|Hopkins vs Dawson]]
-[[http://mayweatherversusortiz.com/|Hopkins vs Dawson]]
-[[http://pacquiaovsmarquez3live.com/|Donaire vs Narvaez]]
-[[http://mayweatherversusortiz.com/|Donaire vs Narvaez]]
-[[http://pacquiaovsmarquez3live.com/2011/10/watch-hopkins-vs-dawson-live-streaming-online/|Hopkins vs Dawson Live Streaming]]
-[[http://mayweatherversusortiz.com/2011/10/watch-donaire-vs-narvaez-live-streaming-online/|Donaire vs Narvaez Live Streaming]]

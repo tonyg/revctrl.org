@@ -12,10 +12,3 @@ A weave can be used for ["Resolution"] by taking all ancestors of the current no
 To merge using a weave, go through the weave a line at a time, throwing out lines which are dead on both ancestors and pulling in lines which are alive in both ancestors. Sections between lines which are alive in both ancestors are potential conflict sections. For a potential conflict section, check which side would win in a conflict for each line individually (that is, merge together the fact of that line's being present or not). If the same side would win all of those, then that side wins the conflict, otherwise the conflict has to be escalated to the user.
 
 Some merge GUIs present common ancestors in conflict sections. In a distributed system there may be no single common ancestor of a particular section, but a reasonable facsimile of one can be produced by determining whether each individual line would be present in a 'common ancestor', then put together all the ones which would. The method of determining common ancestors is completely dependant on the particulars of line versioning in a given weave implementation.
-
-[[http://pacquiaovsmarquez3live.com/2011/07/pacquiao-vs-marquez-trilogy-free-live-streaming/|Pacquiao vs Marquez Live Streaming]]
-[[http://cottovsmargarito2.com/|Cotto vs Margarito]]
-[[http://pacquiaovsmarquez3live.com/2011/08/andre-ward-vs-carl-froch-official-tickets-for-sale/|Ward vs Froch Tickets]]
-[[http://cottovsmargarito2live.blogspot.com/|Cotto vs Margarito]]
-[[http://pacquiaoversusmarquez-lll.blogspot.com/|Pacquiao vs Marquez]]
-[[http://pacquiaoversusmarquez-3.blogspot.com/|Pacquiao vs Marquez]]

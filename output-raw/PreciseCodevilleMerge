@@ -33,9 +33,5 @@ An even less featureful merge algorithm than no frills is SimpleWeaveMerge, whic
 This uses the [[http://en.wikipedia.org/wiki/Patience_sorting|Patience sorting]] algorithm  to find the longest common subset.
 
 ----
-= Resources =
-*[[http://www.hasstel.com/|Dobra Strona]] Uwodzenie
-*[[http://jakszybkoschudnacz.wordpress.com/|Kliknij Tutaj]] Odchudzanie
-----
 
 CategoryMergeAlgorithm

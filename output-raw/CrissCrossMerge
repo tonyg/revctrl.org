@@ -11,35 +11,20 @@ A criss-cross merge is an ancestry graph in which minimal common ancestors are n
 }}}
 
 ---- /!\ '''Edit conflict - other version:''' ----
-The story one [[http://www.easyessayhelp.com| essay writing]] can tell here is that Bob and Claire made [[http://www.beerocity.com beer glasses] some change independently [[http://www.easyessayhelp.com/write-my-research-paper.php| write my research paper]], then each merged the changes together.  They conflicted, and Bob (of course) decided his change was better, while Claire (typically) picked her version.  Now, we need to merge again.  This should be a conflict. 
-Note that this [[http://www.gardenspotvillage.org|Best Retirement Communities]] can happen equally well with a textual merger -- they have [[http://www.webpages.ca|seo]] each edited the same place in the file, and when resolving [[http://www.cleanfresnocarpets.com|clovis carpet cleaning]] the conflict  they each choose to make the resulting text identical to their original version (i.e., they don't munge the two edits together somehow, they just pick one to win).
+The story one can tell here is that Bob and Claire made some change independently, then each merged the changes together.  They conflicted, and Bob (of course) decided his change was better, while Claire (typically) picked her version.  Now, we need to merge again.  This should be a conflict. 
+Note that this can happen equally well with a textual merger -- they have each edited the same place in the file, and when resolving the conflict  they each choose to make the resulting text identical to their original version (i.e., they don't munge the two edits together somehow, they just pick one to win).
 
-This is [[http://www.valleypistachio.com/| buy pistachios]] one of the key examples [[http://www.easyessayhelp.com/write-my-essay.php| help me write my essay]] that has driven development of merge algorithms; there is currently no textual merge algorithm that fully handles this case (probably - see below).[[http://www.swimtownpools.com/Pool-Solutions-3-Stabilized-Chlorine-Tablets-p/p27050de.htm| 3 inch chlorine tablets]]
-[[http://www.swimtownpools.com/pool-liners-s/8.htm| above ground pool liner]]
-[[http://www.silverliningherbs.com| dog health supplements]]
-[[http://www.globalliftcorp.com| pool lifts]]
-[[http://www.cavite-housing.com/category/lancaster-estates/|cavite homes]]
-[[http://www.datarecoverygroup.com| data recovery]]
-[[http://www.valleybrokers.com| corvallis homes for sale]]
-[[http://www.swimtownpools.com/BIO-LAB-CHLORINATOR-MA18B-with-flow-meter-p/25118000.htm| biolab pool chlorinator]]
-[[http://www.swimtownpools.com/swimming-pool-paint-s/335.htm| swimming pool paint]]
-[[http://www.swimtownpools.com/all-above-ground-pools-s/1.htm| above ground pools]]
-[[http://www.swimtownpools.com| pool supplies]]
-[[http://www.capitalsteel.net| Steel bar]]
-[[http://www.swimtownpools.com/gas-pool-heaters-s/190.htm| Gas pool heater]]
-[[http://www.swimtownpools.com/pool-chemical-feeders-s/170.htm| pool chemical feeder]]
-[[http://www.swimtownpools.com/swimming-pool-lights-s/228.htm| swimming pool lights]]
-[[http://www.ssdcs.com| Michigan disability attorney]]
+This is one of the key examples that has driven development of merge algorithms; there is currently no textual merge algorithm that fully handles this case (probably - see below).
 
 ---- /!\ '''Edit conflict - your version:''' ----
-The story one can tell here is that Bob and Claire made some change independently, then each merged the changes together.  They conflicted, and Bob (of course) decided his change was better, while Claire (typically) picked her version.  Now, we need to merge again [[http://en.wikipedia.org/wiki/Susan_Lim|Dr Susan Lim]].  This should be a conflict.
+The story one can tell here is that Bob and Claire made some change independently, then each merged the changes together.  They conflicted, and Bob (of course) decided his change was better, while Claire (typically) picked her version.  Now, we need to merge again.  This should be a conflict.
 
 
 Note that this can happen equally well with a textual merger -- they have each edited the same place in the file, and when resolving the conflict  they each choose to make the resulting text identical to their original version (i.e., they don't munge the two edits together somehow, they just pick one to win).
 
 
 
-This is one of the key examples that has driven development of merge algorithms; there is currently no textual merge algorithm that fully handles this case[[http://www.weldingtrainingcenter.com/welding-schools|welding school]] (probably - see below).
+This is one of the key examples that has driven development of merge algorithms; there is currently no textual merge algorithm that fully handles this case (probably - see below).
 
 
 ---- /!\ '''End of edit conflict''' ----
@@ -52,43 +37,43 @@ ThreeWayMerge has obvious problems here -- there are two "least" (or more proper
 ---- /!\ '''Edit conflict - your version:''' ----
 
 ---- /!\ '''End of edit conflict''' ----
-Furthermore, using ''either'' of them as a base for the merge will give an incorrectly clean merge -- if b1 as used as a base, it will appear that b2 is [[http://www.easyessayhelp.com/research-paper.php|buy research paper]] unchanged while c2 has changed, therefore c2 will win.  If c1 is used as a base, the opposite occurs.
+Furthermore, using ''either'' of them as a base for the merge will give an incorrectly clean merge -- if b1 as used as a base, it will appear that b2 is unchanged while c2 has changed, therefore c2 will win.  If c1 is used as a base, the opposite occurs.
 
-One possible solution is to use 'a' as the common ancestor for the merge; this is the approach taken by ["Monotone"], when it uses the ["LCA+DOM"] rather than ["LCA"] as a merge base.  However, this approach has its own problems  [[http://www.espycamera.com|Spy Equipment]]
+One possible solution is to use 'a' as the common ancestor for the merge; this is the approach taken by ["Monotone"], when it uses the ["LCA+DOM"] rather than ["LCA"] as a merge base.  However, this approach has its own problems.
 
 ---- /!\ '''Edit conflict - other version:''' ----
 
 == Recursive three-way merge ==
-Another possible solution is to first merge 'b1' and 'c1' to a temporary node (basically, imagine that the 'X' in the diagram is actually a revision, not just edges crossing) and then use that as a base for merging 'b2' and 'c2'. The interesting part is when merging 'b1' and 'c1' results in conflicts - the trick is that in that case, 'X' is included ''with the conflicts recorded inside'' (e.g. using the classical conflict markers). Since both 'b2' and 'c2' had to resolve the same conflict, in the case they resolved it the same way they both remove the conflicts from 'X' in the same way and a clean [[http://www.thebestpokersite.com/shop/Tables-amp-Chairs/Premium-Poker-Tables-c19/|bbo poker tables]] merge results; if they resolved it in different ways, the conflicts from 'X' get propagated to the final merge result. If a merge would result in more than two bases ('b1', 'c1, 'd1'), they are merged consecutively - first 'b1' with 'c1' and then the result with 'd1' .
+Another possible solution is to first merge 'b1' and 'c1' to a temporary node (basically, imagine that the 'X' in the diagram is actually a revision, not just edges crossing) and then use that as a base for merging 'b2' and 'c2'. The interesting part is when merging 'b1' and 'c1' results in conflicts - the trick is that in that case, 'X' is included ''with the conflicts recorded inside'' (e.g. using the classical conflict markers). Since both 'b2' and 'c2' had to resolve the same conflict, in the case they resolved it the same way they both remove the conflicts from 'X' in the same way and a clean merge results; if they resolved it in different ways, the conflicts from 'X' get propagated to the final merge result. If a merge would result in more than two bases ('b1', 'c1, 'd1'), they are merged consecutively - first 'b1' with 'c1' and then the result with 'd1' .
 
-This is what ["Git"]'s "recursive merge" strategy doe[s.
+This is what ["Git"]'s "recursive merge" strategy does.
 
 
 Recursive three-way merge ''usually'' provides the right answer, however there are some edge cases. For example, conflict markers can be matched incorrectly, because they aren't given any special semantic meaning for the merge algorithm, and are simply treated as lines. In particular, there are (somewhat complicated) cases where the conflict markers of two unrelated conflicts get matched against each other, even though the content sections of them are totally unrelated.
 
-Also, recursive merge can do some of the same invalid merges as SimpleWeaveMerge does, which are described below, although exactly what it does under those circumstances is highly dependant on the details of the 3 way merge algorithm, but it isn't clear that tweaking the 3-way merge algorithm to be more conservative about showing conflicts will make such problems go away. Basically, including the conflict is creating a weave, and that introduces the problems which weaves have. [[http://favoritefilipinofoods.blogspot.com/|Filipino Recipes]]
-]
-Finally, recursive three-way merge has all the inherent problems of ImplicitUndo. In particular, merging together multiple things which merge cleanly will sometimes give different answers depending on the order in which the merges happen. In fact, it's possible in a never-ending criss-cross case for a value to flip-flop until the end of time without ever getting a single [[http://mayweatherversusortiz.com/2011/09/pacquiao-vs-marquez-official-tickets-for-sale/|Pacquiao vs Marquez Tickets]] unclean merge. This is a very fundamental problem, and fixing it requires first deciding what one wants to have happen in such cases, because what is appropriate behavior is unclear.
+Also, recursive merge can do some of the same invalid merges as SimpleWeaveMerge does, which are described below, although exactly what it does under those circumstances is highly dependant on the details of the 3 way merge algorithm, but it isn't clear that tweaking the 3-way merge algorithm to be more conservative about showing conflicts will make such problems go away. Basically, including the conflict is creating a weave, and that introduces the problems which weaves have.
+
+Finally, recursive three-way merge has all the inherent problems of ImplicitUndo. In particular, merging together multiple things which merge cleanly will sometimes give different answers depending on the order in which the merges happen. In fact, it's possible in a never-ending criss-cross case for a value to flip-flop until the end of time without ever getting a single unclean merge. This is a very fundamental problem, and fixing it requires first deciding what one wants to have happen in such cases, because what is appropriate behavior is unclear.
 
 ---- /!\ '''Edit conflict - your version:''' ----
 
 == Recursive three-way merge ==
-Another possible solution is to first merge 'b1' and 'c1' to a temporary node (basically, imagine that the 'X' in the diagram is actually a revision, not just edges crossing) and then use that as a base for merging 'b2' and 'c2'. The interesting part is when merging 'b1' and 'c1' results in conflicts - the trick is that in that case, 'X' is included ''with the conflicts recorded inside'' (e.g. using the classical conflict markers). Since both 'b2' and 'c2' had to resolve the same conflict, in the case they resolved it the same way they both remove the conflicts from 'X' in the same way and a clean merge results; if they resolved it in different ways, the conflicts from 'X' get propagated to the final [[http://www.pacquiaovsmarquezfight.com|pacquiao vs marquez live streaming]] merge result. If a merge would result in more than two bases ('b1', 'c1, 'd1'), they are merged consecutively - first 'b1' with 'c1' and then the result with 'd1' .
+Another possible solution is to first merge 'b1' and 'c1' to a temporary node (basically, imagine that the 'X' in the diagram is actually a revision, not just edges crossing) and then use that as a base for merging 'b2' and 'c2'. The interesting part is when merging 'b1' and 'c1' results in conflicts - the trick is that in that case, 'X' is included ''with the conflicts recorded inside'' (e.g. using the classical conflict markers). Since both 'b2' and 'c2' had to resolve the same conflict, in the case they resolved it the same way they both remove the conflicts from 'X' in the same way and a clean merge results; if they resolved it in different ways, the conflicts from 'X' get propagated to the final merge result. If a merge would result in more than two bases ('b1', 'c1, 'd1'), they are merged consecutively - first 'b1' with 'c1' and then the result with 'd1' .
 
-This is what ["Git"]'s "recursive merge" strategy doe[s.
+This is what ["Git"]'s "recursive merge" strategy does.
 
 
 Recursive three-way merge ''usually'' provides the right answer, however there are some edge cases. For example, conflict markers can be matched incorrectly, because they aren't given any special semantic meaning for the merge algorithm, and are simply treated as lines. In particular, there are (somewhat complicated) cases where the conflict markers of two unrelated conflicts get matched against each other, even though the content sections of them are totally unrelated.
 
-Also, recursive merge can do some of the same invalid merges as SimpleWeaveMerge does, which are described below, although exactly what it does under those circumstances is highly dependant on the details of the 3 way merge algorithm, but it isn't clear that tweaking the 3-way merge algorithm to be more conservative about showing conflicts will make such problems go away. Basically, including the conflict is creating a weave, and that introduces the problems which weaves have [[http://www.naturemill.com/|Compost Bin]].
-]
-Finally, recursive three-way merge has all the inherent problems of ImplicitUndo. In particular, merging together multiple things which merge cleanly will sometimes give different answers depending on the order in which the merges happen. In fact, it's possible in a never-ending criss-cross case for a value to flip-flop until the end of time without ever getting a single unclean merge. This is a very fundamental problem, and fixing it requires [[http://www.mayweathervsortizfight.com/mayweather-vs-ortiz-tickets|mayweather vs ortiz tickets]] first deciding what one wants to have happen in such cases, because what is appropriate behavior is unclear.
+Also, recursive merge can do some of the same invalid merges as SimpleWeaveMerge does, which are described below, although exactly what it does under those circumstances is highly dependant on the details of the 3 way merge algorithm, but it isn't clear that tweaking the 3-way merge algorithm to be more conservative about showing conflicts will make such problems go away. Basically, including the conflict is creating a weave, and that introduces the problems which weaves have.
+
+Finally, recursive three-way merge has all the inherent problems of ImplicitUndo. In particular, merging together multiple things which merge cleanly will sometimes give different answers depending on the order in which the merges happen. In fact, it's possible in a never-ending criss-cross case for a value to flip-flop until the end of time without ever getting a single unclean merge. This is a very fundamental problem, and fixing it requires first deciding what one wants to have happen in such cases, because what is appropriate behavior is unclear.
 
 ---- /!\ '''End of edit conflict''' ----
 = Scalar codeville merge =
 Traditional CodevilleMerge on scalar values gives an AmbiguousCleanMerge here -- the last-changed revision for b2 is b1, which is an ancestor of c2, and thus c2 should win cleanly; similarly, the last-changed revision for c2 is c1, which is an ancestor of b2, and thus b2 should win cleanly.
 
-This somewhat anomalous case is normally presented to the user as a conflict (what else can one do?), which is the right result.  But [[http://thehemorrhoidguide.com/What-is-a-Hemorrhoid.php|What is a hemorrhoid]] there [[http://donairevsnarvaezlive.blogspot.com/|Donaire vs Narvaez]] is a more subtle problem:
+This somewhat anomalous case is normally presented to the user as a conflict (what else can one do?), which is the right result.  But there is a more subtle problem:
 
 {{{
    a
@@ -103,10 +88,10 @@ This somewhat anomalous case is normally presented to the user as a conflict (wh
 }}}
 
 ---- /!\ '''Edit conflict - other version:''' ----
-Suppose someone else commits another version under c2, in which they didn't touch this scalar at all -- they are blissfully ignorant of Bob and Claire's shenanigans.  Now, this should merge cleanly -- someone has resolved the b2/c2 conflict, someone else has made no changes at all, all should be fine. But it's not; it's another [[http://mayweatherversusortiz.com/|Hopkins vs Dawson]] [[http://pacquiaovsmarquez3live.com/|Donaire vs Narvaez]] ambiguous clean merge, because the last-changed revisions for b3 and c3 are still b1 and c1, respectively.  In fact, this can continue arbitrarily long:
+Suppose someone else commits another version under c2, in which they didn't touch this scalar at all -- they are blissfully ignorant of Bob and Claire's shenanigans.  Now, this should merge cleanly -- someone has resolved the b2/c2 conflict, someone else has made no changes at all, all should be fine. But it's not; it's another ambiguous clean merge, because the last-changed revisions for b3 and c3 are still b1 and c1, respectively.  In fact, this can continue arbitrarily long:
 
 ---- /!\ '''Edit conflict - your version:''' ----
-Suppose someone else commits another version under c2, in which they didn't touch this scalar at all -- they are blissfully ignorant of Bob and Claire's shenanigans.  Now, this should merge cleanly -- someone has resolved the b2/c2 conflict, someone else has made no changes at all, all should be fine. But it's not; it's another ambiguous clean merge, because the last-changed revisions for [[http://pacquiaoversusmarquez-lll.blogspot.com/|Pacquiao vs Marquez]] b3 and c3 are still b1 and c1, respectively.  In fact, this can continue arbitrarily long:
+Suppose someone else commits another version under c2, in which they didn't touch this scalar at all -- they are blissfully ignorant of Bob and Claire's shenanigans.  Now, this should merge cleanly -- someone has resolved the b2/c2 conflict, someone else has made no changes at all, all should be fine. But it's not; it's another ambiguous clean merge, because the last-changed revisions for b3 and c3 are still b1 and c1, respectively.  In fact, this can continue arbitrarily long:
 
 ---- /!\ '''End of edit conflict''' ----
 
@@ -123,7 +108,7 @@ Suppose someone else commits another version under c2, in which they didn't touc
     \ / \
      b4  c4
 }}}
-This is yet another conflict.  These conflicts continue so long as new versions are committed that do not have the ambiguous-clean resolution as an ancestor [[http://nofaxpayday-loans.com/|no fax payday loans]].
+This is yet another conflict.  These conflicts continue so long as new versions are committed that do not have the ambiguous-clean resolution as an ancestor.
 
 (Of course, if at any point someone resolves one of these repeated conflicts in favor of c, then things get even more complicated.
 
@@ -237,22 +222,7 @@ m(b,c) m(b,c)
     b2  c2
 }}}
 
-Where m(b,c) is a "merger" patch for b1 and c1 for [[http://www.southamptonlocksmiths24hrs.co.uk|Southampton Locksmiths]] [[http://www.caldwells.com/products/doors-by-type/entry-exterior-doors/|front doors]] [[http://www.ecopowerheating.co.uk|Electric Heating]] [[http://www.directlocks.co.uk|Door Locks]] [[http://www.solidlineproducts.com/|ipad bluetooth keyboard]].  The end result is that DARCS behaves the same as GIT does with its recursive three way merge, except that DARCS uses a special form for its 'merger patch' rather than normal conflict markers.  This makes sure that there are no problems with textual merge and conflict markers (such as mis-matched delimiters, etc).
+Where m(b,c) is a "merger" patch for b1 and c1.  The end result is that DARCS behaves the same as GIT does with its recursive three way merge, except that DARCS uses a special form for its 'merger patch' rather than normal conflict markers.  This makes sure that there are no problems with textual merge and conflict markers (such as mis-matched delimiters, etc).
 
 ----
 CategoryMergeExample
-[[http://www.radiofrequencywelding.com/|radio frequency welding]]
-[[http://www.cashadvance-loans.net/|cash advance loans]]
-[[http://www.sweetrexies.com|candy gift baskets]]
-[[http://www.maps-live.com|live maps]]
-[[http://pacquiaovsmarquez3live.com/2011/10/watch-hopkins-vs-dawson-live-streaming-online/|Hopkins vs Dawson Live Streaming]]
-[[http://mayweatherversusortiz.com/2011/10/watch-donaire-vs-narvaez-live-streaming-online/|Donaire vs Narvaez Live Streaming]]
-[[http://cottovsmargarito2live.blogspot.com/|Cotto vs Margarito]]
-[[http://www.linkmysite.net/|Business web directory]]
-[[http://pacquiaoversusmarquez-3.blogspot.com/|Pacquiao vs Marquez]]
-[[http://www.quotessea.com/category/children-quotes/|Children Quotes]]
-[[http://www.kgb-militaryschool.com/view/video/|russian martial arts]]
-[[http://www.geekynchic.com/item_2/Mens-Lego-Brick-Cufflinks-ALL-COLORS.php|lego cufflinks]]
-[[http://www.shopeastwest.com/med/health-wellness/Celebrex/22.html|Celebrex]]
-[[http://www.buygenericlamisil.net/|Lamisil]]
-[[http://www.genericlanoxin.com/|Lanoxin]]
