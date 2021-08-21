@@ -1,3 +1,5 @@
+# Die Die Die Merge
+
 Proposed name for a widely used, but rarely formalized, BooleanMergeAlgorithm.
 
 The rule is: if a 0 is a descendent of a 1, then that 0 beats all 1s.  otherwise, 1s beat 0s.

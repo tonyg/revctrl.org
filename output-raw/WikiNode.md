@@ -1,3 +1,5 @@
+# Wiki Node
+
 Welcome to the Revctrl wiki, where we discuss various revision control systems, and the software and algorithms used to implement them.
 
 == key pages ==

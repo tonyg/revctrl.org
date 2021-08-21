@@ -1,3 +1,5 @@
+# Convergence
+
 Convergence is the behavior where an identical change is made in two different branches, like this:
 
 {{{

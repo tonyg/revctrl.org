@@ -1,3 +1,5 @@
+# Neutral Interface
+
 To make various GUI tools usable with multiple SCM backends, 
 I propose creating an intermediary program (or programs or libraries) to present the 
 SCM data to the GUI application in an easily parsed, neutral format.

@@ -1,3 +1,5 @@
+# Glossary
+
  <<Anchor(accidentalcleanmerge)>>
  accidental clean merge:: when two people make "the same" change, and these are then merged.  Example: {{{
     a

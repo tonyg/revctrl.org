@@ -1,3 +1,5 @@
+# Living Lines First
+
 LivingLinesFirst is a refinement of having ["Convergence"] in a ["Weave"]. It involves ignoring lines which aren't alive in ancestors (or aren't alive in the combination of ancestors, as per GenerationCounting) and then having a second pass which does include non-living lines and looks for matches of lines between matches which were found in the last pass.
 
 For example, let's say we start with this:

@@ -1,5 +1,4 @@
-#format wiki
-#language en
+# Scalar Merge
 
 == What is Scalar Merge? ==
 

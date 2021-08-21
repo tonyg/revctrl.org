@@ -1,3 +1,5 @@
+# Implicit Undo
+
 An (arguably) beneficial property for a merge algorithm to have.
 
 An algorithm that supports implicit undo is one in which someone can make a change, and then revert that change, and the merge algorithm will act as if the change never happened.

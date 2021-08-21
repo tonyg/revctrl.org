@@ -1,3 +1,5 @@
+# Three-Way Merge
+
 = Summary =
 Three-way merge is a staple of revision control systems such as CVS and Bazaar.  It takes three inputs: THIS, BASE, and OTHER.  THIS is the current value in the user's tree.  OTHER is the current value in the tree to be merged.  BASE is a basis for comparison between THIS and OTHER, and is usually an ancestor of them.
 

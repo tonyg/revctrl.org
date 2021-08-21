@@ -1,4 +1,5 @@
-## page was renamed from WeaveMerge
+# Weave
+
 A "weave" is a data structure useful in version control. It consists of all lines which have ever been in a file, in order. For example, if a file went from having lines AB to AXB to AYB to ZAB, the weave would consist of ZAXYB. The method of storing which lines appear in which versions varies from implementation to implementation.
 
 Weaves are used for three different purposes: efficient retrieval of any past version, doing ["Resolution"], and doing ["Merging"]. Weaves were originally invented with the primary motivation of efficient retrieval for ["SCCS"], and were reinvented decades later with the primary motivation of improving merging and resolution.

@@ -1,3 +1,5 @@
+# BK Merge
+
 bk-merge is the merge algorithm used by the proprietary program [http://bitmover.com BitKeeper].  Obviously, we do not know how it actually works.  Nor are we particularly interested in finding out; there's no particular reason to believe bitmover actually knows more than we do about merge algorithm design, and we don't want intellectual property issues tainting our work (either legally or in terms of public opinion).
 
 We do, however, have a pretty good guess how it works, due to a combination of three things:

@@ -1,3 +1,5 @@
+# Merging
+
 (what is merging)
 
 (classical merging, cherrypicking)

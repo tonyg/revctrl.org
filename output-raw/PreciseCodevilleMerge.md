@@ -1,3 +1,5 @@
+# Precise Codeville Merge
+
 PreciseCodevilleMerge is the combination of a weave-based merge with a resolution algorithm based on unique lines, plus [[Convergence]], GenerationCounting, LivingLinesFirst,  and EdgeVersioning. If you wish to answer the existential question of whether a particular piece of merge code is a version of PreciseCodevilleMerge, go over that checklist of features and if they're all there then it qualifies.
 
 ImplicitUndo isn't included because it conflicts with other features and has internal inconsistencies. Dynamic line ordering isn't included because of technical difficulties, although it's hoped that eventually somebody will figure out how to implement a weave which does partial ordering.

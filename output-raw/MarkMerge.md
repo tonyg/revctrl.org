@@ -1,3 +1,5 @@
+# Mark Merge
+
 A scalar merge algorithm, related to CodevilleMerge.  Generally referred to as "mark-merge" or "*-merge" (but never StarMerge, which is something else entirely).
 
 Detailed writeup of original version: [http://thread.gmane.org/gmane.comp.version-control.monotone.devel/4297] ("unique-*-merge")

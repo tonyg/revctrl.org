@@ -1,11 +1,4 @@
-##master-page:FrontPage
-#format wiki
-#language en
-#pragma section-numbers off
-
-<<TableOfContents()>>
-
-= Revctrl Wiki =
+# Revctrl Wiki
 
 For discussion, whiteboarding and archival of knowledge of revision control systems.
 

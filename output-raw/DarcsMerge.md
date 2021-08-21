@@ -1,3 +1,5 @@
+# Darcs Merge
+
 For every patch P to be merged in the tree,
 
  1. Find a patch T_n in the current tree whose context is identical to that of P

@@ -1,3 +1,5 @@
+# Operational Transformation
+
 Operational Transformation is a theory very similar to the Darcs Theory of Patches (see DarcsMerge).  It has been developed by the collaborative editing community.
 
 In collaborative editing, much less emphasis is placed on conflict marking (they don't bother with it).  Conflicts occur at a much more fine-grained level than in revision control (e.g. keypresses) and at the place that both users are currently working in real time.  This means that each user should see the other making changes in the same area, and use a mechanism other than the editing system to coordinate.  Conflict resolution just has to ensure consistency, and can otherwise do pretty much anything, as long as it is automatic.
