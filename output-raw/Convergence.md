@@ -20,7 +20,7 @@ So the following example:
   c
 ```
 
-Should cleanly merge to c, assuming the standard interpretation of AccidentalCleanMerge.
+Should cleanly merge to c, assuming the standard interpretation of [AccidentalCleanMerge](AccidentalCleanMerge.md).
 
 Currently hardly any version control system properly supports convergence.
 
@@ -57,7 +57,7 @@ The following case involves some subtlety:
   z  b
 ```
 
-In this case, y appeared on the right but doesn't any longer, creating a 'phantom' conflict. The most compelling argument about whether to support phantom conflicts is that they cause StaircaseMerge to become a conflict, which indicates that they should be ignored.
+In this case, y appeared on the right but doesn't any longer, creating a 'phantom' conflict. The most compelling argument about whether to support phantom conflicts is that they cause [StaircaseMerge](StaircaseMerge.md) to become a conflict, which indicates that they should be ignored.
 
 ```
   a
@@ -90,4 +90,4 @@ Contrast the above with the following case, which is a clean merge regardless of
   z
 ```
 
-See the ImplicitUndo page for a discussion of interactions with convergence.
+See the [ImplicitUndo](ImplicitUndo.md) page for a discussion of interactions with convergence.

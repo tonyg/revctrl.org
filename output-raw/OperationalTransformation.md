@@ -1,6 +1,6 @@
 # Operational Transformation
 
-Operational Transformation is a theory very similar to the Darcs Theory of Patches (see DarcsMerge).  It has been developed by the collaborative editing community.
+Operational Transformation is a theory very similar to the Darcs Theory of Patches (see [DarcsMerge](DarcsMerge.md)).  It has been developed by the collaborative editing community.
 
 In collaborative editing, much less emphasis is placed on conflict marking (they don't bother with it).  Conflicts occur at a much more fine-grained level than in revision control (e.g. keypresses) and at the place that both users are currently working in real time.  This means that each user should see the other making changes in the same area, and use a mechanism other than the editing system to coordinate.  Conflict resolution just has to ensure consistency, and can otherwise do pretty much anything, as long as it is automatic.
 
@@ -8,15 +8,15 @@ A document starts empty.  Each user then begins transforming it.  Those transfor
 
 === Definitions ===
 
-An ''operation'' is a modification of a document.  e.g. the addition of a character at a particular position in the document because of a keypress.
+An _operation_ is a modification of a document.  e.g. the addition of a character at a particular position in the document because of a keypress.
 
-A ''transformation function'' is a function, T, that merges two parallel operations by serialising them.  This is similar to the ||-merge operation in Darcs, or the exact ThreeWayTextMergeImplementation.  T(op1, op2) returns an operation that is the 'same' as op1 but changed so that it can be applied after op2.
+A _transformation function_ is a function, `T`, that merges two parallel operations by serialising them.  This is similar to the `||`-merge operation in Darcs, or the exact [ThreeWayTextMergeImplementation](ThreeWayTextMergeImplementation.md).  `T(op1, op2)` returns an operation that is the 'same' as op1 but changed so that it can be applied after op2.
 
-Composition is expressed as '.': 'op1 . op2' means to apply op1, and then apply op2 to the result.  We also define T(opx, opy . opz) = T(T(opx, opy), opz).  This says that to transform opx through a pair of operations, opy.opz, you first transform opx through opy, and then you transform the result of that through opz.
+Composition is expressed as `.`: `op1 . op2` means to apply `op1`, and then apply `op2` to the result.  We also define `T(opx, opy . opz) = T(T(opx, opy), opz)`.  This says that to transform `opx` through a pair of operations, `opy.opz`, you first transform `opx` through `opy`, and then you transform the result of that through `opz`.
 
 ==== example ====
 
-A standard merge looks as below.  We have one initial context, a, and two changes, op1 and op2 that both apply to a.  Each of op1 and op2 can be passed through the transformation function T to get op1' = T(op1, op2) and op2' = T(op2, op1).
+A standard merge looks as below.  We have one initial context, `a`, and two changes, `op1` and `op2` that both apply to `a`.  Each of `op1` and `op2` can be passed through the transformation function `T` to get `op1' = T(op1, op2)` and `op2' = T(op2, op1)`.
 
 ```
       a
@@ -32,15 +32,15 @@ op2'\   / op1'
 
 === Requirements ===
 
-TP1: For every two concurrent operations, op1 and op2, defined on the same state, the transformation function T must satisfy:
+TP1: For every two concurrent operations, `op1` and `op2`, defined on the same state, the transformation function `T` must satisfy:
 
 ```
 op1 . T(op2, op1) == op2 . T(op1, op2)
 ```
 
-In the above example, this is requirement that op1 . op2' == op2 . op1'.  d is consistent regardless of which way around the merge is performed.  This is what the above example shows.
+In the above example, this is requirement that `op1 . op2' == op2 . op1'`.  `d` is consistent regardless of which way around the merge is performed.  This is what the above example shows.
 
-TP2: For every three concurrent operations, op1, op2 and op3, defined on the same state, the transformation function T must satisfy:
+TP2: For every three concurrent operations, `op1`, `op2` and `op3`, defined on the same state, the transformation function `T` must satisfy:
 
 ```
 T(op3, op1 . T(op2, op1)) == T(op3, op2 . T(op1, op2))
@@ -54,7 +54,7 @@ T(T(op3,op1),T(op2,op1)) == T(T(op3,op2),T(op1,op2))
 
 ==== example ====
 
-Start with the previous example where there are two parallel operations, op1 and op2.  Property TP1 says that which op you choose to transform to serialise them doesn't matter.  This gives us the ''abcd'' diamond of states which again appears below.  Property TP2 goes one step further and says that the way you serialise a third operation, op3, through the other two doesn't matter either.  We could transform op3 through op1 and then op2', or we could transform op3 through op2 and then op1'.  The result should be the same.
+Start with the previous example where there are two parallel operations, `op1` and `op2`.  Property TP1 says that which op you choose to transform to serialise them doesn't matter.  This gives us the _abcd_ diamond of states which again appears below.  Property TP2 goes one step further and says that the way you serialise a third operation, `op3`, through the other two doesn't matter either.  We could transform `op3` through `op1` and then `op2'`, or we could transform `op3` through `op2` and then `op1'`.  The result should be the same.
 
 ```
 op1' = T(op1, op2)
@@ -87,7 +87,7 @@ In this formalism, priorities are fixed attributes of the user than makes the ch
 
 There are two operations:
 
-Ins(p, c, pr) inserts character c at position p with priority pr.  Del(p, pr) deletes the character at location p with priority pr.
+`Ins(p, c, pr)` inserts character `c` at position `p` with priority `pr`.  `Del(p, pr)` deletes the character at location `p` with priority `pr`.
 
 And the definition of the transformation function is relatively straight forward:
 
@@ -134,7 +134,7 @@ op1 = ins(3,x)     op2 = del(2)        op3 = ins(2,y)
 
 == Tombstone Transformation Functions ==
 
-Having shown other systems incorrect, Oster et. al. then go on to describe the Tombstone Transformation Functions, or TTF.  In version control parlance, this is a weave (see SimpleWeaveMerge).  No characters are ever deleted, but rather they are marked invisible (these invisible characters are the 'tombstones').  Ordering ties are broken by user-ID.  They show that this system satisfies TP2 when many other systems do not.
+Having shown other systems incorrect, Oster et. al. then go on to describe the Tombstone Transformation Functions, or TTF.  In version control parlance, this is a weave (see [SimpleWeaveMerge](SimpleWeaveMerge.md)).  No characters are ever deleted, but rather they are marked invisible (these invisible characters are the 'tombstones').  Ordering ties are broken by user-ID.  They show that this system satisfies TP2 when many other systems do not.
 
 = Strengths =
 
@@ -157,7 +157,7 @@ Operational Transformation theory is related to Darcs theory of patches.  Darcs 
 op1.op2 <-> op2'.op1'
 ```
 
-As described in [http://www.abridgegame.org/pipermail/darcs-users/2003/000221.html this thread], this effect can be achieved using the OT transformation operator as long as you can invert an operation.  We'll define Inv(op) to be another operation that has the opposite effect of op.  This means that Inv(op).op is the identity.  Inv(op) is both a left and a right inverse, so op.Inv(op) is also the identity.
+As described in [http://www.abridgegame.org/pipermail/darcs-users/2003/000221.html this thread], this effect can be achieved using the OT transformation operator as long as you can invert an operation.  We'll define `Inv(op)` to be another operation that has the opposite effect of `op`.  This means that `Inv(op).op` is the identity.  `Inv(op)` is both a left and a right inverse, so `op.Inv(op)` is also the identity.
 
 We can then define the commuted op1 and op2, those being op1' and op2', as:
 
@@ -166,15 +166,15 @@ op2' = T(op2, Inv(op1))
 op1' = T(op1, op2')
 ```
 
-Rather than inverting operators, it is also possible to view this as having an inverse Transformation function, T-1.  Imagine opA and opB are parallel ops that need to be merged; then we get opB' = T(opB, opA).  And then opB = T-1(opB', opA).  The commutation of op1 and op2 then becomes:
+Rather than inverting operators, it is also possible to view this as having an inverse Transformation function, `T⁻¹`.  Imagine `opA` and `opB` are parallel ops that need to be merged; then we get `opB' = T(opB, opA)`.  And then `opB = T⁻¹(opB', opA)`.  The commutation of `op1` and `op2` then becomes:
 
 ```
 op2' = T-1(op2, op1)
 op1' = T(op1, op2')
 ```
 
-[http://hal.inria.fr/inria-00109039/en/ This paper] describes partial T-1 functions for the tombstone transformation operators.
+[This paper](http://hal.inria.fr/inria-00109039/en/) describes partial `T⁻¹` functions for the tombstone transformation operators.
 
 ----
 
-CategoryMergeAlgorithm
+[CategoryMergeAlgorithm](CategoryMergeAlgorithm.md)

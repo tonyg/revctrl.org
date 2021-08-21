@@ -6,11 +6,11 @@ There are a number of different types of merge algorithm.  In order to introduce
 
 Whereas traditional textual merge algorithms allow two different changes to a document to be merged, scalar merge simply decides which scalar wins cleanly, or that there is a conflict for the user to resolve.
 
-A special case of scalar merge is the BooleanMergeAlgorithm.  DieDieDieMerge is one example of such a boolean scalar merge algorithm.
+A special case of scalar merge is the [BooleanMergeAlgorithm](BooleanMergeAlgorithm.md).  [DieDieDieMerge](DieDieDieMerge.md) is one example of such a boolean scalar merge algorithm.
 
 == Converting to full merge ==
 
-There is a general theory of building complex merge algorithms using a scalar merger as a primitive.  This description originated with Nathaniel Smith in a [http://article.gmane.org/gmane.comp.version-control.revctrl/189 revctrl mailing list post]:
+There is a general theory of building complex merge algorithms using a scalar merger as a primitive.  This description originated with Nathaniel Smith in a [revctrl mailing list post](http://article.gmane.org/gmane.comp.version-control.revctrl/189):
 
 You provide:
   * the data structure you want to define a merger for.  E.g., directory trees, or sets, or something.  Note the invariants of this structure.  (E.g., in a directory tree, you cannot have two distinct files with the same name.)
@@ -26,15 +26,12 @@ This works perfectly well to get excellent tree mergers and set mergers, and pro
    * What I really want is a user model for text merging; this wasn't necessarily getting me any closer to that, so even if it all worked out, I wouldn't know whether I'd actually accomplished anything anyway.
    * Merge algorithms are fun, but we were already far enough developing all this theory that it was time to stop and actually implement stuff and come back to all this later, when there weren't a million other more practical things to spend time on :-).  (3-way text merging kind of sucks, but it's not like an urgent bug that users complain about every day.)
 
-Weave merging can also be seen as a special case of this formalism, with the scalar fields being the boolean "does this line in the weave currently exist" values.
+[Weave](Weave.md) merging can also be seen as a special case of this formalism, with the scalar fields being the boolean "does this line in the weave currently exist" values.
 
 = Scalar Merge Algorithms =
 
 To add a page to this category, add a link to this page on the last line of the page. You can add multiple categories to a page.
 
-'''List of pages in this category:'''
-
-[[FullSearch()]]
-
 ----
-CategoryCategory CategoryMergeAlgorithm
+
+[CategoryCategory](CategoryCategory.md) [CategoryMergeAlgorithm](CategoryMergeAlgorithm.md)

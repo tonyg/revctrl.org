@@ -2,13 +2,13 @@
 
 Three way merge is the old workhorse of version control systems. When a merge is to be done between THIS and OTHER, it picks a common ancestor, BASE, and uses it as a guide in determining how the merge should be done.
 
-Selecting BASE can be very tricky, and sometimes there isn't any single correct ancestor, especially in the case of CrissCrossMerge.
+Selecting BASE can be very tricky, and sometimes there isn't any single correct ancestor, especially in the case of [CrissCrossMerge](CrissCrossMerge.md).
 
 There are several ways to implement three-way merging.
 
 = Inexact Patching =
-Since the goal of merging is to apply the changes made in another branch to your own, a fairly direct approach is to diff BASE and OTHER, and apply the resulting patch to THIS.
 
+Since the goal of merging is to apply the changes made in another branch to your own, a fairly direct approach is to diff BASE and OTHER, and apply the resulting patch to THIS.
 
 Since this approach uses context diffs, it can sometimes apply patches to the wrong place, a problem fixed by exact patching.
 
@@ -16,7 +16,7 @@ This has the failing that it does not recognize when THIS and OTHER have both ma
 
 = Exact patching =
 
-Exact patching is similar to inexact patching, except it makes two diffs, one from BASE to THIS, and one from BASE to OTHER, then uses the patch from BASE to OTHER to determine the line offsets to apply the patch from BASE to THIS to. It doesn't have to use context lines like inexact patching does, and can recognize AccidentalCleanMerge as a special case (especially important for 3way, since it runs into lots of erroneous accidental clean merges when BASE is selected too conservatively).  This is known in the subversion world as [http://subversion.tigris.org/variance-adjusted-patching.html Variance Adjusted Patching].  The same concept can also be extended to work with binary diffs.  In the binary case you usually want a 'buffer' around the edges of the patch that is used to catch conflicts.  Interestingly, this buffer could be extended using the semantics of the file being edited - either to the nearest newline, or the nearest set of braces, etc.
+Exact patching is similar to inexact patching, except it makes two diffs, one from BASE to THIS, and one from BASE to OTHER, then uses the patch from BASE to OTHER to determine the line offsets to apply the patch from BASE to THIS to. It doesn't have to use context lines like inexact patching does, and can recognize [AccidentalCleanMerge](AccidentalCleanMerge.md) as a special case (especially important for 3way, since it runs into lots of erroneous accidental clean merges when BASE is selected too conservatively).  This is known in the subversion world as [Variance Adjusted Patching](http://subversion.tigris.org/variance-adjusted-patching.html).  The same concept can also be extended to work with binary diffs.  In the binary case you usually want a 'buffer' around the edges of the patch that is used to catch conflicts.  Interestingly, this buffer could be extended using the semantics of the file being edited - either to the nearest newline, or the nearest set of braces, etc.
 
 = Three-way compare =
 This approach compares all three texts, and divides them up into sections where

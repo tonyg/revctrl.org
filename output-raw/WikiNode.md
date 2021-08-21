@@ -4,30 +4,30 @@ Welcome to the Revctrl wiki, where we discuss various revision control systems, 
 
 == key pages ==
 
-  * FrontPage
-  * ["Glossary"] -- some technical terms we casually throw around here
-  * ConceptTable -- some of the technical terms other revision control systems used. Helps when 2 systems use different terms for the same idea.
-  * CategoryMergeAlgorithm lists the various merge algorithms we've discussed
-  * RevctrlTalks -- Revctrl TV!
-  * NeutralInterface
+  * [FrontPage](FrontPage.md)
+  * [Glossary](Glossary.md) -- some technical terms we casually throw around here
+  * [ConceptTable](ConceptTable.md) -- some of the technical terms other revision control systems used. Helps when 2 systems use different terms for the same idea.
+  * [CategoryMergeAlgorithm](CategoryMergeAlgorithm.md) lists the various merge algorithms we've discussed
+  * [RevctrlTalks](RevctrlTalks.md) -- Revctrl TV!
+  * [NeutralInterface](NeutralInterface.md)
 
 == neighboring wiki with wikinodes ==
-  * [http://communitywiki.org/odd/SoftwareBazaar/WikiNode the Software Bazaar wiki] mentions [http://communitywiki.org/odd/SoftwareBazaar/distributed_wiki the distributed wiki] which has some similarities to a distributed version control system.
-  * [http://alliance.seas.upenn.edu/~bcpierce/wiki/index.php?n=Main.WikiNode the Unison wiki] discusses Unison, a tool for rapidly synchronizing 2 directories over a slow network connection. It can be used as a crude revision control system (backups), or it can be used in conjunction with a standard revision control system to speed up check-ins and check-outs over a slow connection.
-  * [http://wiki.linuxquestions.org/wiki/WikiNode the Linux Questions wiki] briefly [http://wiki.linuxquestions.org/wiki/Revision_control mentions revision control]
-  * [http://wiki.synchroedit.com/index.php/WikiNode the SynchroEdit wiki] discusses Synchro Edit, an editor that allows multiple users to share a single X(HT)ML or text document, edit the document the same time, and synchronize changes so that all users have the same version.
+  * [the Software Bazaar wiki](http://communitywiki.org/odd/SoftwareBazaar/WikiNode) mentions [the distributed wiki](http://communitywiki.org/odd/SoftwareBazaar/distributed_wiki) which has some similarities to a distributed version control system.
+  * [the Unison wiki](http://alliance.seas.upenn.edu/~bcpierce/wiki/index.php?n=Main.WikiNode) discusses Unison, a tool for rapidly synchronizing 2 directories over a slow network connection. It can be used as a crude revision control system (backups), or it can be used in conjunction with a standard revision control system to speed up check-ins and check-outs over a slow connection.
+  * [the Linux Questions wiki](http://wiki.linuxquestions.org/wiki/WikiNode) briefly [mentions revision control](http://wiki.linuxquestions.org/wiki/Revision_control)
+  * [the SynchroEdit wiki](http://wiki.synchroedit.com/index.php/WikiNode) discusses Synchro Edit, an editor that allows multiple users to share a single X(HT)ML or text document, edit the document the same time, and synchronize changes so that all users have the same version.
 
 
 == neighboring wiki that, alas, still lack wikinodes ==
 
-  * [http://wiki.darcs.net/ the darcs wiki] discusses the "darcs" version control system. ''needs wikinode''
-  * [http://wikiindex.org/Arch_Wiki the Arch wiki] discusses the Arch Revision Control Systems such as GNU Arch and Bazaar and ArX. Arch is a distributed revision control system. ''needs wikinode''
-  * [http://venge.net/mtn-wiki/ the monotone wiki]
-  * [http://git.or.cz/gitwiki/ the git wiki]
-  * [http://selenic.com/mercurial/wiki/ the mercurial wiki] discusses the mercurial version control system. ''needs wikinode''
-  * [http://svk.elixus.org/ the Svk wiki] discusses the SVK distributed version control system. ''needs wikinode''
-  * [http://swik.net/rsync the rsync wiki] discusses rsync, often used for rapidly backing up or synchronizing directories over slow network connections.
-  * [http://multisync.sourceforge.net/wiki/ the MultiSync wiki] ...
+  * [the darcs wiki](http://wiki.darcs.net/) discusses the "darcs" version control system. _needs wikinode_
+  * [the Arch wiki](http://wikiindex.org/Arch_Wiki) discusses the Arch Revision Control Systems such as GNU Arch and Bazaar and ArX. Arch is a distributed revision control system. _needs wikinode_
+  * [the monotone wiki](http://venge.net/mtn-wiki/)
+  * [the git wiki](http://git.or.cz/gitwiki/)
+  * [the mercurial wiki](http://selenic.com/mercurial/wiki/) discusses the mercurial version control system. _needs wikinode_
+  * [the Svk wiki](http://svk.elixus.org/) discusses the SVK distributed version control system. _needs wikinode_
+  * [the rsync wiki](http://swik.net/rsync) discusses rsync, often used for rapidly backing up or synchronizing directories over slow network connections.
+  * [the MultiSync wiki](http://multisync.sourceforge.net/wiki/) ...
 
 Please add closely-related wiki to this page (preferably linking directly to their wikinodes).
-Prune less-related wiki, moving information about them to the [http://wikiindex.org/ WikiIndex].
+Prune less-related wiki, moving information about them to the [WikiIndex](http://wikiindex.org/).

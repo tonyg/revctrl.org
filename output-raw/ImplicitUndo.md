@@ -13,7 +13,7 @@ The simplest scalar example is:
  a
 ```
 
-An implicit undo supporting algorithm will make this a clean merge to 'c'.
+An implicit undo supporting algorithm will make this a clean merge to `c`.
 
 To make things trickier, the case:
 ```
@@ -23,11 +23,11 @@ To make things trickier, the case:
   / \
  a   b
 ```
-should also be a clean merge, but with 'a' winning.  The intuition is that if I undo some changes back to an earlier version, the undo should beat all the things that are undone, but should lose to all the things that beat the earlier version.
+should also be a clean merge, but with `a` winning.  The intuition is that if I undo some changes back to an earlier version, the undo should beat all the things that are undone, but should lose to all the things that beat the earlier version.
 
 = Discussion =
 
-This is a problem that has arisen only with the development of more advanced merge algorithms; 3-way merge does not have this problem, because it simply ignores almost all historical information.  However, there is a direct trade-off -- 3-way merge faces more [:Resolution:resolution] ambiguities as a result. More disturbingly, a series of clean merges using 3-way merge can cause an undo of a change to silently disappear, with no user editing whatsoever.
+This is a problem that has arisen only with the development of more advanced merge algorithms; 3-way merge does not have this problem, because it simply ignores almost all historical information.  However, there is a direct trade-off -- 3-way merge faces more [resolution](Resolution.md) ambiguities as a result. More disturbingly, a series of clean merges using 3-way merge can cause an undo of a change to silently disappear, with no user editing whatsoever.
 
 The use case for this is reasonably common (people making changes, and then reverting them), and users have some expectation that it will work, since 3-way merge works this way.  Not supporting implicit undo also puts a heavier burden on conflict resolution UIs, because it may be entirely obscure to the user why they are seeing a particular conflict.
 
@@ -35,9 +35,9 @@ However, it is a somewhat controversial feature, because its is not clear what e
 
 Implicit undo in its strongest form has been shown to be internally inconsistent. See http://article.gmane.org/gmane.comp.version-control.revctrl/89. A weaker version may still prove workable.
 
-Handling implicit undo is particularly tricky for textual merge algorithms, because it is not enough to build on top of an implicit undo supporting scalar merge algorithm; one must also modify one's [:Resolution:resolution] algorithm.
+Handling implicit undo is particularly tricky for textual merge algorithms, because it is not enough to build on top of an implicit undo supporting scalar merge algorithm; one must also modify one's [resolution](Resolution.md) algorithm.
 
-In some cases implicit undo and ["Convergence"] give conflicting answers. The following is the simplest example:
+In some cases implicit undo and ["convergence"](Convergence.md) give conflicting answers. The following is the simplest example:
 
 ```
    a
@@ -51,7 +51,7 @@ Convergence clearly dictates that the above should merge to a, while implicit un
 
 Partially because of this case, the best hope of having working implicit undo at this point is to make a conservative implementation whose only behavior is to in some cases take conflicts given by a convergence-supporting merge algorithm and resolve them cleanly.
 
-The above example is particularly bad for textual merges, because a line deletion may or may not count as being convergent depending on whether it's done as part of another change. For example with AXB -> AB -> AXB versus AXB -> AYB, the AYB wins by implicit undo, but with AXB -> AB -> AXB versus AXB -> AB -> AYB, there is convergence, but each individual line has the same history in both examples.
+The above example is particularly bad for textual merges, because a line deletion may or may not count as being convergent depending on whether it's done as part of another change. For example with `AXB -> AB -> AXB` versus `AXB -> AYB`, the `AYB` wins by implicit undo, but with `AXB -> AB -> AXB` versus `AXB -> AB -> AYB`, there is convergence, but each individual line has the same history in both examples.
 
 Implicit undo can cause a descendant with is different from either ancestor, for example:
 
@@ -124,12 +124,12 @@ The above examples in aggregate seem to indicate that supporting implicit undo i
 
 = Supported by =
 
-ThreeWayMerge
+[ThreeWayMerge](ThreeWayMerge.md)
 
 = Not supported by =
 
-DarcsMerge, MarkMerge, SimpleWeaveMerge, others
+[DarcsMerge](DarcsMerge.md), [MarkMerge](MarkMerge.md), [SimpleWeaveMerge](SimpleWeaveMerge.md), others
 
 ----
 
-CategoryMergeExample
+[CategoryMergeExample](CategoryMergeExample.md)
