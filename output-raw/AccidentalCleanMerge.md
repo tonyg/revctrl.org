@@ -2,11 +2,11 @@
 
 When "the same change" is made independently on two branches, and they are then merged:
 
-{{{
+```
     a
    / \
   b   b
-}}}
+```
 
 A change was made on both sides, so arguably this should be a conflict; however, the changes happen to be identical, so "accidentally" we get a clean merge after all.
 

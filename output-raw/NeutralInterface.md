@@ -12,7 +12,7 @@ http://pasky.or.cz/~xpasky/neutral.sh
 
 === Strawman functionality ===
 
-{{{
+```
 $ scm identify
 type:9:Mercurial
 project-name:9:linux-2.6
@@ -48,7 +48,7 @@ type:3:GIT
 :
 ^D
 $ 
-}}}
+```
 
 === Proposed format ===
 
@@ -102,12 +102,12 @@ To allow for arbitrary data in arguments, shell mode passes arguments as follows
 
 example:
 
-{{{
+```
 command\n
 14:first argument\n
 15:second argument\n
 \n
-}}}
+```
 
 Results are returned as in command line mode, followed by a newline.
 

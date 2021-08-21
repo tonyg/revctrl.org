@@ -5,24 +5,24 @@ An (arguably) beneficial property for a merge algorithm to have.
 An algorithm that supports implicit undo is one in which someone can make a change, and then revert that change, and the merge algorithm will act as if the change never happened.
 
 The simplest scalar example is:
-{{{
+```
    a
   / \
  b   c
  |
  a
-}}}
+```
 
 An implicit undo supporting algorithm will make this a clean merge to 'c'.
 
 To make things trickier, the case:
-{{{
+```
    a
    |
    b
   / \
  a   b
-}}}
+```
 should also be a clean merge, but with 'a' winning.  The intuition is that if I undo some changes back to an earlier version, the undo should beat all the things that are undone, but should lose to all the things that beat the earlier version.
 
 = Discussion =
@@ -39,13 +39,13 @@ Handling implicit undo is particularly tricky for textual merge algorithms, beca
 
 In some cases implicit undo and ["Convergence"] give conflicting answers. The following is the simplest example:
 
-{{{
+```
    a
   / \
  b   b
  |
  a
-}}}
+```
 
 Convergence clearly dictates that the above should merge to a, while implicit undo indicates that it should merge to b. The general consensus is that convergence is more important in this case than implicit undo.
 
@@ -55,7 +55,7 @@ The above example is particularly bad for textual merges, because a line deletio
 
 Implicit undo can cause a descendant with is different from either ancestor, for example:
 
-{{{
+```
    a
   / \
  b   b
@@ -63,7 +63,7 @@ Implicit undo can cause a descendant with is different from either ancestor, for
  a X a
  |/ \|
  b   b
-}}}
+```
 
 If one supports full-blown implicit undo, then in this case both b's at the bottom were clean merges, because they were examples of the previous example, but since both b's have already been overridden, then merging these two b's together should result in a. This example doesn't hit an internal inconsistency in implicit undo, but it does conflict with the obvious principle that the descendant of two identical ancestors should cleanly merge to those ancestors, and it's a much simpler example than the one which demonstrates an internal inconsistency.
 
@@ -71,17 +71,17 @@ Fortunately this example is also one which heavily relies on a case where implic
 
 The following is a case where convergence prevents implicit undo from working:
 
-{{{
+```
    a
   / \
  c   c
  |   |
  a   b
-}}}
+```
 
 Here's a strange edge case:
 
-{{{
+```
         a
         |\
         | \
@@ -93,7 +93,7 @@ Here's a strange edge case:
         | X |
         |/ \|
         b   a
-}}}
+```
 
 Note that there is no convergence here.
 
@@ -101,7 +101,7 @@ In this case, if we assume no implicit undo then we clearly have a conflict, but
 
 Here is another edge case:
 
-{{{
+```
         a
        / \
       /   \
@@ -114,7 +114,7 @@ Here is another edge case:
      | /   q
      |/    |
      b     a
-}}}
+```
 
 Again note the lack of convergence.
 
