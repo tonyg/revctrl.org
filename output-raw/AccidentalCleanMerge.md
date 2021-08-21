@@ -1,3 +1,5 @@
+# Accidental Clean Merge
+
 When "the same change" is made independently on two branches, and they are then merged:
 
 {{{

@@ -1,3 +1,5 @@
+# Codeville Merge
+
 Traditional (or "Sloppy") Codeville merge is a TwoWayMerge which makes use of additional annotation information in order to resolve conflicts.
 
 Codeville's annotation is on the "slots" or spaces between lines, not on the lines themselves.  Each slot has associated with it a revision id.  When a line is added, both surrounding slots are set to the current change. When a line is deleted, the slot where that line used to be is set to the current change. Note: deletions are the motivation behind annotating slots rather than the lines themselves.

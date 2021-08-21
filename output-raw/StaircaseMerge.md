@@ -1,3 +1,5 @@
+# Staircase Merge
+
 Name for the following merge example:
 
 {{{

@@ -1,3 +1,5 @@
+# Criss Cross Merge
+
 A criss-cross merge is an ancestry graph in which minimal common ancestors are not unique.  The simplest example with scalars is something like:
 
 {{{

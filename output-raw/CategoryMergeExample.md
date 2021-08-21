@@ -1,5 +1,4 @@
-#format wiki
-#language en
+# Category: Merge Example
 
 The various pathological and not-so-pathological cases that merge algorithms must deal with.
 

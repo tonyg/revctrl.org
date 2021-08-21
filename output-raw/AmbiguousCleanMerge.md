@@ -1,3 +1,5 @@
+# Ambiguous Clean Merge
+
 A case which causes considerable problems for many merge algorithms. Specificaly:
 
 {{{

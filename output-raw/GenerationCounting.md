@@ -1,3 +1,5 @@
+# Generation Counting
+
 GenerationCounting is a the technique for supporting ["Convergence"] used by ConvergentScalarMerge and PreciseCodevilleMerge. It involves keeping a 'generation count' for every possible value. Generation counts start out at 0 for everything, then go to 1 when the thing appears, then 2 when it's deleted again, then 3 when it's re-added, etc. When two different versions are merged together, the higher number wins.
 
 GenerationCounting clearly has the definitional property of ["Convergence"] that when one side of a merge has the other one as a subset of its history, then the superset wins. It also somewhat controversially clean merges in other cases, for example the following:

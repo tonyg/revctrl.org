@@ -1,6 +1,4 @@
-#format wiki
-#language en
-#pragma section-numbers off
+# Edge Versioning
 
 BramCohen said:
 

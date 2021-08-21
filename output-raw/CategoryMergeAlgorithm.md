@@ -1,5 +1,4 @@
-#format wiki
-#language en
+# Category: Merge Algorithm
 
 Various and sundry merge algorithms.
 

@@ -1,3 +1,5 @@
+# Three-Way Text Merge Implementation
+
 Three way merge is the old workhorse of version control systems. When a merge is to be done between THIS and OTHER, it picks a common ancestor, BASE, and uses it as a guide in determining how the merge should be done.
 
 Selecting BASE can be very tricky, and sometimes there isn't any single correct ancestor, especially in the case of CrissCrossMerge.

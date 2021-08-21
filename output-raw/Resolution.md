@@ -1,3 +1,5 @@
+# Resolution
+
 Resolution is the process where a version control system takes a file which has been edited by a user and implicitly heuristically determines what the changes which have been made are. All version control systems (except for distant relatives which hook into editors like microsoft word) must perform resolution at some point.
 
 Most version control systems have to do some kind of resolution to do regular merging, which sometimes makes the distinction between merging and resolution unclear. As a rule of thumb, if something has to do a diff-like operation, it's doing resolution.

@@ -1,3 +1,5 @@
+# Rollback
+
 A desirable feature for VCSes/merge algorithms -- temporary rejection of integrated changes.  This is a use case that is very poorly supported by all basic DAG+merge systems.
 
 To go into more detail: Imagine you have two branches, let's call them "stable" and "ultragizmo".  At some point, it's determined that the new ultragizmo feature is stable enough to integrate, so "ultragizmo" is merged into "stable".  A few days later, someone discovers a huge, horrible bug in the new code, that will take some time to fix.  We want to be able to do the following:
