@@ -2,7 +2,7 @@
 
 == What is Scalar Merge? ==
 
-There are a number of different types of merge algorithm.  In order to introduce more theory into merge algorithms, these can be subdivided into a number of types.  One type of merge algorithm is the ''scalar merge'', so called because it assumes that each revision consists of only a single scalar.
+There are a number of different types of merge algorithm.  In order to introduce more theory into merge algorithms, these can be subdivided into a number of types.  One type of merge algorithm is the _scalar merge_, so called because it assumes that each revision consists of only a single scalar.
 
 Whereas traditional textual merge algorithms allow two different changes to a document to be merged, scalar merge simply decides which scalar wins cleanly, or that there is a conflict for the user to resolve.
 

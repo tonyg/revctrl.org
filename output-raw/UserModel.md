@@ -27,7 +27,7 @@ As that paper states:
 
 In short, if we're going to have to make guesses about squishy things like "intention", we had better be very explicit about our assumptions.  Otherwise, we continue to invent algorithms that look great, until someone suggests a new example.  This is fundamentally non-viable, because we never know whether we've seen "all the bad examples" (especially since historically, every time we think this someone has come up with new ones).  If we keep progressing from one example to another, we're doomed, because there are infinitely many examples.  The hope is that by defining our assumptions about the user, critiques of merge algorithms can be reduced to arguments that the algorithm implements a user model that does not accurately reflect users (example: [MarkMerge](MarkMerge.md)'s failure to handle [StaircaseMerge](StaircaseMerge.md)), or arguments that the algorithm does not properly implement its user model (example: unique-[MarkMerge](MarkMerge.md)'s failure to handle [AccidentalCleanMerge](AccidentalCleanMerge.md)).
 
-If this works, then every nasty example will turn out to be signaling a general problem of one of these two types.  We like general problems ''much'' more than specific problems.
+If this works, then every nasty example will turn out to be signaling a general problem of one of these two types.  We like general problems _much_ more than specific problems.
 
 = Practice =
 
