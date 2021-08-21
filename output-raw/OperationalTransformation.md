@@ -18,7 +18,7 @@ Composition is expressed as '.': 'op1 . op2' means to apply op1, and then apply 
 
 A standard merge looks as below.  We have one initial context, a, and two changes, op1 and op2 that both apply to a.  Each of op1 and op2 can be passed through the transformation function T to get op1' = T(op1, op2) and op2' = T(op2, op1).
 
-{{{
+```
       a
      / \
 op1 /   \ op2
@@ -28,35 +28,35 @@ op1 /   \ op2
 op2'\   / op1'
      \ /
       d
-}}}
+```
 
 === Requirements ===
 
 TP1: For every two concurrent operations, op1 and op2, defined on the same state, the transformation function T must satisfy:
 
-{{{
+```
 op1 . T(op2, op1) == op2 . T(op1, op2)
-}}}
+```
 
 In the above example, this is requirement that op1 . op2' == op2 . op1'.  d is consistent regardless of which way around the merge is performed.  This is what the above example shows.
 
 TP2: For every three concurrent operations, op1, op2 and op3, defined on the same state, the transformation function T must satisfy:
 
-{{{
+```
 T(op3, op1 . T(op2, op1)) == T(op3, op2 . T(op1, op2))
-}}}
+```
 
 or equivalently:
 
-{{{
+```
 T(T(op3,op1),T(op2,op1)) == T(T(op3,op2),T(op1,op2))
-}}}
+```
 
 ==== example ====
 
 Start with the previous example where there are two parallel operations, op1 and op2.  Property TP1 says that which op you choose to transform to serialise them doesn't matter.  This gives us the ''abcd'' diamond of states which again appears below.  Property TP2 goes one step further and says that the way you serialise a third operation, op3, through the other two doesn't matter either.  We could transform op3 through op1 and then op2', or we could transform op3 through op2 and then op1'.  The result should be the same.
 
-{{{
+```
 op1' = T(op1, op2)
 op2' = T(op2, op1)
 op3'a = T(op3, op1)
@@ -77,7 +77,7 @@ op3''b = T(op3'b, op1')
             op3''a | | op3''b
                    \ /
                     f
-}}}
+```
 
 == Ressel's Transformation Functions ==
 
@@ -91,7 +91,7 @@ Ins(p, c, pr) inserts character c at position p with priority pr.  Del(p, pr) de
 
 And the definition of the transformation function is relatively straight forward:
 
-{{{
+```
 T(Ins(p1, c1, u1), Ins(p2, c2, u2)) :-
    if (p1 < p2) or (p1 == p2 and u1 < u2) return Ins(p1, c1, u1)
    else return Ins(p1 + 1, c1, u1)
@@ -108,11 +108,11 @@ T(Del(p1, u1), Del(p2, u2)) :-
    if (p1 < p2) return Del(p1, u1)
    else if (p1 > p2) return Del(p1 - 1, u1)
    else return Id()
-}}}
+```
 
 The counter example of TP2 (from [http://hal.inria.fr/inria-00071213 Proving correctness of transformation functions in collaborative editing systems] by Oster et. al., but with typesetting errors corrected):
 
-{{{
+```
 
    Site 1              Site 2              Site 3
 
@@ -130,7 +130,7 @@ op1 = ins(3,x)     op2 = del(2)        op3 = ins(2,y)
 
                        "axyc"              "ayxc"
 
-}}}
+```
 
 == Tombstone Transformation Functions ==
 
@@ -153,25 +153,25 @@ Does not mark conflicts at all.
 
 Operational Transformation theory is related to Darcs theory of patches.  Darcs is based on commuting patches:
 
-{{{
+```
 op1.op2 <-> op2'.op1'
-}}}
+```
 
 As described in [http://www.abridgegame.org/pipermail/darcs-users/2003/000221.html this thread], this effect can be achieved using the OT transformation operator as long as you can invert an operation.  We'll define Inv(op) to be another operation that has the opposite effect of op.  This means that Inv(op).op is the identity.  Inv(op) is both a left and a right inverse, so op.Inv(op) is also the identity.
 
 We can then define the commuted op1 and op2, those being op1' and op2', as:
 
-{{{
+```
 op2' = T(op2, Inv(op1))
 op1' = T(op1, op2')
-}}}
+```
 
 Rather than inverting operators, it is also possible to view this as having an inverse Transformation function, T-1.  Imagine opA and opB are parallel ops that need to be merged; then we get opB' = T(opB, opA).  And then opB = T-1(opB', opA).  The commutation of op1 and op2 then becomes:
 
-{{{
+```
 op2' = T-1(op2, op1)
 op1' = T(op1, op2')
-}}}
+```
 
 [http://hal.inria.fr/inria-00109039/en/ This paper] describes partial T-1 functions for the tombstone transformation operators.
 

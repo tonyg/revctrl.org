@@ -1,14 +1,16 @@
 # Glossary
 
  <<Anchor(accidentalcleanmerge)>>
- accidental clean merge:: when two people make "the same" change, and these are then merged.  Example: {{{
+ accidental clean merge:: when two people make "the same" change, and these are then merged.  Example:
+```
     a
    / \
   b   b
-}}} See AccidentalCleanMerge.
+```
+See AccidentalCleanMerge.
 
  <<Anchor(aliasing)>>
- aliasing:: aliasing is taking two logically distinct entities and causing them to be treated as equivalent, at least in certain contexts.  Aliasing is similar to suturing, but the assertion is weaker ({{{x == y}}}, not {{{x is y}}}), and is trivial to undo.
+ aliasing:: aliasing is taking two logically distinct entities and causing them to be treated as equivalent, at least in certain contexts.  Aliasing is similar to suturing, but the assertion is weaker (`x == y`, not `x is y`), and is trivial to undo.
 
  <<Anchor(ambiguouscleanmerge)>>
  ambiguous clean merge:: See AmbiguousCleanMerge.
@@ -32,13 +34,15 @@
  content merger:: See [[#TextualMerger|textual merger]]
 
  <<Anchor(convergence)>>
- convergence:: The idea that if the "same change" is made independently at different places in a graph, then a merge algorithm should treat the two changes as if they were a single change. Example: {{{
+ convergence:: The idea that if the "same change" is made independently at different places in a graph, then a merge algorithm should treat the two changes as if they were a single change. Example:
+```
     a
    / \
   b   b
   |
   c
- }}} a convergent merge algorithm will make this a clean merge to c. See [[Convergence]].
+```
+a convergent merge algorithm will make this a clean merge to c. See [[Convergence]].
 
  <<Anchor(convergentscalarmerge)>>
  convergent scalar merge:: A scalar merge algorithm related to PreciseCodevilleMerge. See ConvergentScalarMerge.
@@ -93,13 +97,15 @@
  snapshot:: A collection of files and directories considered as a timestamped unit, possibly with metadata such as a revision comment attached.  The revision history of a project may be considered either as a sequence of snapshots or as a sequence of the [[#changeset|changesets]] connecting them.  However, these representations are not perfectly dual.  Notably, moving from a changeset-sequence representation to a snapshot-sequence representation loses information about file and directory add, delete, and rename operations. While additions and deletions can be reliably inferred by comparing snapshots, renames cannot be; this has some subtle and occasionally nasty ripple effects.
 
  <<Anchor(staircasemerge)>>
- staircase merge:: A simple merge example: {{{
+ staircase merge:: A simple merge example:
+```
     a
    / \
   b   c
    \ / \
     c   d
- }}} A merge algorithm which supports StaircaseMerge will cleanly merge this to d.
+```
+A merge algorithm which supports StaircaseMerge will cleanly merge this to d.
 
  <<Anchor(suturing)>>
  suturing:: suturing is taking two logically distinct entities and merging them into a single logical entity.  See [[Suturing]].  Compare with [[#aliasing|aliasing]].

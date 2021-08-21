@@ -2,7 +2,7 @@
 
 A criss-cross merge is an ancestry graph in which minimal common ancestors are not unique.  The simplest example with scalars is something like:
 
-{{{
+```
    a
   / \
  b1  c1
@@ -10,7 +10,7 @@ A criss-cross merge is an ancestry graph in which minimal common ancestors are n
  | X |
  |/ \|
  b2  c2
-}}}
+```
 
 ---- /!\ '''Edit conflict - other version:''' ----
 The story one can tell here is that Bob and Claire made some change independently, then each merged the changes together.  They conflicted, and Bob (of course) decided his change was better, while Claire (typically) picked her version.  Now, we need to merge again.  This should be a conflict. 
@@ -77,7 +77,7 @@ Traditional CodevilleMerge on scalar values gives an AmbiguousCleanMerge here --
 
 This somewhat anomalous case is normally presented to the user as a conflict (what else can one do?), which is the right result.  But there is a more subtle problem:
 
-{{{
+```
    a
   / \
  b1  c1
@@ -87,7 +87,7 @@ This somewhat anomalous case is normally presented to the user as a conflict (wh
  b2  c2
   \ / \
    b3  c3
-}}}
+```
 
 ---- /!\ '''Edit conflict - other version:''' ----
 Suppose someone else commits another version under c2, in which they didn't touch this scalar at all -- they are blissfully ignorant of Bob and Claire's shenanigans.  Now, this should merge cleanly -- someone has resolved the b2/c2 conflict, someone else has made no changes at all, all should be fine. But it's not; it's another ambiguous clean merge, because the last-changed revisions for b3 and c3 are still b1 and c1, respectively.  In fact, this can continue arbitrarily long:
@@ -97,7 +97,7 @@ Suppose someone else commits another version under c2, in which they didn't touc
 
 ---- /!\ '''End of edit conflict''' ----
 
-{{{
+```
    a
   / \
  b1  c1
@@ -109,7 +109,7 @@ Suppose someone else commits another version under c2, in which they didn't touc
    b3  c3
     \ / \
      b4  c4
-}}}
+```
 This is yet another conflict.  These conflicts continue so long as new versions are committed that do not have the ambiguous-clean resolution as an ancestor.
 
 (Of course, if at any point someone resolves one of these repeated conflicts in favor of c, then things get even more complicated.
@@ -117,7 +117,7 @@ This is yet another conflict.  These conflicts continue so long as new versions 
 = *-merge =
 [:MarkMerge:*-merge] handles this case well.  The graph, annotated with *s, is:
 
-{{{
+```
    a*
   / \
  b1* c1*
@@ -125,7 +125,7 @@ This is yet another conflict.  These conflicts continue so long as new versions 
  | X |
  |/ \|
  b2* c2*
-}}}
+```
 
 ---- /!\ '''Edit conflict - other version:''' ----
 Note that the two conflicting merges at the end cause b2 and c2 to be marked. This the key to *-merge's success in this case.  *(b2) = b2, and *(c2) = c2, neither of c2 and b2 are an ancestor of the other, so a conflict is reported.
@@ -137,7 +137,7 @@ Note that the two conflicting merges at the end cause b2 and c2 to be marked. Th
 
 Nor does *-merge suffer from the indefinite procession of repeated conflicts:
 
-{{{
+```
    a*
   / \
  b1* c1*
@@ -147,7 +147,7 @@ Nor does *-merge suffer from the indefinite procession of repeated conflicts:
  b2* c2*
   \ / \
    b3* c3
-}}}
+```
 
 ---- /!\ '''Edit conflict - other version:''' ----
 Because b2 and c2 conflicted, b3 is marked; c3, however, is not changed from its parent, so it is not marked.  Therefore b3 wins this merge cleanly.
@@ -159,7 +159,7 @@ Because b2 and c2 conflicted, b3 is marked; c3, however, is not changed from its
 
 *-merge does perform sub-optimally in a similar case:
 
-{{{
+```
     a*
    / \
   b1* c1*
@@ -169,7 +169,7 @@ Because b2 and c2 conflicted, b3 is marked; c3, however, is not changed from its
   b2* c2*
  / \ /
 d*  b3*
-}}}
+```
 
 ---- /!\ '''Edit conflict - other version:''' ----
 Here it reports a conflict, rather than merging cleanly to d.  However, this is because this is a StaircaseMerge, and has nothing to do with the criss-cross merge at all. 
@@ -185,7 +185,7 @@ Here it reports a conflict, rather than merging cleanly to d.  However, this is 
 = Simple weave merge =
 SimpleWeaveMerge handles the simple form of criss-cross correctly.  However, it runs into problems on a slightly different example, that only arise in the textual merging case:
 
-{{{
+```
     xy
    /  \
  xby  xcy
@@ -193,7 +193,7 @@ SimpleWeaveMerge handles the simple form of criss-cross correctly.  However, it 
   | /\ |
   |/  \|
 xbcy  xcby
-}}}
+```
 (each letter represents a line in a file)
 
 Here Bob and Claire have managed to overcome their differences somewhat -- they each actually include the other's new lines when they merge -- but they both insist that their own line must come _first_.
@@ -212,7 +212,7 @@ SimpleWeaveMerge will silently clean merge this to either xcby or xbcy -- which 
 
 The DARCS merge algorithm would generate something like this:
 
-{{{
+```
       a
      / \
     b1  c1
@@ -222,7 +222,7 @@ The DARCS merge algorithm would generate something like this:
 m(b,c) m(b,c)
     |   |
     b2  c2
-}}}
+```
 
 Where m(b,c) is a "merger" patch for b1 and c1.  The end result is that DARCS behaves the same as GIT does with its recursive three way merge, except that DARCS uses a special form for its 'merger patch' rather than normal conflict markers.  This makes sure that there are no problems with textual merge and conflict markers (such as mis-matched delimiters, etc).
 
