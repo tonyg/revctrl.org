@@ -36,4 +36,4 @@ While c wins because of the following path:
       c
 ```
 
-See CrissCrossMerge for more discussion.
+See [CrissCrossMerge](CrissCrossMerge.md) for more discussion.

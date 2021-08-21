@@ -12,7 +12,7 @@ Name for the following merge example:
 
 An algorithm that supports StaircaseMerge will cleanly merge c and d to d.  The reasoning is that d, when created, defeated c; therefore, it should win cleanly.
 
-This behavior is similar to ImplicitUndo because b was added and reverted, but while ImplicitUndo appears to be quite dangerous and tricky to implement, StaircaseMerge doesn't appear to cause any nasty edge cases and at least one technique for implementing it straightforwardly is known.
+This behavior is similar to [ImplicitUndo](ImplicitUndo.md) because b was added and reverted, but while [ImplicitUndo](ImplicitUndo.md) appears to be quite dangerous and tricky to implement, StaircaseMerge doesn't appear to cause any nasty edge cases and at least one technique for implementing it straightforwardly is known.
 
 == Example: Repeated Staircase Merge ==
 
@@ -44,7 +44,7 @@ This related case illustrates interesting complications which can arise:
       b   e
 ```
 
-Note that this is the same as the previous examples but with the `d`s changed to `b`s. Analogy with the previous example indicates that e should win cleanly, but GenerationCounting raises a conflict, because on the left `b` has been resurrected, and on the right it's alive for the first time). The theory behind this can be seen by comparing to the following case:
+Note that this is the same as the previous examples but with the `d`s changed to `b`s. Analogy with the previous example indicates that e should win cleanly, but [GenerationCounting](GenerationCounting.md) raises a conflict, because on the left `b` has been resurrected, and on the right it's alive for the first time). The theory behind this can be seen by comparing to the following case:
 
 ```
     a
@@ -56,11 +56,11 @@ Note that this is the same as the previous examples but with the `d`s changed to
       b   e
 ```
 
-By ["Convergence"] we can ignore the `c`s, but since `b` was born, died, and re-born on the left, that's ["Convergence"] plus further history with the single birth of `b` on the right, so we have a conflict.
+By [Convergence](Convergence.md) we can ignore the `c`s, but since `b` was born, died, and re-born on the left, that's [Convergence](Convergence.md) plus further history with the single birth of `b` on the right, so we have a conflict.
 
 == Example: Convergence gets confused by Staircase ==
 
-The following example illustrates a potential ambiguity in the semantics of Convergence when mixed with Staircase:
+The following example illustrates a potential ambiguity in the semantics of [Convergence](Convergence.md) when mixed with Staircase:
 
 ```
     a
@@ -79,7 +79,7 @@ The following example illustrates a potential ambiguity in the semantics of Conv
     b  c
 ```
 
-In this case the decision of the branch on the right to go with d indicates that d wins over all of its history, so intuitively it would make sense for b to cleanly win at the bottom, because after d there is strictly convergent history with b winning. However, if GenerationCounting is used, then c wins cleanly.
+In this case the decision of the branch on the right to go with d indicates that d wins over all of its history, so intuitively it would make sense for b to cleanly win at the bottom, because after d there is strictly convergent history with b winning. However, if [GenerationCounting](GenerationCounting.md) is used, then c wins cleanly.
 
 Fixing this problem for a general text merger doesn't appear to be impossible. The following example clearly illustrates how this case should affect a boolean value, as is the case for line include/exclude as used in generation counting of text files:
 
@@ -103,12 +103,12 @@ A general algorithm for getting this right is unknown, although it feels notably
 
 = Supported by =
 
-CodevilleMerge, ThreeWayMerge
+[CodevilleMerge](CodevilleMerge.md), [ThreeWayMerge](ThreeWayMerge.md)
 
 = Not supported by =
 
-MarkMerge
+[MarkMerge](MarkMerge.md)
 
 ----
 
-CategoryMergeExample
+[CategoryMergeExample](CategoryMergeExample.md)

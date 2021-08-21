@@ -2,7 +2,7 @@
 
 = Concept =
 
-A User Model is formal model of how a user understands their changes, and what they expect to cause a clean merge or a conflict.  This concept was first defined and articulated in the original MarkMerge paper: http://article.gmane.org/gmane.comp.version-control.codeville.devel/6
+A User Model is formal model of how a user understands their changes, and what they expect to cause a clean merge or a conflict.  This concept was first defined and articulated in the original [MarkMerge](MarkMerge.md) paper: http://article.gmane.org/gmane.comp.version-control.codeville.devel/6
 
 As that paper states:
 
@@ -25,13 +25,13 @@ As that paper states:
 > trying to optimize, and hard to evaluate an algorithm when we can't
 > even say what it's supposed to be doing.
 
-In short, if we're going to have to make guesses about squishy things like "intention", we had better be very explicit about our assumptions.  Otherwise, we continue to invent algorithms that look great, until someone suggests a new example.  This is fundamentally non-viable, because we never know whether we've seen "all the bad examples" (especially since historically, every time we think this someone has come up with new ones).  If we keep progressing from one example to another, we're doomed, because there are infinitely many examples.  The hope is that by defining our assumptions about the user, critiques of merge algorithms can be reduced to arguments that the algorithm implements a user model that does not accurately reflect users (example: MarkMerge's failure to handle StaircaseMerge), or arguments that the algorithm does not properly implement its user model (example: unique-MarkMerge's failure to handle AccidentalCleanMerge).
+In short, if we're going to have to make guesses about squishy things like "intention", we had better be very explicit about our assumptions.  Otherwise, we continue to invent algorithms that look great, until someone suggests a new example.  This is fundamentally non-viable, because we never know whether we've seen "all the bad examples" (especially since historically, every time we think this someone has come up with new ones).  If we keep progressing from one example to another, we're doomed, because there are infinitely many examples.  The hope is that by defining our assumptions about the user, critiques of merge algorithms can be reduced to arguments that the algorithm implements a user model that does not accurately reflect users (example: [MarkMerge](MarkMerge.md)'s failure to handle [StaircaseMerge](StaircaseMerge.md)), or arguments that the algorithm does not properly implement its user model (example: unique-[MarkMerge](MarkMerge.md)'s failure to handle [AccidentalCleanMerge](AccidentalCleanMerge.md)).
 
 If this works, then every nasty example will turn out to be signaling a general problem of one of these two types.  We like general problems ''much'' more than specific problems.
 
 = Practice =
 
-The only merge algorithm so far to adopt this approach explicitly is MarkMerge, and the only developer or analyst to have used the concept in writing is NathanielSmith.  He earnestly (and third-person-ly) hopes that future work will find the concept useful.
+The only merge algorithm so far to adopt this approach explicitly is [MarkMerge](MarkMerge.md), and the only developer or analyst to have used the concept in writing is NathanielSmith.  He earnestly (and third-person-ly) hopes that future work will find the concept useful.
 
 The user model used by MarkMerge is:
 
@@ -48,6 +48,6 @@ The user model used by MarkMerge is:
      side of the merge express parallel claims.
 ```
 
-This language is necessarily pretty fuzzy, which opens the whole concept of a user model to objections.  Especially since, ideally, a user model should entirely determine the results of a full algorithm implementing it... it might be claimed that a user model is simply a fuzzy high-level description of the algorithm proper.  Nonetheless, it has shown some practical benefits in at least the MarkMerge case.
+This language is necessarily pretty fuzzy, which opens the whole concept of a user model to objections.  Especially since, ideally, a user model should entirely determine the results of a full algorithm implementing it... it might be claimed that a user model is simply a fuzzy high-level description of the algorithm proper.  Nonetheless, it has shown some practical benefits in at least the [MarkMerge](MarkMerge.md) case.
 
 This model described is for scalar merge.  No potential user model has been formulated for textual merge, which may be part of why we have no predictably reliable textual mergers...

@@ -139,7 +139,7 @@ Contrariwise, I'm pretty sure the approach can be simplified if we do want to me
 
 All of this requires a VCS that supports:
   * merging between arbitrary historical revisions, not just branch heads
-  * AccidentalCleanMerge (see below)
+  * [AccidentalCleanMerge](AccidentalCleanMerge.md) (see below)
 One also has to take care with things like invertibility -- in many systems, a delete is not truly invertible; all that can be done is create a new file with the same name and contents as the old one.
 
 An alternative is to simply discard the original development branch, and recreate it from the double-reverted base:
@@ -160,7 +160,7 @@ An alternative is to simply discard the original development branch, and recreat
    S5      \
            U2' (everyone should use this)
 ```
-This may be appropriate in some cases, though care should be taken: it causes tricky coordination problems, may lose history, and may not be possible if, for instance, the two branches are controlled by different people/organizations (say the "stable" branch is Bob's Kernel Distro's kernel branch, and the "ultragizmo" branch is Linus's branch, and Linus doesn't care about Bob's travails).  The biggest advantage of the complex dance done above is that ordinary merge tools will work, even if more work has been done against U2 -- you can simply merge U3 and U2'.  (This is why AccidentalCleanMerge is important here, or possibly ["Convergence"].)
+This may be appropriate in some cases, though care should be taken: it causes tricky coordination problems, may lose history, and may not be possible if, for instance, the two branches are controlled by different people/organizations (say the "stable" branch is Bob's Kernel Distro's kernel branch, and the "ultragizmo" branch is Linus's branch, and Linus doesn't care about Bob's travails).  The biggest advantage of the complex dance done above is that ordinary merge tools will work, even if more work has been done against U2 -- you can simply merge U3 and U2'.  (This is why [AccidentalCleanMerge](AccidentalCleanMerge.md) is important here, or possibly [Convergence](Convergence.md).)
 
 The situation is symmetrical enough that you can also do things the other way around, discarding the bad part of the stable branch and recreating it:
 ```
@@ -190,4 +190,4 @@ Everything but DARCS.
 
 ----
 
-CategoryMergeExample
+[CategoryMergeExample](CategoryMergeExample.md)
