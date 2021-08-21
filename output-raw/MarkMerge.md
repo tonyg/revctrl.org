@@ -12,24 +12,24 @@ The most interesting things about *-merge are:
   * has a [UserModel](UserModel.md)
   * has a formal analysis showing that it is fully well-defined, and implements the [UserModel](UserModel.md)
 
-= Strengths =
+## Strengths
 
   * best formal analysis of any current merge algorithm
   * believed to never clean merge without justification (conservative)
   * "deterministic \*-merge" (basically multi-\*-merge but easier to make formal statements about) is commutative and associative (i.e., satisfies [OperationalTransformation](OperationalTransformation.md) theory's properties TP1 and TP2).
 
-= Weaknesses =
+## Weaknesses
 
   * unique-\*-merge does not handle accidental clean merges; multi-\*-merge does
   * does not handle [StaircaseMerge](StaircaseMerge.md)
   * does not attempt [Convergence](Convergence.md)
   * does not attempt implicit rollback
 
-= Used by =
+## Used by
 
 [Monotone](Monotone.md)
 
-= Related =
+## Related
 
 [CodevilleMerge](CodevilleMerge.md)
 

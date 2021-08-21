@@ -26,14 +26,15 @@ Please add your own.  Note: I'm using GUI mode to edit this table
 | update from repo | update | _see pull_ | pull -u | update |
 
 
-== Concepts ==
+## Concepts
  * manifest - to see what files are under version control
  * tag changes/revisions - to mark a certain revision, or set of changes as special in some way, like "PRERELEASE", or "2.0.3"
  * what's the difference between pull and "update from repo"?
-== Notes ==
+
+## Notes
  * _na_ - this concept is not available in this revctrl system
  * _see..._ - this concept is not available, but the revctrl system uses a different concept in its place
 
-== See also ==
+## See also
 
  * Rosetta Stone from a [[http://wiki.darcs.net/RosettaStone|Darcs perspective]]

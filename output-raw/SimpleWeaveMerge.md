@@ -4,13 +4,13 @@ This algorithm has sometimes been known as [PreciseCodevilleMerge](PreciseCodevi
 
 See also http://bazaar.canonical.com/BzrWeaveFormat for a nice and detailed description.
 
-= Strengths =
+## Strengths
 
-= Weaknesses =
+## Weaknesses
 
-= Used by =
+## Used by
 
-= Related =
+## Related
 
 [SCCSMerge](SCCSMerge.md), [BKMerge](BKMerge.md), [PreciseCodevilleMerge](PreciseCodevilleMerge.md)
 

@@ -1,6 +1,6 @@
 # Scalar Merge
 
-== What is Scalar Merge? ==
+## What is Scalar Merge?
 
 There are a number of different types of merge algorithm.  In order to introduce more theory into merge algorithms, these can be subdivided into a number of types.  One type of merge algorithm is the _scalar merge_, so called because it assumes that each revision consists of only a single scalar.
 
@@ -8,7 +8,7 @@ Whereas traditional textual merge algorithms allow two different changes to a do
 
 A special case of scalar merge is the [BooleanMergeAlgorithm](BooleanMergeAlgorithm.md).  [DieDieDieMerge](DieDieDieMerge.md) is one example of such a boolean scalar merge algorithm.
 
-== Converting to full merge ==
+## Converting to full merge
 
 There is a general theory of building complex merge algorithms using a scalar merger as a primitive.  This description originated with Nathaniel Smith in a [revctrl mailing list post](http://article.gmane.org/gmane.comp.version-control.revctrl/189):
 
@@ -28,7 +28,7 @@ This works perfectly well to get excellent tree mergers and set mergers, and pro
 
 [Weave](Weave.md) merging can also be seen as a special case of this formalism, with the scalar fields being the boolean "does this line in the weave currently exist" values.
 
-= Scalar Merge Algorithms =
+## Scalar Merge Algorithms
 
 To add a page to this category, add a link to this page on the last line of the page. You can add multiple categories to a page.
 

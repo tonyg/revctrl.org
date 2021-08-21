@@ -4,21 +4,21 @@ Convergent scalar merge is a scalar merge algorithm based on the property that i
 
 attachment:ConvergentScalarMerge.py
 
-= Strengths =
+## Strengths
 
   * supports [Convergence](Convergence.md)
   * handles [StaircaseMerge](StaircaseMerge.md)
   * has a conceptually simple motivation
 
-= Weaknesses =
+## Weaknesses
 
   * doesn't support [ImplicitUndo](ImplicitUndo.md)
 
-= Used by =
+## Used by
 
   * Will be used by [Codeville](Codeville.md)
 
-= Related =
+## Related
 
   * [MarkMerge](MarkMerge.md)
 

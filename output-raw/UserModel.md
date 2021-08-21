@@ -1,6 +1,6 @@
 # User Model
 
-= Concept =
+## Concept
 
 A User Model is formal model of how a user understands their changes, and what they expect to cause a clean merge or a conflict.  This concept was first defined and articulated in the original [MarkMerge](MarkMerge.md) paper: http://article.gmane.org/gmane.comp.version-control.codeville.devel/6
 
@@ -29,7 +29,7 @@ In short, if we're going to have to make guesses about squishy things like "inte
 
 If this works, then every nasty example will turn out to be signaling a general problem of one of these two types.  We like general problems _much_ more than specific problems.
 
-= Practice =
+## Practice
 
 The only merge algorithm so far to adopt this approach explicitly is [MarkMerge](MarkMerge.md), and the only developer or analyst to have used the concept in writing is NathanielSmith.  He earnestly (and third-person-ly) hopes that future work will find the concept useful.
 

@@ -1,17 +1,19 @@
 # Three-Way Merge
 
-= Summary =
+## Summary
 Three-way merge is a staple of revision control systems such as CVS and Bazaar.  It takes three inputs: THIS, BASE, and OTHER.  THIS is the current value in the user's tree.  OTHER is the current value in the tree to be merged.  BASE is a basis for comparison between THIS and OTHER, and is usually an ancestor of them.
 
 The operation of three way merge can be paraphrased as "keep my changes, but apply the changes OTHER made to my copy".
 
 Consider the values in each version in a scalar merge context.
- ||Case||THIS||BASE||OTHER||RESULT                                               ||
- ||1.  ||A   ||A   ||A    ||A (Boring case)                                      ||
- ||2.  ||B   ||A   ||A    ||B (Take change from THIS)                            ||
- ||3.  ||A   ||A   ||B    ||B (Take change from OTHER)                           ||
- ||4.  ||A   ||B   ||A    ||A ([AccidentalCleanMerge](AccidentalCleanMerge.md))  ||
- ||5.  ||A   ||B   ||C    || **Conflict**                                        ||
+
+| Case  | THIS  | BASE  | OTHER | RESULT                                              |
+| ----- | ----- | ----- | ----- | --------------------------------------------------- |
+| 1.    | A     | A     | A     | A (Boring case)                                     |
+| 2.    | B     | A     | A     | B (Take change from THIS)                           |
+| 3.    | A     | A     | B     | B (Take change from OTHER)                          |
+| 4.    | A     | B     | A     | A ([AccidentalCleanMerge](AccidentalCleanMerge.md)) |
+| 5.    | A     | B     | C     |  **Conflict**                                       |
 
 As long as any two versions have the same value, the algorithm produces a result.  A conflict happens when all versions are have different values, because it is not clear whether OTHER or THIS (or some combination) should be taken. It is not universally accepted that case 4 should merge cleanly, so this case is sometimes an exception.
 
@@ -23,25 +25,26 @@ The selection of an appropriate base is important in three-way merges, because t
 
 See [ThreeWayTextMergeImplementation](ThreeWayTextMergeImplementation.md) for implementation details.
 
-= Diff & Patch =
+## Diff & Patch
 Diff and patch can be used to perform something like a three-way merge.  One simply performs a diff from BASE to OTHER, and then uses patch to apply it to THIS.  This approach is more limited than diff3.  In case 4, instead of reporting a clean merge, it necessarily produces a conflict. This approach is also prone to even worse [Resolution](Resolution.md) errors than more intelligent implementations.
 
-= Strengths =
+## Strengths
  * Requires just three inputs
  * Reasonably simple to understand and implement (ignoring BASE selection)
  * Implementations widely available
 
-= Weaknesses =
+## Weaknesses
  * Prone to [Resolution](Resolution.md) errors due to not being fully history-aware
  * A [CrissCrossMerge](CrissCrossMerge.md) produces a strange later three-way-merge
  * Some scenarios can cause text to be lost that should not be
  * Difficult to choose a decent BASE in arbitrary history graphs
  * Cannot support [Convergence](Convergence.md)
 
-= Used by =
- ["CVS"], ["Arch"], ["Bazaar"], ["Bazaar-NG"], ["Monotone"], many others
+## Used by
 
-= Related =
+[CVS](CVS.md), [Arch](Arch.md), [Bazaar](Bazaar.md), [Bazaar-NG](Bazaar-NG.md), [Monotone](Monotone.md), many others
+
+## Related
  Patch/diff merge
 
 ----

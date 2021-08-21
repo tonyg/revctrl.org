@@ -14,7 +14,7 @@ An algorithm that supports StaircaseMerge will cleanly merge c and d to d.  The 
 
 This behavior is similar to [ImplicitUndo](ImplicitUndo.md) because b was added and reverted, but while [ImplicitUndo](ImplicitUndo.md) appears to be quite dangerous and tricky to implement, StaircaseMerge doesn't appear to cause any nasty edge cases and at least one technique for implementing it straightforwardly is known.
 
-== Example: Repeated Staircase Merge ==
+## Example: Repeated Staircase Merge
 
 It's possible to have a repeated staircase merge
 
@@ -30,7 +30,7 @@ It's possible to have a repeated staircase merge
 
 Note that this can easily continue as you repeatedly merge changes to a development branch into an unaltered branch. Most people agree that the user shouldn't have to repeatedly fix conflicts in this case, so it creates a compelling argument for clean merging of staircase.
 
-== Example: Staircase vs. Convergence ==
+## Example: Staircase vs. Convergence
 
 This related case illustrates interesting complications which can arise:
 
@@ -58,7 +58,7 @@ Note that this is the same as the previous examples but with the `d`s changed to
 
 By [Convergence](Convergence.md) we can ignore the `c`s, but since `b` was born, died, and re-born on the left, that's [Convergence](Convergence.md) plus further history with the single birth of `b` on the right, so we have a conflict.
 
-== Example: Convergence gets confused by Staircase ==
+## Example: Convergence gets confused by Staircase
 
 The following example illustrates a potential ambiguity in the semantics of [Convergence](Convergence.md) when mixed with Staircase:
 
@@ -101,11 +101,11 @@ Fixing this problem for a general text merger doesn't appear to be impossible. T
 
 A general algorithm for getting this right is unknown, although it feels notably similar to the problem of supporting staircase in a non-convergent scalar merge, which also doesn't have a good known algorithm.
 
-= Supported by =
+## Supported by
 
 [CodevilleMerge](CodevilleMerge.md), [ThreeWayMerge](ThreeWayMerge.md)
 
-= Not supported by =
+## Not supported by
 
 [MarkMerge](MarkMerge.md)
 

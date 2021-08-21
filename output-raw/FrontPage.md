@@ -4,7 +4,7 @@ For discussion, whiteboarding and archival of knowledge of revision control syst
 
 Note that you must be logged in to edit pages.
 
-== Places to go ==
+## Places to go
 
   * [Glossary](Glossary.md)
   * [CategoryMergeAlgorithm](CategoryMergeAlgorithm.md)
@@ -13,9 +13,9 @@ Note that you must be logged in to edit pages.
   * [ConceptTable](ConceptTable.md)
   * [RevctrlTalks](RevctrlTalks.md)
 
-== #revctrl on irc.freenode.net ==
+  * `#revctrl` on irc.freenode.net
 
-=== Resources ===
+## Resources
 
  * [The Revctrl Mailing List](http://lists.zooko.com/mailman/listinfo/revctrl)
  * [Zooko's quick reference](http://www.zooko.com/revision_control_quick_ref.html)
@@ -27,7 +27,7 @@ _It would be nice to have a summary of the top N distributed version control sys
 
 Is it possible to make a [NeutralInterface](NeutralInterface.md) ?
 
-== Links ==
+## Links
 
  * [a mailing list](http://lists.madduck.net/mailman/listinfo/vcs-home) and [a wiki](http://www.theficks.name/VCS-Home/HomePage) for storing `$HOME` in VCS.
  * [a mailing list](http://lists.madduck.net/mailman/listinfo/vcs-pkg) about maintaining distro packages in VCS.

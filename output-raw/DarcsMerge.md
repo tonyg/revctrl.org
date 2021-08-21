@@ -11,7 +11,7 @@ It's that simple!
 
 There is a [thread](http://www.abridgegame.org/pipermail/darcs-users/2003/000221.html) on the darcs users mailing list comparing [DarcsMerge](DarcsMerge.md) and the exact patching form of [ThreeWayTextMergeImplementation](ThreeWayTextMergeImplementation.md).
 
-= Strengths =
+## Strengths
 
  * Is always able to apply patches that don't really conflict.
  * Merging branches with many changes on both sides does not make it less probable that the merge will succeed
@@ -21,7 +21,7 @@ There is a [thread](http://www.abridgegame.org/pipermail/darcs-users/2003/000221
  * Does not lose patch identity in merge
  * Handles all merge "problems", such as [CrissCrossMerge](CrissCrossMerge.md), [AccidentalCleanMerge](AccidentalCleanMerge.md) or [StaircaseMerge](StaircaseMerge.md).  (These problems simply don't exist with this algorithm.)
 
-= Weaknesses =
+## Weaknesses
 
  * You cannot use "traditional" diffs internally.  They cannot accommodate conflict patches.
  * Conflict becomes a repository state, not a working-tree state.  (Some would consider this a pro)
@@ -29,11 +29,11 @@ There is a [thread](http://www.abridgegame.org/pipermail/darcs-users/2003/000221
  * Nobody has proved that the performance of conflict-conflict merge corner cases can be improved from `O(exp n)`
  * Requires additional work if you want to record who merged what and when.  (This is because the merge algorithm itself does not need this information.)
 
-= Used by =
+## Used by
 
 Darcs.
 
-= Related =
+## Related
 
 Any merge algorithm that deals directly with patches.
 
