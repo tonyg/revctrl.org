@@ -11,7 +11,7 @@ Consider the values in each version in a scalar merge context.
  ||2.  ||B   ||A   ||A    ||B (Take change from THIS)                            ||
  ||3.  ||A   ||A   ||B    ||B (Take change from OTHER)                           ||
  ||4.  ||A   ||B   ||A    ||A ([AccidentalCleanMerge](AccidentalCleanMerge.md))  ||
- ||5.  ||A   ||B   ||C    || '''Conflict'''                                      ||
+ ||5.  ||A   ||B   ||C    || **Conflict**                                        ||
 
 As long as any two versions have the same value, the algorithm produces a result.  A conflict happens when all versions are have different values, because it is not clear whether OTHER or THIS (or some combination) should be taken. It is not universally accepted that case 4 should merge cleanly, so this case is sometimes an exception.
 
