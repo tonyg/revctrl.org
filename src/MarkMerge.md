@@ -2,7 +2,7 @@
 
 A scalar merge algorithm, related to [CodevilleMerge](CodevilleMerge.md).  Generally referred to as "mark-merge" or "*-merge" (but never [StarMerge](StarMerge.md), which is something else entirely).
 
-Detailed writeup of original version: <http://thread.gmane.org/gmane.comp.version-control.monotone.devel/4297> ("unique-*-merge"; [available below](#unique-mark-marge))
+Detailed writeup of original version: <http://thread.gmane.org/gmane.comp.version-control.monotone.devel/4297> ("unique-*-merge"; [available below](#unique-mark-merge))
 
 Detailed writeup of updated version (handles accidental clean merges): <http://article.gmane.org/gmane.comp.version-control.revctrl/93> ("multi-*-merge"; [available below](#multi-mark-merge))
 
@@ -46,7 +46,7 @@ The most interesting things about *-merge are:
 > Wiki MarkMerge page](https://wiki.monotone.ca/MarkMerge/), and may
 > include the text of the messages referred to above.
 
-## <span id="unique-mark-marge"></span> Initial mark-merge proposal
+## <span id="unique-mark-merge"></span> Initial mark-merge proposal
 
 This appears to be the text of the
 `gmane.comp.version-control.monotone.devel` message numbered 4297
