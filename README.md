@@ -16,6 +16,35 @@ content or something.
  - originally scraped and archived by Tony Garnock-Jones <tonyg@leastfixedpoint.com>
  - spam cleanup and improvements to formatting by Michael Haggerty <mhagger@alum.mit.edu>
 
+## Authors
+
+Unfortunately, all the edit history of the wiki was lost, and
+individual pages do not have clear authorship. All we have is a record
+of the wikipages named after some of the people who made contributions
+to the site.
+
+Here, then, is a partial list of (presumed) authors. If anyone has
+more information about authorship of the content here, please [contact
+me](mailto:tonyg@leastfixedpoint.com):
+
+> AaronBentley,
+> AllenSmith,
+> BramCohen,
+> BryanOSullivan,
+> DavidCary,
+> EricKow,
+> FrancisJackson,
+> GlenWhitney,
+> KenSchalk,
+> ManpreetSingh,
+> MiguelProvencio,
+> NathanielSmith,
+> PetrBaudis,
+> RitaGolubeva,
+> RossCohen,
+> WJustin, and
+> WillUther.
+
 ## Table of Contents
 
 The main entry point to the site:
