@@ -43,12 +43,13 @@ The most interesting things about *-merge are:
 
 > *Editor's note.* The `gmane.org` links above do not work reliably.
 > The following text is the majority of the content of [the Monotone
-> Wiki MarkMerge page](https://wiki.monotone.ca/MarkMerge/), and may
-> include the text of the messages referred to above.
+> Wiki MarkMerge page](https://wiki.monotone.ca/MarkMerge/) (as of 14
+> October 2021), and includes the text of the messages referred to
+> above.
 
 ## <span id="unique-mark-merge"></span> Initial mark-merge proposal
 
-> *Editor's note.* This appears to be the text of the
+> *Editor's note.* This is the text of the
 > `gmane.comp.version-control.monotone.devel` message numbered 4297
 > referred to above.
 
@@ -424,7 +425,7 @@ The most interesting things about *-merge are:
 
 ## <span id="multi-mark-merge"></span> Improvements to *-merge
 
-> *Editor's note.* This appears to be the text of the
+> *Editor's note.* This is the text of the
 > `gmane.comp.version-control.revctrl` message numbered 93 referred to
 > above.
 
@@ -745,7 +746,7 @@ The most interesting things about *-merge are:
 
 ## <span id="more-on-mark-merge"></span> More on "mark-merge"
 
-> *Editor's note.* This appears to be the text of the
+> *Editor's note.* This is the text of the
 > `gmane.comp.version-control.revctrl` message numbered 92 referred to
 > above.
 
