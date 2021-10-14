@@ -22,6 +22,12 @@ The main entry point to the site:
 
  - [FrontPage](FrontPage.md)
 
+Pages acting as [Category](CategoryCategory.md) indexes:
+
+ - [CategoryMergeAlgorithm](CategoryMergeAlgorithm.md)
+ - [CategoryMergeExample](CategoryMergeExample.md)
+ - [ScalarMerge](ScalarMerge.md)
+
 Unfortunately, slightly fewer than half of the pages that used to be
 on the site could be rescued. (See [here](scrape/rejects) for those
 whose titles we know but whose contents were lost.)
