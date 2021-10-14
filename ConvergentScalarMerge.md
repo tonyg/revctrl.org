@@ -1,6 +1,6 @@
 # Convergent Scalar Merge
 
-Convergent scalar merge is a scalar merge algorithm based on the property that if A and B are merged and A has an ancestor whose history is isomorphic to B's history, then A should win. It's similar to [MarkMerge](MarkMerge.md), and can be thought of as the scalar version of [PreciseCodevilleMerge](PreciseCodevilleMerge.md) (in fact, they were developed in tandem).
+Convergent scalar merge is a [ScalarMerge](ScalarMerge.md) algorithm based on the property that if A and B are merged and A has an ancestor whose history is isomorphic to B's history, then A should win. It's similar to [MarkMerge](MarkMerge.md), and can be thought of as the scalar version of [PreciseCodevilleMerge](PreciseCodevilleMerge.md) (in fact, they were developed in tandem).
 
 attachment: [ConvergentScalarMerge.py](attachments/ConvergentScalarMerge.py)
 

@@ -30,7 +30,9 @@ This works perfectly well to get excellent tree mergers and set mergers, and pro
 
 ## Scalar Merge Algorithms
 
-To add a page to this category, add a link to this page on the last line of the page. You can add multiple categories to a page.
+ - [ConvergentScalarMerge](ConvergentScalarMerge.md)
+ - [MarkMerge](MarkMerge.md)
+ - [PreciseCodevilleMerge](PreciseCodevilleMerge.md)
 
 ----
 
