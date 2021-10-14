@@ -2,7 +2,7 @@
 
 ## Concept
 
-A User Model is formal model of how a user understands their changes, and what they expect to cause a clean merge or a conflict.  This concept was first defined and articulated in the original [MarkMerge](MarkMerge.md) paper: http://article.gmane.org/gmane.comp.version-control.codeville.devel/6
+A User Model is formal model of how a user understands their changes, and what they expect to cause a clean merge or a conflict.  This concept was first defined and articulated in the original [MarkMerge](MarkMerge.md) paper: <http://article.gmane.org/gmane.comp.version-control.codeville.devel/6>
 
 As that paper states:
 
@@ -35,18 +35,14 @@ The only merge algorithm so far to adopt this approach explicitly is [MarkMerge]
 
 The user model used by MarkMerge is:
 
-```
-  1) whenever a user explicitly sets the value, they express a claim
-     that their setting is superior to the old setting
-  2) whenever a user chooses to commit a new revision, they implicitly
-     affirm the validity of the decisions that led to that revision's
-     parents
-    Corollary of (1) and (2): whenever a user explicitly sets the
-     value, they express that they consider their new setting to be
-     superior to _all_ old settings
-  3) A "conflict" should occur if, and only if, the settings on each
-     side of the merge express parallel claims.
-```
+1. whenever a user explicitly sets the value, they express a claim that their setting is superior to the old setting
+2. whenever a user chooses to commit a new revision, they implicitly affirm the validity of the decisions that led to that revision's parents
+
+   Corollary of (1) and (2): whenever a user explicitly sets the
+   value, they express that they consider their new setting to be
+   superior to _all_ old settings
+
+3. A "conflict" should occur if, and only if, the settings on each side of the merge express parallel claims.
 
 This language is necessarily pretty fuzzy, which opens the whole concept of a user model to objections.  Especially since, ideally, a user model should entirely determine the results of a full algorithm implementing it... it might be claimed that a user model is simply a fuzzy high-level description of the algorithm proper.  Nonetheless, it has shown some practical benefits in at least the [MarkMerge](MarkMerge.md) case.
 

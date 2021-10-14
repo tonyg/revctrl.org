@@ -139,7 +139,7 @@
                     <main>
                         <h1 id="user-model"><a class="header" href="#user-model">User Model</a></h1>
 <h2 id="concept"><a class="header" href="#concept">Concept</a></h2>
-<p>A User Model is formal model of how a user understands their changes, and what they expect to cause a clean merge or a conflict.  This concept was first defined and articulated in the original <a href="MarkMerge.html">MarkMerge</a> paper: http://article.gmane.org/gmane.comp.version-control.codeville.devel/6</p>
+<p>A User Model is formal model of how a user understands their changes, and what they expect to cause a clean merge or a conflict.  This concept was first defined and articulated in the original <a href="MarkMerge.html">MarkMerge</a> paper: <a href="http://article.gmane.org/gmane.comp.version-control.codeville.devel/6">http://article.gmane.org/gmane.comp.version-control.codeville.devel/6</a></p>
 <p>As that paper states:</p>
 <blockquote>
 <p>Traditionally, merge algorithms are evaluated by coming up with some
@@ -166,17 +166,20 @@ even say what it's supposed to be doing.</p>
 <h2 id="practice"><a class="header" href="#practice">Practice</a></h2>
 <p>The only merge algorithm so far to adopt this approach explicitly is <a href="MarkMerge.html">MarkMerge</a>, and the only developer or analyst to have used the concept in writing is NathanielSmith.  He earnestly (and third-person-ly) hopes that future work will find the concept useful.</p>
 <p>The user model used by MarkMerge is:</p>
-<pre><code>  1) whenever a user explicitly sets the value, they express a claim
-     that their setting is superior to the old setting
-  2) whenever a user chooses to commit a new revision, they implicitly
-     affirm the validity of the decisions that led to that revision's
-     parents
-    Corollary of (1) and (2): whenever a user explicitly sets the
-     value, they express that they consider their new setting to be
-     superior to _all_ old settings
-  3) A &quot;conflict&quot; should occur if, and only if, the settings on each
-     side of the merge express parallel claims.
-</code></pre>
+<ol>
+<li>
+<p>whenever a user explicitly sets the value, they express a claim that their setting is superior to the old setting</p>
+</li>
+<li>
+<p>whenever a user chooses to commit a new revision, they implicitly affirm the validity of the decisions that led to that revision's parents</p>
+<p>Corollary of (1) and (2): whenever a user explicitly sets the
+value, they express that they consider their new setting to be
+superior to <em>all</em> old settings</p>
+</li>
+<li>
+<p>A &quot;conflict&quot; should occur if, and only if, the settings on each side of the merge express parallel claims.</p>
+</li>
+</ol>
 <p>This language is necessarily pretty fuzzy, which opens the whole concept of a user model to objections.  Especially since, ideally, a user model should entirely determine the results of a full algorithm implementing it... it might be claimed that a user model is simply a fuzzy high-level description of the algorithm proper.  Nonetheless, it has shown some practical benefits in at least the <a href="MarkMerge.html">MarkMerge</a> case.</p>
 <p>This model described is for scalar merge.  No potential user model has been formulated for textual merge, which may be part of why we have no predictably reliable textual mergers...</p>
 
