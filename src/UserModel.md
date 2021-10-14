@@ -2,9 +2,9 @@
 
 ## Concept
 
-A User Model is formal model of how a user understands their changes, and what they expect to cause a clean merge or a conflict.  This concept was first defined and articulated in the original [MarkMerge](MarkMerge.md) paper: <http://article.gmane.org/gmane.comp.version-control.codeville.devel/6>
+A User Model is formal model of how a user understands their changes, and what they expect to cause a clean merge or a conflict.  This concept was first defined and articulated in the original [MarkMerge](MarkMerge.md) paper: <http://article.gmane.org/gmane.comp.version-control.codeville.devel/6> ([*I suspect this is the paper referred to - ed.*](MarkMerge.md#unique-mark-merge))
 
-As that paper states:
+As [that paper](MarkMerge.md#unique-mark-merge) states:
 
 > Traditionally, merge algorithms are evaluated by coming up with some
 > set of examples, eyeballing them to make some guess as to what the
