@@ -28,6 +28,8 @@ Pages acting as [Category](CategoryCategory.md) indexes:
  - [CategoryMergeExample](CategoryMergeExample.md)
  - [ScalarMerge](ScalarMerge.md)
 
+### All available pages
+
 Unfortunately, slightly fewer than half of the pages that used to be
 on the site could be rescued. (See [here](scrape/rejects) for those
 whose titles we know but whose contents were lost.)
@@ -69,6 +71,8 @@ whose titles we know but whose contents were lost.)
  - [UserModel](UserModel.md)
  - [Weave](Weave.md)
  - [WikiNode](WikiNode.md)
+
+### Attachments
 
 In addition, a handful of attachments were rescued:
 
