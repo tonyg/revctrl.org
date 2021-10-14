@@ -37,4 +37,4 @@ Please add your own.  Note: I'm using GUI mode to edit this table
 
 ## See also
 
- * Rosetta Stone from a [[http://wiki.darcs.net/RosettaStone|Darcs perspective]]
+ * Rosetta Stone from a [Darcs perspective](http://wiki.darcs.net/RosettaStone)

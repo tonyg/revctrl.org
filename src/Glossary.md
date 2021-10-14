@@ -88,7 +88,7 @@ a convergent merge algorithm will make this a clean merge to c. See [Convergence
  **rollback**:: see [Rollback](Rollback.md)
 
  <span id="scalarmerger"></span>
- **scalar merger**:: A merge algorithm that works on a single atomic value.  An example is [mark-merge](#markmerge).  Concept explained in [[http://thread.gmane.org/gmane.comp.version-control.monotone.devel/4297]].
+ **scalar merger**:: A merge algorithm that works on a single atomic value.  An example is [mark-merge](#markmerge).  Concept explained [here](http://thread.gmane.org/gmane.comp.version-control.monotone.devel/4297).
 
  <span id="secondgeneration"></span>
  **second-generation**:: See [generations](#vcsgenerations).

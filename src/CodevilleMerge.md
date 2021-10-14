@@ -10,10 +10,10 @@ For merging, there are 2 sides (versions of the given file) which are to be merg
 
 Take lC as the set of changes in the annotation on the left side of a conflict section and rC as the set on the right. Take lA as the list of applied changes on the left and rA as the set on the right.
 
-If lC - rA is non-empty, then the left side should win.[[BR]]
-If rC - lA is non-empty, then the right side should win.[[BR]]
-If both sides should win, then it's a conflict.[[BR]]
-If _neither_ side should win, it's also a conflict. This is almost certainly non-obvious at first blush, but this situation can occur, albiet somewhat infrequently. This is what's known as an [AmbiguousCleanMerge](AmbiguousCleanMerge.md).
+ - If lC - rA is non-empty, then the left side should win.
+ - If rC - lA is non-empty, then the right side should win.
+ - If both sides should win, then it's a conflict.
+ - If _neither_ side should win, it's also a conflict. This is almost certainly non-obvious at first blush, but this situation can occur, albiet somewhat infrequently. This is what's known as an [AmbiguousCleanMerge](AmbiguousCleanMerge.md).
 
 ## Strengths
 

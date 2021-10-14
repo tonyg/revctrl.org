@@ -124,9 +124,7 @@ d*  b3*
 Here it reports a conflict, rather than merging cleanly to d.  However, this is because this is a [StaircaseMerge](StaircaseMerge.md), and has nothing to do with the criss-cross merge at all. 
 
 
-[[Anchor(orderingambiguities)]]
-
-## Simple weave merge
+## <span id="orderingambiguities"></span>Simple weave merge
 
 [SimpleWeaveMerge](SimpleWeaveMerge.md) handles the simple form of criss-cross correctly.  However, it runs into problems on a slightly different example, that only arise in the textual merging case:
 
