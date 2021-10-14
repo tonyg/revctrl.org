@@ -9,7 +9,6 @@ Various and sundry merge algorithms.
  - [ConvergentScalarMerge](ConvergentScalarMerge.md)
  - [DarcsMerge](DarcsMerge.md)
  - [DieDieDieMerge](DieDieDieMerge.md)
- - [FrontPage](FrontPage.md)
  - [MarkMerge](MarkMerge.md)
  - [OperationalTransformation](OperationalTransformation.md)
  - [PreciseCodevilleMerge](PreciseCodevilleMerge.md)

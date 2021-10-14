@@ -6,7 +6,6 @@ The various pathological and not-so-pathological cases that merge algorithms mus
 
  - [AccidentalCleanMerge](AccidentalCleanMerge.md)
  - [CrissCrossMerge](CrissCrossMerge.md)
- - [FrontPage](FrontPage.md)
  - [ImplicitUndo](ImplicitUndo.md)
  - [Rollback](Rollback.md)
  - [StaircaseMerge](StaircaseMerge.md)
