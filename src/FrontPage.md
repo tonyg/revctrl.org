@@ -9,7 +9,6 @@ Note that you must be logged in to edit pages.
   * [Glossary](Glossary.md)
   * [CategoryMergeAlgorithm](CategoryMergeAlgorithm.md)
   * [CategoryMergeExample](CategoryMergeExample.md)
-  * [WantedPages](WantedPages.md)
   * [ConceptTable](ConceptTable.md)
   * [RevctrlTalks](RevctrlTalks.md)
 
