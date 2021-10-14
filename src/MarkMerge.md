@@ -2,11 +2,22 @@
 
 A scalar merge algorithm, related to [CodevilleMerge](CodevilleMerge.md).  Generally referred to as "mark-merge" or "*-merge" (but never [StarMerge](StarMerge.md), which is something else entirely).
 
-Detailed writeup of original version: <http://thread.gmane.org/gmane.comp.version-control.monotone.devel/4297> ("unique-*-merge"; [available below](#unique-mark-merge))
+Detailed writeup of original version: [1A], [1B] ("unique-*-merge"; [available below](#unique-mark-merge))
 
-Detailed writeup of updated version (handles accidental clean merges): <http://article.gmane.org/gmane.comp.version-control.revctrl/93> ("multi-*-merge"; [available below](#multi-mark-merge))
+[1A]: https://lists.nongnu.org/archive/html/monotone-devel/2005-08/msg00037.html
+[1B]: http://thread.gmane.org/gmane.comp.version-control.monotone.devel/4297
 
-Other links: <http://article.gmane.org/gmane.comp.version-control.revctrl/92> ([available below](#more-on-mark-merge)), <http://article.gmane.org/gmane.comp.version-control.revctrl/197> ("deterministic-*-merge")
+Detailed writeup of updated version (handles accidental clean merges): [2A], [2B] ("multi-*-merge"; [available below](#multi-mark-merge))
+
+[2A]: https://lists.nongnu.org/archive/html/monotone-devel/2005-08/msg00264.html
+[2B]: http://article.gmane.org/gmane.comp.version-control.revctrl/93
+
+Other links: [3A], [3B] ([available below](#more-on-mark-merge)); [4A] ("deterministic-*-merge")
+
+[3A]: https://mail.gnu.org/archive/html/monotone-devel/2005-08/msg00236.html
+[3B]: http://article.gmane.org/gmane.comp.version-control.revctrl/92
+
+[4A]: http://article.gmane.org/gmane.comp.version-control.revctrl/197
 
 The most interesting things about *-merge are:
   * has a [UserModel](UserModel.md)
@@ -33,25 +44,25 @@ The most interesting things about *-merge are:
 
 [CodevilleMerge](CodevilleMerge.md)
 
-----
-
-[CategoryMergeAlgorithm](CategoryMergeAlgorithm.md) [CategoryScalarMerge](CategoryScalarMerge.md)
-
 ---
 
-# Emails relating to MarkMerge
+# Writeups of Mark Merge
 
-> *Editor's note.* The `gmane.org` links above do not work reliably.
-> The following text is the majority of the content of [the Monotone
-> Wiki MarkMerge page](https://wiki.monotone.ca/MarkMerge/) (as of 14
-> October 2021), and includes the text of the messages referred to
-> above.
+> *Editor's note.* The `gmane.org` links to the discussions of Mark
+> Merge from the original wiki content do not work reliably. The
+> following texts were copied from the content of [the Monotone Wiki
+> MarkMerge page](https://wiki.monotone.ca/MarkMerge/) (as of 14
+> October 2021), and include the text of the messages originally
+> referred to.
 
 ## <span id="unique-mark-merge"></span> Initial mark-merge proposal
 
 > *Editor's note.* This is the text of the
 > `gmane.comp.version-control.monotone.devel` message numbered 4297
 > referred to above.
+>
+> Replies and further discussion can be found [here][1A] (at the time
+> of writing).
 
     From: Nathaniel Smith <njs <at> pobox.com>
     Subject: [cdv-devel] more merging stuff (bit long...)
@@ -428,6 +439,9 @@ The most interesting things about *-merge are:
 > *Editor's note.* This is the text of the
 > `gmane.comp.version-control.revctrl` message numbered 93 referred to
 > above.
+>
+> Replies and further discussion can be found [here][2A] (at the time
+> of writing).
 
     From: Nathaniel Smith <njs@...>
     Subject: improvements to *-merge
@@ -749,6 +763,8 @@ The most interesting things about *-merge are:
 > *Editor's note.* This is the text of the
 > `gmane.comp.version-control.revctrl` message numbered 92 referred to
 > above.
+>
+> Context can be found [here][3A] (at the time of writing).
 
     From: Timothy Brownawell <tbrownaw@...>
     Subject: more on "mark-merge"
@@ -856,3 +872,7 @@ The most interesting things about *-merge are:
     This ("the other funky case") is handled by (2), and resolves cleanly.
 
     Tim
+
+----
+
+[CategoryMergeAlgorithm](CategoryMergeAlgorithm.md) [CategoryScalarMerge](CategoryScalarMerge.md)

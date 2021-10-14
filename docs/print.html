@@ -713,9 +713,9 @@ op1' = T(op1, op2')
 <p><a href="CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="mark-merge"><a class="header" href="#mark-merge">Mark Merge</a></h1>
 <p>A scalar merge algorithm, related to <a href="CodevilleMerge.html">CodevilleMerge</a>.  Generally referred to as &quot;mark-merge&quot; or &quot;*-merge&quot; (but never <a href="StarMerge.html">StarMerge</a>, which is something else entirely).</p>
-<p>Detailed writeup of original version: <a href="http://thread.gmane.org/gmane.comp.version-control.monotone.devel/4297">http://thread.gmane.org/gmane.comp.version-control.monotone.devel/4297</a> (&quot;unique-*-merge&quot;; <a href="MarkMerge.html#unique-mark-merge">available below</a>)</p>
-<p>Detailed writeup of updated version (handles accidental clean merges): <a href="http://article.gmane.org/gmane.comp.version-control.revctrl/93">http://article.gmane.org/gmane.comp.version-control.revctrl/93</a> (&quot;multi-*-merge&quot;; <a href="MarkMerge.html#multi-mark-merge">available below</a>)</p>
-<p>Other links: <a href="http://article.gmane.org/gmane.comp.version-control.revctrl/92">http://article.gmane.org/gmane.comp.version-control.revctrl/92</a> (<a href="MarkMerge.html#more-on-mark-merge">available below</a>), <a href="http://article.gmane.org/gmane.comp.version-control.revctrl/197">http://article.gmane.org/gmane.comp.version-control.revctrl/197</a> (&quot;deterministic-*-merge&quot;)</p>
+<p>Detailed writeup of original version: <a href="https://lists.nongnu.org/archive/html/monotone-devel/2005-08/msg00037.html">1A</a>, <a href="http://thread.gmane.org/gmane.comp.version-control.monotone.devel/4297">1B</a> (&quot;unique-*-merge&quot;; <a href="MarkMerge.html#unique-mark-merge">available below</a>)</p>
+<p>Detailed writeup of updated version (handles accidental clean merges): <a href="https://lists.nongnu.org/archive/html/monotone-devel/2005-08/msg00264.html">2A</a>, <a href="http://article.gmane.org/gmane.comp.version-control.revctrl/93">2B</a> (&quot;multi-*-merge&quot;; <a href="MarkMerge.html#multi-mark-merge">available below</a>)</p>
+<p>Other links: <a href="https://mail.gnu.org/archive/html/monotone-devel/2005-08/msg00236.html">3A</a>, <a href="http://article.gmane.org/gmane.comp.version-control.revctrl/92">3B</a> (<a href="MarkMerge.html#more-on-mark-merge">available below</a>); <a href="http://article.gmane.org/gmane.comp.version-control.revctrl/197">4A</a> (&quot;deterministic-*-merge&quot;)</p>
 <p>The most interesting things about *-merge are:</p>
 <ul>
 <li>has a <a href="UserModel.html">UserModel</a></li>
@@ -739,21 +739,22 @@ op1' = T(op1, op2')
 <h2 id="related-6"><a class="header" href="#related-6">Related</a></h2>
 <p><a href="CodevilleMerge.html">CodevilleMerge</a></p>
 <hr />
-<p><a href="CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a> <a href="CategoryScalarMerge.html">CategoryScalarMerge</a></p>
-<hr />
-<h1 id="emails-relating-to-markmerge"><a class="header" href="#emails-relating-to-markmerge">Emails relating to MarkMerge</a></h1>
+<h1 id="writeups-of-mark-merge"><a class="header" href="#writeups-of-mark-merge">Writeups of Mark Merge</a></h1>
 <blockquote>
-<p><em>Editor's note.</em> The <code>gmane.org</code> links above do not work reliably.
-The following text is the majority of the content of <a href="https://wiki.monotone.ca/MarkMerge/">the Monotone
-Wiki MarkMerge page</a> (as of 14
-October 2021), and includes the text of the messages referred to
-above.</p>
+<p><em>Editor's note.</em> The <code>gmane.org</code> links to the discussions of Mark
+Merge from the original wiki content do not work reliably. The
+following texts were copied from the content of <a href="https://wiki.monotone.ca/MarkMerge/">the Monotone Wiki
+MarkMerge page</a> (as of 14
+October 2021), and include the text of the messages originally
+referred to.</p>
 </blockquote>
 <h2 id="span-idunique-mark-mergespan-initial-mark-merge-proposal"><a class="header" href="#span-idunique-mark-mergespan-initial-mark-merge-proposal"><span id="unique-mark-merge"></span> Initial mark-merge proposal</a></h2>
 <blockquote>
 <p><em>Editor's note.</em> This is the text of the
 <code>gmane.comp.version-control.monotone.devel</code> message numbered 4297
 referred to above.</p>
+<p>Replies and further discussion can be found <a href="https://lists.nongnu.org/archive/html/monotone-devel/2005-08/msg00037.html">here</a> (at the time
+of writing).</p>
 </blockquote>
 <pre><code>From: Nathaniel Smith &lt;njs &lt;at&gt; pobox.com&gt;
 Subject: [cdv-devel] more merging stuff (bit long...)
@@ -1130,6 +1131,8 @@ must debate everything, and there would be no end to the discussion).
 <p><em>Editor's note.</em> This is the text of the
 <code>gmane.comp.version-control.revctrl</code> message numbered 93 referred to
 above.</p>
+<p>Replies and further discussion can be found <a href="https://lists.nongnu.org/archive/html/monotone-devel/2005-08/msg00264.html">here</a> (at the time
+of writing).</p>
 </blockquote>
 <pre><code>From: Nathaniel Smith &lt;njs@...&gt;
 Subject: improvements to *-merge
@@ -1451,6 +1454,7 @@ beer.&quot;
 <p><em>Editor's note.</em> This is the text of the
 <code>gmane.comp.version-control.revctrl</code> message numbered 92 referred to
 above.</p>
+<p>Context can be found <a href="https://mail.gnu.org/archive/html/monotone-devel/2005-08/msg00236.html">here</a> (at the time of writing).</p>
 </blockquote>
 <pre><code>From: Timothy Brownawell &lt;tbrownaw@...&gt;
 Subject: more on &quot;mark-merge&quot;
@@ -1559,6 +1563,8 @@ This (&quot;the other funky case&quot;) is handled by (2), and resolves cleanly.
 
 Tim
 </code></pre>
+<hr />
+<p><a href="CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a> <a href="CategoryScalarMerge.html">CategoryScalarMerge</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="precise-codeville-merge"><a class="header" href="#precise-codeville-merge">Precise Codeville Merge</a></h1>
 <p>PreciseCodevilleMerge is the combination of a weave-based merge with a resolution algorithm based on unique lines, plus <a href="Convergence.html">Convergence</a>, <a href="GenerationCounting.html">GenerationCounting</a>, <a href="LivingLinesFirst.html">LivingLinesFirst</a>, and <a href="EdgeVersioning.html">EdgeVersioning</a>. If you wish to answer the existential question of whether a particular piece of merge code is a version of <a href="PreciseCodevilleMerge.html">PreciseCodevilleMerge</a>, go over that checklist of features and if they're all there then it qualifies.</p>
 <p><a href="ImplicitUndo.html">ImplicitUndo</a> isn't included because it conflicts with other features and has internal inconsistencies. Dynamic line ordering isn't included because of technical difficulties, although it's hoped that eventually somebody will figure out how to implement a weave which does partial ordering.</p>
