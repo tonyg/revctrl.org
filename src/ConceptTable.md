@@ -2,7 +2,8 @@
 
 The revctrl Rosetta stone.  Table of concepts available to revision control systems and (if available) the corresponding commands.
 
-Please add your own.  Note: I'm using GUI mode to edit this table
+<!-- Please add your own.  Note: I'm using GUI mode to edit this table -->
+
 | concept | bzr | darcs | hg | svn |
 | ----- | ----- | ----- | ----- | ----- |
 | branch | branch | get | clone | copy |

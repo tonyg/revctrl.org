@@ -24,6 +24,7 @@
     - [StaircaseMerge](StaircaseMerge.md)
  - [Uncategorised pages](uncategorised.md)
     - [AmbiguousCleanMerge](AmbiguousCleanMerge.md)
+    - [CategoryCategory](CategoryCategory.md)
     - [Convergence](Convergence.md)
     - [EdgeVersioning](EdgeVersioning.md)
     - [GenerationCounting](GenerationCounting.md)

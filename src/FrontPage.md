@@ -2,8 +2,6 @@
 
 For discussion, whiteboarding and archival of knowledge of revision control systems.
 
-Note that you must be logged in to edit pages.
-
 ## Places to go
 
   * [Glossary](Glossary.md)
