@@ -24,23 +24,23 @@ Here, then, is a partial list of (presumed) authors. If anyone has
 more information about authorship of the content here, please [contact
 me](mailto:tonyg@leastfixedpoint.com):
 
-> AaronBentley,
-> AllenSmith,
-> BramCohen,
-> BryanOSullivan,
-> DavidCary,
-> EricKow,
-> FrancisJackson,
-> GlenWhitney,
-> KenSchalk,
-> ManpreetSingh,
-> MiguelProvencio,
-> NathanielSmith,
-> PetrBaudis,
-> RitaGolubeva,
-> RossCohen,
-> WJustin, and
-> WillUther.
+> Petr Baudiš,
+> Aaron Bentley,
+> David Cary,
+> Bram Cohen,
+> Ross Cohen,
+> Rita Golubeva,
+> Francis Jackson,
+> W. Justin,
+> Eric Kow,
+> Bryan O'Sullivan,
+> Miguel Provencio,
+> Ken Schalk,
+> Manpreet Singh,
+> Allen Smith,
+> Nathaniel J. Smith,
+> Will Uther, and
+> Glen Whitney.
 
 ## Table of Contents
 
