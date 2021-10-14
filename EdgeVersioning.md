@@ -6,7 +6,7 @@ BramCohen said:
 
 Or, to put it graphically:
 
-attachment:edge-versioning.png
+![Edge versioning DAG illustration](attachments/edge-versioning.png)
 
 In this case, the user has indicated that C beats A and that C beats B, but never that C beats AB, so presenting the conflict "AB" vs. "C" makes more sense than silently picking C.
 
