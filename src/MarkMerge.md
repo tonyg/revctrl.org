@@ -48,9 +48,9 @@ The most interesting things about *-merge are:
 
 ## <span id="unique-mark-merge"></span> Initial mark-merge proposal
 
-This appears to be the text of the
-`gmane.comp.version-control.monotone.devel` message numbered 4297
-referred to above.
+> *Editor's note.* This appears to be the text of the
+> `gmane.comp.version-control.monotone.devel` message numbered 4297
+> referred to above.
 
     From: Nathaniel Smith <njs <at> pobox.com>
     Subject: [cdv-devel] more merging stuff (bit long...)
@@ -424,9 +424,9 @@ referred to above.
 
 ## <span id="multi-mark-merge"></span> Improvements to *-merge
 
-This appears to be the text of the
-`gmane.comp.version-control.revctrl` message numbered 93 referred to
-above.
+> *Editor's note.* This appears to be the text of the
+> `gmane.comp.version-control.revctrl` message numbered 93 referred to
+> above.
 
     From: Nathaniel Smith <njs@...>
     Subject: improvements to *-merge
@@ -745,9 +745,9 @@ above.
 
 ## <span id="more-on-mark-merge"></span> More on "mark-merge"
 
-This appears to be the text of the
-`gmane.comp.version-control.revctrl` message numbered 92 referred to
-above.
+> *Editor's note.* This appears to be the text of the
+> `gmane.comp.version-control.revctrl` message numbered 92 referred to
+> above.
 
     From: Timothy Brownawell <tbrownaw@...>
     Subject: more on "mark-merge"
