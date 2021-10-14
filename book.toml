@@ -5,6 +5,9 @@ language = "en"
 multilingual = false
 src = "src"
 
+[build]
+build-dir = "docs"
+
 [output.html]
 git-repository-url = "https://github.com/tonyg/revctrl.org/"
 site-url = "https://tonyg.github.io/revctrl.org/"
