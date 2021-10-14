@@ -1,0 +1,6 @@
+[book]
+title = "Revision Control"
+editor = "Tony Garnock-Jones"
+language = "en"
+multilingual = false
+src = "src"

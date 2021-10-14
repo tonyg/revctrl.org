@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Glossary - Revision Control</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="FrontPage.html"><strong aria-hidden="true">2.</strong> FrontPage</a></li><li class="chapter-item expanded "><a href="Glossary.html" class="active"><strong aria-hidden="true">3.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="ConceptTable.html"><strong aria-hidden="true">4.</strong> ConceptTable</a></li><li class="chapter-item expanded "><a href="CategoryMergeAlgorithm.html"><strong aria-hidden="true">5.</strong> CategoryMergeAlgorithm</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="BKMerge.html"><strong aria-hidden="true">5.1.</strong> BKMerge</a></li><li class="chapter-item expanded "><a href="CodevilleMerge.html"><strong aria-hidden="true">5.2.</strong> CodevilleMerge</a></li><li class="chapter-item expanded "><a href="DarcsMerge.html"><strong aria-hidden="true">5.3.</strong> DarcsMerge</a></li><li class="chapter-item expanded "><a href="DieDieDieMerge.html"><strong aria-hidden="true">5.4.</strong> DieDieDieMerge</a></li><li class="chapter-item expanded "><a href="OperationalTransformation.html"><strong aria-hidden="true">5.5.</strong> OperationalTransformation</a></li><li class="chapter-item expanded "><a href="ScalarMerge.html"><strong aria-hidden="true">5.6.</strong> ScalarMerge</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ConvergentScalarMerge.html"><strong aria-hidden="true">5.6.1.</strong> ConvergentScalarMerge</a></li><li class="chapter-item expanded "><a href="MarkMerge.html"><strong aria-hidden="true">5.6.2.</strong> MarkMerge</a></li><li class="chapter-item expanded "><a href="PreciseCodevilleMerge.html"><strong aria-hidden="true">5.6.3.</strong> PreciseCodevilleMerge</a></li></ol></li><li class="chapter-item expanded "><a href="SimpleWeaveMerge.html"><strong aria-hidden="true">5.7.</strong> SimpleWeaveMerge</a></li><li class="chapter-item expanded "><a href="ThreeWayMerge.html"><strong aria-hidden="true">5.8.</strong> ThreeWayMerge</a></li></ol></li><li class="chapter-item expanded "><a href="CategoryMergeExample.html"><strong aria-hidden="true">6.</strong> CategoryMergeExample</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="AccidentalCleanMerge.html"><strong aria-hidden="true">6.1.</strong> AccidentalCleanMerge</a></li><li class="chapter-item expanded "><a href="CrissCrossMerge.html"><strong aria-hidden="true">6.2.</strong> CrissCrossMerge</a></li><li class="chapter-item expanded "><a href="ImplicitUndo.html"><strong aria-hidden="true">6.3.</strong> ImplicitUndo</a></li><li class="chapter-item expanded "><a href="Rollback.html"><strong aria-hidden="true">6.4.</strong> Rollback</a></li><li class="chapter-item expanded "><a href="StaircaseMerge.html"><strong aria-hidden="true">6.5.</strong> StaircaseMerge</a></li></ol></li><li class="chapter-item expanded "><a href="uncategorised.html"><strong aria-hidden="true">7.</strong> Uncategorised pages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="AmbiguousCleanMerge.html"><strong aria-hidden="true">7.1.</strong> AmbiguousCleanMerge</a></li><li class="chapter-item expanded "><a href="Convergence.html"><strong aria-hidden="true">7.2.</strong> Convergence</a></li><li class="chapter-item expanded "><a href="EdgeVersioning.html"><strong aria-hidden="true">7.3.</strong> EdgeVersioning</a></li><li class="chapter-item expanded "><a href="GenerationCounting.html"><strong aria-hidden="true">7.4.</strong> GenerationCounting</a></li><li class="chapter-item expanded "><a href="LivingLinesFirst.html"><strong aria-hidden="true">7.5.</strong> LivingLinesFirst</a></li><li class="chapter-item expanded "><a href="Merging.html"><strong aria-hidden="true">7.6.</strong> Merging</a></li><li class="chapter-item expanded "><a href="NeutralInterface.html"><strong aria-hidden="true">7.7.</strong> NeutralInterface</a></li><li class="chapter-item expanded "><a href="Renaming.html"><strong aria-hidden="true">7.8.</strong> Renaming</a></li><li class="chapter-item expanded "><a href="Resolution.html"><strong aria-hidden="true">7.9.</strong> Resolution</a></li><li class="chapter-item expanded "><a href="RevctrlTalks.html"><strong aria-hidden="true">7.10.</strong> RevctrlTalks</a></li><li class="chapter-item expanded "><a href="StarMerge.html"><strong aria-hidden="true">7.11.</strong> StarMerge</a></li><li class="chapter-item expanded "><a href="ThreeWayTextMergeImplementation.html"><strong aria-hidden="true">7.12.</strong> ThreeWayTextMergeImplementation</a></li><li class="chapter-item expanded "><a href="UserModel.html"><strong aria-hidden="true">7.13.</strong> UserModel</a></li><li class="chapter-item expanded "><a href="Weave.html"><strong aria-hidden="true">7.14.</strong> Weave</a></li><li class="chapter-item expanded "><a href="WikiNode.html"><strong aria-hidden="true">7.15.</strong> WikiNode</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Revision Control</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="glossary"><a class="header" href="#glossary">Glossary</a></h1>
+<p><span id="accidentalcleanmerge"></span>
+<strong>accidental clean merge</strong>:: when two people make &quot;the same&quot; change, and these are then merged.  Example:</p>
+<pre><code>    a
+   / \
+  b   b
+</code></pre>
+<p>See <a href="AccidentalCleanMerge.html">AccidentalCleanMerge</a>.</p>
+<p><span id="aliasing"></span>
+<strong>aliasing</strong>:: aliasing is taking two logically distinct entities and causing them to be treated as equivalent, at least in certain contexts.  Aliasing is similar to suturing, but the assertion is weaker (<code>x == y</code>, not <code>x is y</code>), and is trivial to undo.</p>
+<p><span id="ambiguouscleanmerge"></span>
+<strong>ambiguous clean merge</strong>:: See <a href="AmbiguousCleanMerge.html">AmbiguousCleanMerge</a>.</p>
+<p><span id="branch"></span>
+<strong>branch</strong>:: A named line of development.  May be viewed either as a sequence of <a href="#changeset">changesets</a> or as a sequence of <a href="#snapshot">snapshots</a> (but see the warning about the non-duality of these representations under <a href="#snapshot">snapshot</a>).  In the context of a <a href="#repository">repository</a>, a branch may be viewed as a subgraph of the repository <a href="#DAG">DAG</a> with two distinguished vertices; the branch point where it diverges from other lines of development, and a <a href="#tip">tip</a>. Often branches are tied to a <a href="#repository">repository</a> in a many-to-one relationship. But other implementations are possible, for instance, <a href="Monotone.html">Monotone</a> supports fully distributed branches which do not exist exclusively on top of any particular <a href="#repository">repository</a>, while other systems such as <a href="Darcs.html">Darcs</a> and <a href="Bzr.html">Bzr</a> tie branches to repositories in a one-to-one fashion.</p>
+<p><span id="changeset"></span>
+<strong>changeset</strong>:: A collection of <a href="#delta">deltas</a> to a set of files, considered as a unit and (in modern VCSes) with metadata including a change comment and a timestamp attached.  To fully capture the history of a line of development, changesets must also record file additions (which may be modeled as a delta from an empty file), file deletions, and file renames.  See also <a href="#weave">weave</a> and <a href="#snapshot">snapshot</a>.</p>
+<p><span id="checkin"></span>
+<strong>checkin</strong>:: Synonym for <a href="#commit">commit</a> used in older VCSes (SCCS, RCS, CVS). This is why &quot;ci&quot; sometime appears as an alias for the commit operation in the command-line interfaces of VCSes that emulate CVS/Subversions's UI.</p>
+<p><span id="checkout"></span>
+<strong>checkout</strong>:: The operation of getting a <a href="#workspace">workspace</a> copy of some file(s) from a repository.  Mainly used in first- and second-generation VCSes with <a href="#locking">locking</a>.  Recorded here because it's the reason &quot;co&quot; shows up in some command-line interfaces with a meaning different from <a href="#commit">commit</a>.</p>
+<p><span id="commit"></span>
+<strong>commit</strong>:: Modern term for pushing changes from a <a href="#workspace">workspace</a> into a <a href="#repository">repository</a>.  Older VCSes tended to use <a href="#checkin">checkin</a>.</p>
+<p><span id="contentmerger"></span>
+<strong>content merger</strong>:: See <a href="#TextualMerger">textual merger</a></p>
+<p><span id="convergence"></span>
+<strong>convergence</strong>:: The idea that if the &quot;same change&quot; is made independently at different places in a graph, then a merge algorithm should treat the two changes as if they were a single change. Example:</p>
+<pre><code>    a
+   / \
+  b   b
+  |
+  c
+</code></pre>
+<p>a convergent merge algorithm will make this a clean merge to c. See <a href="Convergence.html">Convergence</a>.</p>
+<p><span id="convergentscalarmerge"></span>
+<strong>convergent scalar merge</strong>:: A scalar merge algorithm related to <a href="PreciseCodevilleMerge.html">PreciseCodevilleMerge</a>. See <a href="ConvergentScalarMerge.html">ConvergentScalarMerge</a>.</p>
+<p><span id="DAG"></span>
+<strong>Directed Acyclic Graph (DAG)</strong>:: A diagram (graph) made up of points connected by arrows (directed), where no arrow can lead back to an earlier point; in other words, the arrows cannot form a loop (acyclic).  <a href="#revision">Revisions</a> in a VCS may be viewed as nodes in a DAG and the <a href="#changeset">changesets</a> connecting them as links expressing the &quot;parent-of&quot; relationship. <a href="#tip">Tip</a> revisions will have valence 1, most ordinary revisions will have valence 2, and revisions representing a branch point or merge will have valence 3.</p>
+<p><span id="delta"></span>
+<strong>delta</strong>:: A description of changes between two versions of a file, usually as a sequence of line-oriented additions and deletions and replacements.  Such line-oriented deltas are often represented in a standard notation derived from the output format of the Unix <code>diff(1)</code> command.  There is a well-defined concept of deltas between binary files as well, but no standard notation for expressiong them.</p>
+<p><span id="firstgeneration"></span>
+<strong>first-generation</strong>:: See <a href="#vcsgenerations">generations</a>.</p>
+<p><span id="implicitundo"></span>
+<strong>implicit undo</strong>:: See <a href="ImplicitUndo.html">ImplicitUndo</a>.</p>
+<p><span id="locking"></span>
+<strong>locking</strong>:: Early VCSes (SCCS, RCS) avoided the merging problem by awarding developers temporary but exclusive write locks on files. This approach did not scale well and was abandoned in second- and third-generation VCSes.</p>
+<p><span id="markmerge"></span>
+*<em>mark-merge, <em>-merge</em></em>:: A family of scalar merge algorithms.  See <a href="MarkMerge.html">MarkMerge</a>.</p>
+<p><span id="pcdv"></span>
+<strong>pcdv</strong>:: see <a href="#precisecodevillemerge">precise codeville merge</a></p>
+<p><span id="precisecodevillemerge"></span>
+<strong>precise codeville merge</strong>:: A textual merge algorithm. See <a href="PreciseCodevilleMerge.html">PreciseCodevilleMerge</a>.</p>
+<p><span id="rename"></span>
+<strong>rename</strong>:: the option where a file or directory is either moved to a new directory or has its name changed. It is sometimes useful to distinguish  between moves (which put a file into a different directory) and renames (which change only the file's name, not its location).  see <a href="Renaming.html">Renaming</a></p>
+<p><span id="repository"></span>
+<strong>repository</strong>:: Physical storage of a full or partial history of changes or snapshots.</p>
+<p><span id="resolution"></span>
+<strong>resolution</strong>:: The step where a system takes a user-edited file and heuristically determines what editing the user implicitly did. Not always 1 distinct step nor done at commit time.  See <a href="Resolution.html">Resolution</a>.</p>
+<p><span id="revision"></span>
+<strong>revision</strong>:: A particular state (version) of files and directories which is stored in SCM.</p>
+<p><span id="rollback"></span>
+<strong>rollback</strong>:: see <a href="Rollback.html">Rollback</a></p>
+<p><span id="scalarmerger"></span>
+<strong>scalar merger</strong>:: A merge algorithm that works on a single atomic value.  An example is <a href="#markmerge">mark-merge</a>.  Concept explained <a href="http://thread.gmane.org/gmane.comp.version-control.monotone.devel/4297">here</a>.</p>
+<p><span id="secondgeneration"></span>
+<strong>second-generation</strong>:: See <a href="#vcsgenerations">generations</a>.</p>
+<p><span id="snapshot"></span>
+<strong>snapshot</strong>:: A collection of files and directories considered as a timestamped unit, possibly with metadata such as a revision comment attached.  The revision history of a project may be considered either as a sequence of snapshots or as a sequence of the <a href="#changeset">changesets</a> connecting them.  However, these representations are not perfectly dual.  Notably, moving from a changeset-sequence representation to a snapshot-sequence representation loses information about file and directory add, delete, and rename operations. While additions and deletions can be reliably inferred by comparing snapshots, renames cannot be; this has some subtle and occasionally nasty ripple effects.</p>
+<p><span id="staircasemerge"></span>
+<strong>staircase merge</strong>:: A simple merge example:</p>
+<pre><code>    a
+   / \
+  b   c
+   \ / \
+    c   d
+</code></pre>
+<p>A merge algorithm which supports <a href="StaircaseMerge.html">StaircaseMerge</a> will cleanly merge this to d.</p>
+<p><span id="suturing"></span>
+<strong>suturing</strong>:: suturing is taking two logically distinct entities and merging them into a single logical entity.  See <a href="Suturing.html">Suturing</a>.  Compare with <a href="#aliasing">aliasing</a>.</p>
+<p><span id="textualmerger"></span>
+<strong>textual merger</strong>:: a merge algorithm that operates on text files (as opposed to, for instance a <a href="#treemerger">tree merger</a> or <a href="#scalarmerger">scalar merger</a>)</p>
+<p><span id="thirdgeneration"></span>
+<strong>third-generation</strong>:: See <a href="#vcsgenerations">generations</a>. Also, informally, 3G.</p>
+<p><span id="threewaymerge"></span>
+<strong>three way merge</strong>:: a merge algorithm which operates on three versions of a text file. See <a href="ThreeWayMerge.html">ThreeWayMerge</a>.</p>
+<p><span id="treemerger"></span>
+<strong>tree merger</strong>:: a merge algorithm that operates on trees of files (generally handling things like file/directory add/remove/rename).</p>
+<p><span id="vcs"></span>
+<strong>VCS</strong>:: Version-Control System. The most common of a handful of competing acronyms for the software this site is about.  Others include SCM for Source Code Manager and (rarely) SCCS for Source Code Control System.  The latter is also the proper name of the original VCS.</p>
+<p><span id="vcsgenerations"></span>
+<strong>VCS generations</strong>:: There have, broadly speaking, been three generations of VCSes.  The first was exemplified by SCCS and RCS -- centralized and <a href="#locking">locking</a>, without support for development distributed across a network.  The second generation was exemplified by CVS and Subversion, which introduced merging and added support for distributed development but retained the centralized model based on one master repository per project.  Third-generation VCSes support a fully decentralized model; master repositories may exist as a matter of per-project policy, but the tools are all designed to support history merges between peer repositories.</p>
+<p><span id="weave"></span>
+<strong>weave</strong>:: A data structure representing a full ordering of lines for a particular file along with information about which lines exist for each historical revision. <a href="SCCS.html">SCCS</a> is the classic example. A number of merge algorithms are based on weaves. See <a href="Weave.html">Weave</a>, <a href="WeaveMerge.html">WeaveMerge</a>.  One of the fundamental design desisions in a VCS is whether change history will be represented as a weave or a sequence of <a href="#delta">deltas</a>.</p>
+<p><span id="workspace"></span>
+<strong>workspace</strong>:: An editable copy of the state of a repository at a particular revision (or merge of several revisions) where a user can resolve conflicts and make new changes, then record them as a new revision. Also &quot;working copy&quot;.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="FrontPage.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="ConceptTable.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="FrontPage.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="ConceptTable.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

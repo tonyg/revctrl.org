@@ -1,0 +1,1779 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Revision Control</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="FrontPage.html"><strong aria-hidden="true">2.</strong> FrontPage</a></li><li class="chapter-item expanded "><a href="Glossary.html"><strong aria-hidden="true">3.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="ConceptTable.html"><strong aria-hidden="true">4.</strong> ConceptTable</a></li><li class="chapter-item expanded "><a href="CategoryMergeAlgorithm.html"><strong aria-hidden="true">5.</strong> CategoryMergeAlgorithm</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="BKMerge.html"><strong aria-hidden="true">5.1.</strong> BKMerge</a></li><li class="chapter-item expanded "><a href="CodevilleMerge.html"><strong aria-hidden="true">5.2.</strong> CodevilleMerge</a></li><li class="chapter-item expanded "><a href="DarcsMerge.html"><strong aria-hidden="true">5.3.</strong> DarcsMerge</a></li><li class="chapter-item expanded "><a href="DieDieDieMerge.html"><strong aria-hidden="true">5.4.</strong> DieDieDieMerge</a></li><li class="chapter-item expanded "><a href="OperationalTransformation.html"><strong aria-hidden="true">5.5.</strong> OperationalTransformation</a></li><li class="chapter-item expanded "><a href="ScalarMerge.html"><strong aria-hidden="true">5.6.</strong> ScalarMerge</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ConvergentScalarMerge.html"><strong aria-hidden="true">5.6.1.</strong> ConvergentScalarMerge</a></li><li class="chapter-item expanded "><a href="MarkMerge.html"><strong aria-hidden="true">5.6.2.</strong> MarkMerge</a></li><li class="chapter-item expanded "><a href="PreciseCodevilleMerge.html"><strong aria-hidden="true">5.6.3.</strong> PreciseCodevilleMerge</a></li></ol></li><li class="chapter-item expanded "><a href="SimpleWeaveMerge.html"><strong aria-hidden="true">5.7.</strong> SimpleWeaveMerge</a></li><li class="chapter-item expanded "><a href="ThreeWayMerge.html"><strong aria-hidden="true">5.8.</strong> ThreeWayMerge</a></li></ol></li><li class="chapter-item expanded "><a href="CategoryMergeExample.html"><strong aria-hidden="true">6.</strong> CategoryMergeExample</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="AccidentalCleanMerge.html"><strong aria-hidden="true">6.1.</strong> AccidentalCleanMerge</a></li><li class="chapter-item expanded "><a href="CrissCrossMerge.html"><strong aria-hidden="true">6.2.</strong> CrissCrossMerge</a></li><li class="chapter-item expanded "><a href="ImplicitUndo.html"><strong aria-hidden="true">6.3.</strong> ImplicitUndo</a></li><li class="chapter-item expanded "><a href="Rollback.html"><strong aria-hidden="true">6.4.</strong> Rollback</a></li><li class="chapter-item expanded "><a href="StaircaseMerge.html"><strong aria-hidden="true">6.5.</strong> StaircaseMerge</a></li></ol></li><li class="chapter-item expanded "><a href="uncategorised.html"><strong aria-hidden="true">7.</strong> Uncategorised pages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="AmbiguousCleanMerge.html"><strong aria-hidden="true">7.1.</strong> AmbiguousCleanMerge</a></li><li class="chapter-item expanded "><a href="Convergence.html"><strong aria-hidden="true">7.2.</strong> Convergence</a></li><li class="chapter-item expanded "><a href="EdgeVersioning.html"><strong aria-hidden="true">7.3.</strong> EdgeVersioning</a></li><li class="chapter-item expanded "><a href="GenerationCounting.html"><strong aria-hidden="true">7.4.</strong> GenerationCounting</a></li><li class="chapter-item expanded "><a href="LivingLinesFirst.html"><strong aria-hidden="true">7.5.</strong> LivingLinesFirst</a></li><li class="chapter-item expanded "><a href="Merging.html"><strong aria-hidden="true">7.6.</strong> Merging</a></li><li class="chapter-item expanded "><a href="NeutralInterface.html"><strong aria-hidden="true">7.7.</strong> NeutralInterface</a></li><li class="chapter-item expanded "><a href="Renaming.html"><strong aria-hidden="true">7.8.</strong> Renaming</a></li><li class="chapter-item expanded "><a href="Resolution.html"><strong aria-hidden="true">7.9.</strong> Resolution</a></li><li class="chapter-item expanded "><a href="RevctrlTalks.html"><strong aria-hidden="true">7.10.</strong> RevctrlTalks</a></li><li class="chapter-item expanded "><a href="StarMerge.html"><strong aria-hidden="true">7.11.</strong> StarMerge</a></li><li class="chapter-item expanded "><a href="ThreeWayTextMergeImplementation.html"><strong aria-hidden="true">7.12.</strong> ThreeWayTextMergeImplementation</a></li><li class="chapter-item expanded "><a href="UserModel.html"><strong aria-hidden="true">7.13.</strong> UserModel</a></li><li class="chapter-item expanded "><a href="Weave.html"><strong aria-hidden="true">7.14.</strong> Weave</a></li><li class="chapter-item expanded "><a href="WikiNode.html"><strong aria-hidden="true">7.15.</strong> WikiNode</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Revision Control</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="a-partial-extract-of-revctrlorg"><a class="header" href="#a-partial-extract-of-revctrlorg">A Partial Extract of revctrl.org</a></h1>
+<p>In recent years the <code>revctrl.org</code> wiki has fallen victim to spam,
+making it hard to find the valuable content that still resides there.
+This is an attempt at extracting what remains of value.</p>
+<p>Produced partly by hand, partly using the <code>scrape/pull</code> script, then
+removed obvious spam links from the files in <code>output-raw</code> and
+converted to Markdown.</p>
+<p>The page contents were downloaded on the 12th July 2012.</p>
+<ul>
+<li>scraped, archived, and edited by Tony Garnock-Jones <a href="mailto:tonyg@leastfixedpoint.com">tonyg@leastfixedpoint.com</a></li>
+<li>spam cleanup and improvements to formatting by Michael Haggerty <a href="mailto:mhagger@alum.mit.edu">mhagger@alum.mit.edu</a></li>
+</ul>
+<h2 id="authors"><a class="header" href="#authors">Authors</a></h2>
+<p>Unfortunately, all the edit history of the wiki was lost, and
+individual pages do not have clear authorship. All we have is a record
+of the wikipages named after some of the people who made contributions
+to the site.</p>
+<p>Here, then, is a partial list of (presumed) authors. If anyone has
+more information about authorship of the content here, please <a href="mailto:tonyg@leastfixedpoint.com">contact
+me</a>:</p>
+<blockquote>
+<p>AaronBentley,
+AllenSmith,
+BramCohen,
+BryanOSullivan,
+DavidCary,
+EricKow,
+FrancisJackson,
+GlenWhitney,
+KenSchalk,
+ManpreetSingh,
+MiguelProvencio,
+NathanielSmith,
+PetrBaudis,
+RitaGolubeva,
+RossCohen,
+WJustin, and
+WillUther.</p>
+</blockquote>
+<h2 id="table-of-contents"><a class="header" href="#table-of-contents">Table of Contents</a></h2>
+<p>The main entry point to the site:</p>
+<ul>
+<li><a href="src/FrontPage.html">FrontPage</a></li>
+</ul>
+<p>Pages acting as <a href="src/CategoryCategory.html">Category</a> indexes:</p>
+<ul>
+<li><a href="src/CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a></li>
+<li><a href="src/CategoryMergeExample.html">CategoryMergeExample</a></li>
+<li><a href="src/ScalarMerge.html">ScalarMerge</a></li>
+</ul>
+<h3 id="all-available-pages"><a class="header" href="#all-available-pages">All available pages</a></h3>
+<p>Unfortunately, slightly fewer than half of the pages that used to be
+on the site could be rescued. (See <a href="scrape/rejects">here</a> for those
+whose titles we know but whose contents were lost.)</p>
+<ul>
+<li><a href="src/AccidentalCleanMerge.html">AccidentalCleanMerge</a></li>
+<li><a href="src/AmbiguousCleanMerge.html">AmbiguousCleanMerge</a></li>
+<li><a href="src/BKMerge.html">BKMerge</a></li>
+<li><a href="src/CategoryCategory.html">CategoryCategory</a></li>
+<li><a href="src/CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a></li>
+<li><a href="src/CategoryMergeExample.html">CategoryMergeExample</a></li>
+<li><a href="src/CodevilleMerge.html">CodevilleMerge</a></li>
+<li><a href="src/ConceptTable.html">ConceptTable</a></li>
+<li><a href="src/Convergence.html">Convergence</a></li>
+<li><a href="src/ConvergentScalarMerge.html">ConvergentScalarMerge</a></li>
+<li><a href="src/CrissCrossMerge.html">CrissCrossMerge</a></li>
+<li><a href="src/DarcsMerge.html">DarcsMerge</a></li>
+<li><a href="src/DieDieDieMerge.html">DieDieDieMerge</a></li>
+<li><a href="src/EdgeVersioning.html">EdgeVersioning</a></li>
+<li><a href="src/FrontPage.html">FrontPage</a></li>
+<li><a href="src/GenerationCounting.html">GenerationCounting</a></li>
+<li><a href="src/Glossary.html">Glossary</a></li>
+<li><a href="src/ImplicitUndo.html">ImplicitUndo</a></li>
+<li><a href="src/LivingLinesFirst.html">LivingLinesFirst</a></li>
+<li><a href="src/MarkMerge.html">MarkMerge</a></li>
+<li><a href="src/Merging.html">Merging</a></li>
+<li><a href="src/NeutralInterface.html">NeutralInterface</a></li>
+<li><a href="src/OperationalTransformation.html">OperationalTransformation</a></li>
+<li><a href="src/PreciseCodevilleMerge.html">PreciseCodevilleMerge</a></li>
+<li><a href="src/Renaming.html">Renaming</a></li>
+<li><a href="src/Resolution.html">Resolution</a></li>
+<li><a href="src/RevctrlTalks.html">RevctrlTalks</a></li>
+<li><a href="src/Rollback.html">Rollback</a></li>
+<li><a href="src/ScalarMerge.html">ScalarMerge</a></li>
+<li><a href="src/SimpleWeaveMerge.html">SimpleWeaveMerge</a></li>
+<li><a href="src/StaircaseMerge.html">StaircaseMerge</a></li>
+<li><a href="src/StarMerge.html">StarMerge</a></li>
+<li><a href="src/ThreeWayMerge.html">ThreeWayMerge</a></li>
+<li><a href="src/ThreeWayTextMergeImplementation.html">ThreeWayTextMergeImplementation</a></li>
+<li><a href="src/UserModel.html">UserModel</a></li>
+<li><a href="src/Weave.html">Weave</a></li>
+<li><a href="src/WikiNode.html">WikiNode</a></li>
+</ul>
+<h3 id="attachments"><a class="header" href="#attachments">Attachments</a></h3>
+<p>In addition, a handful of attachments were rescued:</p>
+<ul>
+<li><a href="src/attachments/ConvergentScalarMerge.py">ConvergentScalarMerge.py</a></li>
+<li><a href="src/attachments/edgemerge.py">edgemerge.py</a></li>
+<li><a href="src/attachments/edge-versioning.png">edge-versioning.png</a></li>
+<li><a href="src/attachments/nofrillsprecisemerge.py">nofrillsprecisemerge.py</a></li>
+<li><a href="src/attachments/precisecodevillemerge.py">precisecodevillemerge.py</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="revctrl-wiki"><a class="header" href="#revctrl-wiki">Revctrl Wiki</a></h1>
+<p>For discussion, whiteboarding and archival of knowledge of revision control systems.</p>
+<p>Note that you must be logged in to edit pages.</p>
+<h2 id="places-to-go"><a class="header" href="#places-to-go">Places to go</a></h2>
+<ul>
+<li>
+<p><a href="Glossary.html">Glossary</a></p>
+</li>
+<li>
+<p><a href="CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a></p>
+</li>
+<li>
+<p><a href="CategoryMergeExample.html">CategoryMergeExample</a></p>
+</li>
+<li>
+<p><a href="ConceptTable.html">ConceptTable</a></p>
+</li>
+<li>
+<p><a href="RevctrlTalks.html">RevctrlTalks</a></p>
+</li>
+<li>
+<p><code>#revctrl</code> on irc.freenode.net</p>
+</li>
+</ul>
+<h2 id="resources"><a class="header" href="#resources">Resources</a></h2>
+<ul>
+<li><a href="http://lists.zooko.com/mailman/listinfo/revctrl">The Revctrl Mailing List</a></li>
+<li><a href="http://www.zooko.com/revision_control_quick_ref.html">Zooko's quick reference</a></li>
+<li><a href="http://better-scm.berlios.de/">the &quot;Better SCM Initiative&quot;: another overview of systems</a></li>
+<li><a href="http://planet.revisioncontrol.net">RCS Planet - Blog Collection of RCS developers</a></li>
+<li><a href="http://wiki.darcs.net/Theory/Bibliography">Revision Control Bibliography</a> for more academically leaning publications on revision control</li>
+</ul>
+<p><em>It would be nice to have a summary of the top N distributed version control systems, with some tips to help a programmer choose the best one for her situation. (<a href="http://en.wikipedia.org/wiki/List_of_revision_control_software#Software_using_a_distributed_approach">Wikipedia lists over a dozen distributed control systems</a>). Perhaps use http://lwn.net/Articles/151624/ as a starting point for a quick paraphrase and summary, then fill in other systems and details as we think of them? What to call that summary -- <a href="PickingYourVersionControlSystem.html">PickingYourVersionControlSystem</a>?</em></p>
+<p>Is it possible to make a <a href="NeutralInterface.html">NeutralInterface</a> ?</p>
+<h2 id="links"><a class="header" href="#links">Links</a></h2>
+<ul>
+<li><a href="http://lists.madduck.net/mailman/listinfo/vcs-home">a mailing list</a> and <a href="http://www.theficks.name/VCS-Home/HomePage">a wiki</a> for storing <code>$HOME</code> in VCS.</li>
+<li><a href="http://lists.madduck.net/mailman/listinfo/vcs-pkg">a mailing list</a> about maintaining distro packages in VCS.</li>
+<li><a href="http://swik.net/">SWiK: the Open Software wiki</a> has a brief overview of <a href="http://swik.net/SCM">SCM</a> in general, <a href="http://swik.net/mercurial">Mercurial</a>, <a href="http://swik.net/Subversion">Subversion (SVN)</a>, <a href="http://swik.net/tortoiseSVN">the TortoiseSVN Windows Shell Extension</a>,<a href="http://swik.net/javasvn">JavaSVN</a>, etc. </li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="glossary"><a class="header" href="#glossary">Glossary</a></h1>
+<p><span id="accidentalcleanmerge"></span>
+<strong>accidental clean merge</strong>:: when two people make &quot;the same&quot; change, and these are then merged.  Example:</p>
+<pre><code>    a
+   / \
+  b   b
+</code></pre>
+<p>See <a href="AccidentalCleanMerge.html">AccidentalCleanMerge</a>.</p>
+<p><span id="aliasing"></span>
+<strong>aliasing</strong>:: aliasing is taking two logically distinct entities and causing them to be treated as equivalent, at least in certain contexts.  Aliasing is similar to suturing, but the assertion is weaker (<code>x == y</code>, not <code>x is y</code>), and is trivial to undo.</p>
+<p><span id="ambiguouscleanmerge"></span>
+<strong>ambiguous clean merge</strong>:: See <a href="AmbiguousCleanMerge.html">AmbiguousCleanMerge</a>.</p>
+<p><span id="branch"></span>
+<strong>branch</strong>:: A named line of development.  May be viewed either as a sequence of <a href="Glossary.html#changeset">changesets</a> or as a sequence of <a href="Glossary.html#snapshot">snapshots</a> (but see the warning about the non-duality of these representations under <a href="Glossary.html#snapshot">snapshot</a>).  In the context of a <a href="Glossary.html#repository">repository</a>, a branch may be viewed as a subgraph of the repository <a href="Glossary.html#DAG">DAG</a> with two distinguished vertices; the branch point where it diverges from other lines of development, and a <a href="Glossary.html#tip">tip</a>. Often branches are tied to a <a href="Glossary.html#repository">repository</a> in a many-to-one relationship. But other implementations are possible, for instance, <a href="Monotone.html">Monotone</a> supports fully distributed branches which do not exist exclusively on top of any particular <a href="Glossary.html#repository">repository</a>, while other systems such as <a href="Darcs.html">Darcs</a> and <a href="Bzr.html">Bzr</a> tie branches to repositories in a one-to-one fashion.</p>
+<p><span id="changeset"></span>
+<strong>changeset</strong>:: A collection of <a href="Glossary.html#delta">deltas</a> to a set of files, considered as a unit and (in modern VCSes) with metadata including a change comment and a timestamp attached.  To fully capture the history of a line of development, changesets must also record file additions (which may be modeled as a delta from an empty file), file deletions, and file renames.  See also <a href="Glossary.html#weave">weave</a> and <a href="Glossary.html#snapshot">snapshot</a>.</p>
+<p><span id="checkin"></span>
+<strong>checkin</strong>:: Synonym for <a href="Glossary.html#commit">commit</a> used in older VCSes (SCCS, RCS, CVS). This is why &quot;ci&quot; sometime appears as an alias for the commit operation in the command-line interfaces of VCSes that emulate CVS/Subversions's UI.</p>
+<p><span id="checkout"></span>
+<strong>checkout</strong>:: The operation of getting a <a href="Glossary.html#workspace">workspace</a> copy of some file(s) from a repository.  Mainly used in first- and second-generation VCSes with <a href="Glossary.html#locking">locking</a>.  Recorded here because it's the reason &quot;co&quot; shows up in some command-line interfaces with a meaning different from <a href="Glossary.html#commit">commit</a>.</p>
+<p><span id="commit"></span>
+<strong>commit</strong>:: Modern term for pushing changes from a <a href="Glossary.html#workspace">workspace</a> into a <a href="Glossary.html#repository">repository</a>.  Older VCSes tended to use <a href="Glossary.html#checkin">checkin</a>.</p>
+<p><span id="contentmerger"></span>
+<strong>content merger</strong>:: See <a href="Glossary.html#TextualMerger">textual merger</a></p>
+<p><span id="convergence"></span>
+<strong>convergence</strong>:: The idea that if the &quot;same change&quot; is made independently at different places in a graph, then a merge algorithm should treat the two changes as if they were a single change. Example:</p>
+<pre><code>    a
+   / \
+  b   b
+  |
+  c
+</code></pre>
+<p>a convergent merge algorithm will make this a clean merge to c. See <a href="Convergence.html">Convergence</a>.</p>
+<p><span id="convergentscalarmerge"></span>
+<strong>convergent scalar merge</strong>:: A scalar merge algorithm related to <a href="PreciseCodevilleMerge.html">PreciseCodevilleMerge</a>. See <a href="ConvergentScalarMerge.html">ConvergentScalarMerge</a>.</p>
+<p><span id="DAG"></span>
+<strong>Directed Acyclic Graph (DAG)</strong>:: A diagram (graph) made up of points connected by arrows (directed), where no arrow can lead back to an earlier point; in other words, the arrows cannot form a loop (acyclic).  <a href="Glossary.html#revision">Revisions</a> in a VCS may be viewed as nodes in a DAG and the <a href="Glossary.html#changeset">changesets</a> connecting them as links expressing the &quot;parent-of&quot; relationship. <a href="Glossary.html#tip">Tip</a> revisions will have valence 1, most ordinary revisions will have valence 2, and revisions representing a branch point or merge will have valence 3.</p>
+<p><span id="delta"></span>
+<strong>delta</strong>:: A description of changes between two versions of a file, usually as a sequence of line-oriented additions and deletions and replacements.  Such line-oriented deltas are often represented in a standard notation derived from the output format of the Unix <code>diff(1)</code> command.  There is a well-defined concept of deltas between binary files as well, but no standard notation for expressiong them.</p>
+<p><span id="firstgeneration"></span>
+<strong>first-generation</strong>:: See <a href="Glossary.html#vcsgenerations">generations</a>.</p>
+<p><span id="implicitundo"></span>
+<strong>implicit undo</strong>:: See <a href="ImplicitUndo.html">ImplicitUndo</a>.</p>
+<p><span id="locking"></span>
+<strong>locking</strong>:: Early VCSes (SCCS, RCS) avoided the merging problem by awarding developers temporary but exclusive write locks on files. This approach did not scale well and was abandoned in second- and third-generation VCSes.</p>
+<p><span id="markmerge"></span>
+*<em>mark-merge, <em>-merge</em></em>:: A family of scalar merge algorithms.  See <a href="MarkMerge.html">MarkMerge</a>.</p>
+<p><span id="pcdv"></span>
+<strong>pcdv</strong>:: see <a href="Glossary.html#precisecodevillemerge">precise codeville merge</a></p>
+<p><span id="precisecodevillemerge"></span>
+<strong>precise codeville merge</strong>:: A textual merge algorithm. See <a href="PreciseCodevilleMerge.html">PreciseCodevilleMerge</a>.</p>
+<p><span id="rename"></span>
+<strong>rename</strong>:: the option where a file or directory is either moved to a new directory or has its name changed. It is sometimes useful to distinguish  between moves (which put a file into a different directory) and renames (which change only the file's name, not its location).  see <a href="Renaming.html">Renaming</a></p>
+<p><span id="repository"></span>
+<strong>repository</strong>:: Physical storage of a full or partial history of changes or snapshots.</p>
+<p><span id="resolution"></span>
+<strong>resolution</strong>:: The step where a system takes a user-edited file and heuristically determines what editing the user implicitly did. Not always 1 distinct step nor done at commit time.  See <a href="Resolution.html">Resolution</a>.</p>
+<p><span id="revision"></span>
+<strong>revision</strong>:: A particular state (version) of files and directories which is stored in SCM.</p>
+<p><span id="rollback"></span>
+<strong>rollback</strong>:: see <a href="Rollback.html">Rollback</a></p>
+<p><span id="scalarmerger"></span>
+<strong>scalar merger</strong>:: A merge algorithm that works on a single atomic value.  An example is <a href="Glossary.html#markmerge">mark-merge</a>.  Concept explained <a href="http://thread.gmane.org/gmane.comp.version-control.monotone.devel/4297">here</a>.</p>
+<p><span id="secondgeneration"></span>
+<strong>second-generation</strong>:: See <a href="Glossary.html#vcsgenerations">generations</a>.</p>
+<p><span id="snapshot"></span>
+<strong>snapshot</strong>:: A collection of files and directories considered as a timestamped unit, possibly with metadata such as a revision comment attached.  The revision history of a project may be considered either as a sequence of snapshots or as a sequence of the <a href="Glossary.html#changeset">changesets</a> connecting them.  However, these representations are not perfectly dual.  Notably, moving from a changeset-sequence representation to a snapshot-sequence representation loses information about file and directory add, delete, and rename operations. While additions and deletions can be reliably inferred by comparing snapshots, renames cannot be; this has some subtle and occasionally nasty ripple effects.</p>
+<p><span id="staircasemerge"></span>
+<strong>staircase merge</strong>:: A simple merge example:</p>
+<pre><code>    a
+   / \
+  b   c
+   \ / \
+    c   d
+</code></pre>
+<p>A merge algorithm which supports <a href="StaircaseMerge.html">StaircaseMerge</a> will cleanly merge this to d.</p>
+<p><span id="suturing"></span>
+<strong>suturing</strong>:: suturing is taking two logically distinct entities and merging them into a single logical entity.  See <a href="Suturing.html">Suturing</a>.  Compare with <a href="Glossary.html#aliasing">aliasing</a>.</p>
+<p><span id="textualmerger"></span>
+<strong>textual merger</strong>:: a merge algorithm that operates on text files (as opposed to, for instance a <a href="Glossary.html#treemerger">tree merger</a> or <a href="Glossary.html#scalarmerger">scalar merger</a>)</p>
+<p><span id="thirdgeneration"></span>
+<strong>third-generation</strong>:: See <a href="Glossary.html#vcsgenerations">generations</a>. Also, informally, 3G.</p>
+<p><span id="threewaymerge"></span>
+<strong>three way merge</strong>:: a merge algorithm which operates on three versions of a text file. See <a href="ThreeWayMerge.html">ThreeWayMerge</a>.</p>
+<p><span id="treemerger"></span>
+<strong>tree merger</strong>:: a merge algorithm that operates on trees of files (generally handling things like file/directory add/remove/rename).</p>
+<p><span id="vcs"></span>
+<strong>VCS</strong>:: Version-Control System. The most common of a handful of competing acronyms for the software this site is about.  Others include SCM for Source Code Manager and (rarely) SCCS for Source Code Control System.  The latter is also the proper name of the original VCS.</p>
+<p><span id="vcsgenerations"></span>
+<strong>VCS generations</strong>:: There have, broadly speaking, been three generations of VCSes.  The first was exemplified by SCCS and RCS -- centralized and <a href="Glossary.html#locking">locking</a>, without support for development distributed across a network.  The second generation was exemplified by CVS and Subversion, which introduced merging and added support for distributed development but retained the centralized model based on one master repository per project.  Third-generation VCSes support a fully decentralized model; master repositories may exist as a matter of per-project policy, but the tools are all designed to support history merges between peer repositories.</p>
+<p><span id="weave"></span>
+<strong>weave</strong>:: A data structure representing a full ordering of lines for a particular file along with information about which lines exist for each historical revision. <a href="SCCS.html">SCCS</a> is the classic example. A number of merge algorithms are based on weaves. See <a href="Weave.html">Weave</a>, <a href="WeaveMerge.html">WeaveMerge</a>.  One of the fundamental design desisions in a VCS is whether change history will be represented as a weave or a sequence of <a href="Glossary.html#delta">deltas</a>.</p>
+<p><span id="workspace"></span>
+<strong>workspace</strong>:: An editable copy of the state of a repository at a particular revision (or merge of several revisions) where a user can resolve conflicts and make new changes, then record them as a new revision. Also &quot;working copy&quot;.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="concept-table"><a class="header" href="#concept-table">Concept Table</a></h1>
+<p>The revctrl Rosetta stone.  Table of concepts available to revision control systems and (if available) the corresponding commands.</p>
+<p>Please add your own.  Note: I'm using GUI mode to edit this table
+| concept | bzr | darcs | hg | svn |
+| ----- | ----- | ----- | ----- | ----- |
+| branch | branch | get | clone | copy |
+| checkout | checkout | <em>see branch</em> | update | checkout |
+| commit locally | commit --local | record | commit | <em>na</em> |
+| commit to repo | commit | <em>see push/send</em> | <em>see push</em> | commit |
+| create new repository | init | init | init | import |
+| diff local | diff | whatsnew | diff | diff |
+| diff repos or versions | diff | diff | incoming/outgoing/diff -r | diff |
+| file copy | <em>na</em> | <em>na</em> | copy | copy |
+| file move | mv | mv | move | move |
+| log | log | changes | log | log |
+| manifest | ls | query manifest | manifest | ls |
+| pull | pull | pull | pull | update |
+| push | push | push | push | <em>na</em> |
+| revert | revert | revert | revert | revert |
+| send by mail | merge-directive --mail-to | send | email (with patchbomb extension) | |
+| summarise local changes | status | whatsnew -s | status | status |
+| summarise remote changes | missing --theirs-only | pull --dry-run | incoming | update? |
+| tag changes/revisions | tag | tag | tag | copy |
+| update from repo | update | <em>see pull</em> | pull -u | update |</p>
+<h2 id="concepts"><a class="header" href="#concepts">Concepts</a></h2>
+<ul>
+<li>manifest - to see what files are under version control</li>
+<li>tag changes/revisions - to mark a certain revision, or set of changes as special in some way, like &quot;PRERELEASE&quot;, or &quot;2.0.3&quot;</li>
+<li>what's the difference between pull and &quot;update from repo&quot;?</li>
+</ul>
+<h2 id="notes"><a class="header" href="#notes">Notes</a></h2>
+<ul>
+<li><em>na</em> - this concept is not available in this revctrl system</li>
+<li><em>see...</em> - this concept is not available, but the revctrl system uses a different concept in its place</li>
+</ul>
+<h2 id="see-also"><a class="header" href="#see-also">See also</a></h2>
+<ul>
+<li>Rosetta Stone from a <a href="http://wiki.darcs.net/RosettaStone">Darcs perspective</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="category-merge-algorithm"><a class="header" href="#category-merge-algorithm">Category: Merge Algorithm</a></h1>
+<p>Various and sundry merge algorithms.</p>
+<h2 id="list-of-pages-in-this-category"><a class="header" href="#list-of-pages-in-this-category">List of pages in this category</a></h2>
+<ul>
+<li><a href="BKMerge.html">BKMerge</a></li>
+<li><a href="CodevilleMerge.html">CodevilleMerge</a></li>
+<li><a href="ConvergentScalarMerge.html">ConvergentScalarMerge</a></li>
+<li><a href="DarcsMerge.html">DarcsMerge</a></li>
+<li><a href="DieDieDieMerge.html">DieDieDieMerge</a></li>
+<li><a href="MarkMerge.html">MarkMerge</a></li>
+<li><a href="OperationalTransformation.html">OperationalTransformation</a></li>
+<li><a href="PreciseCodevilleMerge.html">PreciseCodevilleMerge</a></li>
+<li><a href="ScalarMerge.html">ScalarMerge</a></li>
+<li><a href="SimpleWeaveMerge.html">SimpleWeaveMerge</a></li>
+<li><a href="ThreeWayMerge.html">ThreeWayMerge</a></li>
+</ul>
+<hr />
+<p><a href="CategoryCategory.html">CategoryCategory</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bk-merge"><a class="header" href="#bk-merge">BK Merge</a></h1>
+<p>bk-merge is the merge algorithm used by the proprietary program <a href="http://bitmover.com">BitKeeper</a>.  Obviously, we do not know how it actually works.  Nor are we particularly interested in finding out; there's no particular reason to believe bitmover actually knows more than we do about merge algorithm design, and we don't want intellectual property issues tainting our work (either legally or in terms of public opinion).</p>
+<p>We do, however, have a pretty good guess how it works, due to a combination of three things:</p>
+<ul>
+<li>Tridge's reverse-engineering and development of SourcePuller gave him some ideas how things fit together</li>
+<li>About that same time, BramCohen, NathanielSmith, RossCohen and others developed <a href="SimpleWeaveMerge.html">SimpleWeaveMerge</a> from scratch, and then discovered that Tridge's <a href="http://loglibrary.com/show_page/view/126?Multiplier=3600&amp;Interval=6&amp;StartTime=1115689007">notes</a> on BK suddenly made a great deal of sense if interpreted in terms of their new theoretical framework.</li>
+<li>It was then realized that <a href="SimpleWeaveMerge.html">SimpleWeaveMerge</a> is very similar to the ancient <a href="SCCSMerge.html">SCCSMerge</a>, and that BK more or less just uses this well-known, decades old technology directly.  This makes worries about patents somewhat less urgent...</li>
+</ul>
+<h2 id="strengths"><a class="header" href="#strengths">Strengths</a></h2>
+<ul>
+<li>Well-regarded, but we have no rigorous evaluation by people who know their merge algorithms.</li>
+<li>The general strengths of <a href="WeaveMerge.html">WeaveMerges</a>.</li>
+</ul>
+<h2 id="weaknesses"><a class="header" href="#weaknesses">Weaknesses</a></h2>
+<ul>
+<li>Unknown, but may suffer from flaws with regards to <a href="ImplicitUndo.html">ImplicitUndo</a> (there is some kind of hunk rollback support, but we don't know any more than that) and the ordering problems that <a href="SimpleWeaveMerge.html">SimpleWeaveMerge</a> has problems with.</li>
+</ul>
+<h2 id="used-by"><a class="header" href="#used-by">Used by</a></h2>
+<p><a href="BitKeeper.html">BitKeeper</a></p>
+<h2 id="related"><a class="header" href="#related">Related</a></h2>
+<p><a href="SCCSMerge.html">SCCSMerge</a>, <a href="SimpleWeaveMerge.html">SimpleWeaveMerge</a></p>
+<hr />
+<p><a href="CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="codeville-merge"><a class="header" href="#codeville-merge">Codeville Merge</a></h1>
+<p>Traditional (or &quot;Sloppy&quot;) Codeville merge is a <a href="TwoWayMerge.html">TwoWayMerge</a> which makes use of additional annotation information in order to resolve conflicts.</p>
+<p>Codeville's annotation is on the &quot;slots&quot; or spaces between lines, not on the lines themselves.  Each slot has associated with it a revision id.  When a line is added, both surrounding slots are set to the current change. When a line is deleted, the slot where that line used to be is set to the current change. Note: deletions are the motivation behind annotating slots rather than the lines themselves.</p>
+<p>In addition to the annotation, Codeville merge maintains a list of all changes which have been applied.</p>
+<p>For merging, there are 2 sides (versions of the given file) which are to be merged. Call them the left and the right. First, the <a href="TwoWayMerge.html">TwoWayMerge</a> is run, resulting in an alternating set of matching and non-matching sections between the 2 sides. For each non-matching section it must be determined whether the left wins, the right wins or that there is a conflict.</p>
+<p>Take lC as the set of changes in the annotation on the left side of a conflict section and rC as the set on the right. Take lA as the list of applied changes on the left and rA as the set on the right.</p>
+<ul>
+<li>If lC - rA is non-empty, then the left side should win.</li>
+<li>If rC - lA is non-empty, then the right side should win.</li>
+<li>If both sides should win, then it's a conflict.</li>
+<li>If <em>neither</em> side should win, it's also a conflict. This is almost certainly non-obvious at first blush, but this situation can occur, albiet somewhat infrequently. This is what's known as an <a href="AmbiguousCleanMerge.html">AmbiguousCleanMerge</a>.</li>
+</ul>
+<h2 id="strengths-1"><a class="header" href="#strengths-1">Strengths</a></h2>
+<ul>
+<li>handles arbitrary history topologies</li>
+<li>handles <a href="StaircaseMerge.html">StaircaseMerge</a></li>
+<li>supports <a href="AccidentalCleanMerge.html">AccidentalCleanMerge</a></li>
+</ul>
+<h2 id="weaknesses-1"><a class="header" href="#weaknesses-1">Weaknesses</a></h2>
+<ul>
+<li><a href="Resolution.html">Resolution</a> can be inconsistent</li>
+<li>susceptible to <a href="AmbiguousCleanMerge.html">AmbiguousCleanMerge</a>, which in turn can cause merge conflicts to repeat on every branch</li>
+</ul>
+<h2 id="used-by-1"><a class="header" href="#used-by-1">Used by</a></h2>
+<p>Codeville</p>
+<h2 id="related-1"><a class="header" href="#related-1">Related</a></h2>
+<p><a href="PreciseCodevilleMerge.html">PreciseCodevilleMerge</a></p>
+<hr />
+<p><a href="CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="darcs-merge"><a class="header" href="#darcs-merge">Darcs Merge</a></h1>
+<p>For every patch <code>P</code> to be merged in the tree,</p>
+<ol>
+<li>Find a patch <code>T_n</code> in the current tree whose context is identical to that of <code>P</code></li>
+<li>Bring all the patches <code>T_(n+1)..T_(max n)</code> that have been recorded after that patch into the context of <code>P</code> (creating patch <code>P'</code>)</li>
+<li>If some patch <code>T_x</code> cannot be brought to <code>P</code>'s context, change <code>P</code> into a conflict patch that cancels <code>P</code> and <code>T_x</code>, and continue bringing the rest of the patches into <code>P</code>'s context</li>
+<li>Apply patch <code>P'</code></li>
+</ol>
+<p>It's that simple!</p>
+<p>There is a <a href="http://www.abridgegame.org/pipermail/darcs-users/2003/000221.html">thread</a> on the darcs users mailing list comparing <a href="DarcsMerge.html">DarcsMerge</a> and the exact patching form of <a href="ThreeWayTextMergeImplementation.html">ThreeWayTextMergeImplementation</a>.</p>
+<h2 id="strengths-2"><a class="header" href="#strengths-2">Strengths</a></h2>
+<ul>
+<li>Is always able to apply patches that don't really conflict.</li>
+<li>Merging branches with many changes on both sides does not make it less probable that the merge will succeed</li>
+<li>Patches never apply &quot;wrong&quot;.</li>
+<li>A tree with the same set of patches always has the same content.</li>
+<li>Allows orthogonal change types (e.g. identifier renames and hunks) to merge cleanly.</li>
+<li>Does not lose patch identity in merge</li>
+<li>Handles all merge &quot;problems&quot;, such as <a href="CrissCrossMerge.html">CrissCrossMerge</a>, <a href="AccidentalCleanMerge.html">AccidentalCleanMerge</a> or <a href="StaircaseMerge.html">StaircaseMerge</a>.  (These problems simply don't exist with this algorithm.)</li>
+</ul>
+<h2 id="weaknesses-2"><a class="header" href="#weaknesses-2">Weaknesses</a></h2>
+<ul>
+<li>You cannot use &quot;traditional&quot; diffs internally.  They cannot accommodate conflict patches.</li>
+<li>Conflict becomes a repository state, not a working-tree state.  (Some would consider this a pro)</li>
+<li>The &quot;same&quot; patch may have a different content in different trees, if it has different context (i.e. patches are ordered differently in those trees)</li>
+<li>Nobody has proved that the performance of conflict-conflict merge corner cases can be improved from <code>O(exp n)</code></li>
+<li>Requires additional work if you want to record who merged what and when.  (This is because the merge algorithm itself does not need this information.)</li>
+</ul>
+<h2 id="used-by-2"><a class="header" href="#used-by-2">Used by</a></h2>
+<p>Darcs.</p>
+<h2 id="related-2"><a class="header" href="#related-2">Related</a></h2>
+<p>Any merge algorithm that deals directly with patches.</p>
+<hr />
+<p><a href="CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="die-die-die-merge"><a class="header" href="#die-die-die-merge">Die Die Die Merge</a></h1>
+<p>Proposed name for a widely used, but rarely formalized, <a href="BooleanMergeAlgorithm.html">BooleanMergeAlgorithm</a>.</p>
+<p>The rule is: if a 0 is a descendent of a 1, then that 0 beats all 1s.  otherwise, 1s beat 0s.</p>
+<p>This algorithm never gives a conflict, and the user is not usually allowed to override its decision.</p>
+<p>The main use is for modeling lifecycles of things like files.  A file's dead/alive state can be modeled by a boolean scalar, and add/deletes can be merged by using a boolean scalar merge algorithm.  This algorithm implements the simplest lifecycle -- a file is born once, lives for a time, but once dead it is permanently dead.  More complex lifecycles including resurrection can be implemented by swapping in more sophisticated merge algorithms, but this increases the complexity of the rest of the system.  Recording and tracking resurrections may be complex.  Resurrected files raise issues for content merging -- because arbitrarily many branches might have made conflicting changes, that were never resolved when the branches were merged because the files were removed first, but these conflicts must all be resolved when resurrecting the file (though this necessity depends on the content merge algorithm in use) -- and so on.  Therefore, several systems have decided to ignore or defer resurrection support for the time being, and use die-die-die-merge for lifecycles.</p>
+<p>It may also be interesting theoretically, given the relation between <a href="BooleanMergeAlgorithm.html">BooleanMergeAlgorithm</a>s and general <a href="ScalarMerge.html">ScalarMergeAlgorithm</a>s.</p>
+<h2 id="strengths-3"><a class="header" href="#strengths-3">Strengths</a></h2>
+<p>Very simple (simplest natural lifecycle model), gives very strong properties that ease design of other parts of the system.</p>
+<h2 id="weaknesses-3"><a class="header" href="#weaknesses-3">Weaknesses</a></h2>
+<p>Only appropriate in very restricted cases.</p>
+<h2 id="used-by-3"><a class="header" href="#used-by-3">Used by</a></h2>
+<p><a href="Monotone.html">Monotone</a>, <a href="Codeville.html">Codeville</a>, others?</p>
+<h2 id="related-3"><a class="header" href="#related-3">Related</a></h2>
+<p><a href="SimpleWeaveMerge.html">SimpleWeaveMerge</a> uses this algorithm for the lifecycle of individual lines.</p>
+<hr />
+<p><a href="CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="operational-transformation"><a class="header" href="#operational-transformation">Operational Transformation</a></h1>
+<p>Operational Transformation is a theory very similar to the Darcs Theory of Patches (see <a href="DarcsMerge.html">DarcsMerge</a>).  It has been developed by the collaborative editing community.</p>
+<p>In collaborative editing, much less emphasis is placed on conflict marking (they don't bother with it).  Conflicts occur at a much more fine-grained level than in revision control (e.g. keypresses) and at the place that both users are currently working in real time.  This means that each user should see the other making changes in the same area, and use a mechanism other than the editing system to coordinate.  Conflict resolution just has to ensure consistency, and can otherwise do pretty much anything, as long as it is automatic.</p>
+<p>A document starts empty.  Each user then begins transforming it.  Those transformations are concurrently sent to other users.  However, with multiple machines, these messages might be received in different orders by different users.  Ressel et. al. (in Proceedings of the ACM Conference on Computer Supported Cooperative Work 1996) proved some properties that must apply so that when all messages are eventually received and processed, all copies of the document are identical.  From these two properties, you can show correctness (for their definition of correctness).</p>
+<h2 id="definitions"><a class="header" href="#definitions">Definitions</a></h2>
+<p>An <em>operation</em> is a modification of a document.  e.g. the addition of a character at a particular position in the document because of a keypress.</p>
+<p>A <em>transformation function</em> is a function, <code>T</code>, that merges two parallel operations by serialising them.  This is similar to the <code>||</code>-merge operation in Darcs, or the exact <a href="ThreeWayTextMergeImplementation.html">ThreeWayTextMergeImplementation</a>.  <code>T(op1, op2)</code> returns an operation that is the 'same' as op1 but changed so that it can be applied after op2.</p>
+<p>Composition is expressed as <code>.</code>: <code>op1 . op2</code> means to apply <code>op1</code>, and then apply <code>op2</code> to the result.  We also define <code>T(opx, opy . opz) = T(T(opx, opy), opz)</code>.  This says that to transform <code>opx</code> through a pair of operations, <code>opy.opz</code>, you first transform <code>opx</code> through <code>opy</code>, and then you transform the result of that through <code>opz</code>.</p>
+<h3 id="example"><a class="header" href="#example">example</a></h3>
+<p>A standard merge looks as below.  We have one initial context, <code>a</code>, and two changes, <code>op1</code> and <code>op2</code> that both apply to <code>a</code>.  Each of <code>op1</code> and <code>op2</code> can be passed through the transformation function <code>T</code> to get <code>op1' = T(op1, op2)</code> and <code>op2' = T(op2, op1)</code>.</p>
+<pre><code>      a
+     / \
+op1 /   \ op2
+   /     \
+  b       c
+   \     /
+op2'\   / op1'
+     \ /
+      d
+</code></pre>
+<h2 id="requirements"><a class="header" href="#requirements">Requirements</a></h2>
+<p>TP1: For every two concurrent operations, <code>op1</code> and <code>op2</code>, defined on the same state, the transformation function <code>T</code> must satisfy:</p>
+<pre><code>op1 . T(op2, op1) == op2 . T(op1, op2)
+</code></pre>
+<p>In the above example, this is requirement that <code>op1 . op2' == op2 . op1'</code>.  <code>d</code> is consistent regardless of which way around the merge is performed.  This is what the above example shows.</p>
+<p>TP2: For every three concurrent operations, <code>op1</code>, <code>op2</code> and <code>op3</code>, defined on the same state, the transformation function <code>T</code> must satisfy:</p>
+<pre><code>T(op3, op1 . T(op2, op1)) == T(op3, op2 . T(op1, op2))
+</code></pre>
+<p>or equivalently:</p>
+<pre><code>T(T(op3,op1),T(op2,op1)) == T(T(op3,op2),T(op1,op2))
+</code></pre>
+<h3 id="example-1"><a class="header" href="#example-1">example</a></h3>
+<p>Start with the previous example where there are two parallel operations, <code>op1</code> and <code>op2</code>.  Property TP1 says that which op you choose to transform to serialise them doesn't matter.  This gives us the <em>abcd</em> diamond of states which again appears below.  Property TP2 goes one step further and says that the way you serialise a third operation, <code>op3</code>, through the other two doesn't matter either.  We could transform <code>op3</code> through <code>op1</code> and then <code>op2'</code>, or we could transform <code>op3</code> through <code>op2</code> and then <code>op1'</code>.  The result should be the same.</p>
+<pre><code>op1' = T(op1, op2)
+op2' = T(op2, op1)
+op3'a = T(op3, op1)
+op3'b = T(op3, op2)
+op3''a = T(op3'a, op2')
+op3''b = T(op3'b, op1')
+
+                    a--------
+                   / \       \
+              op1 /   \ op2   \ op3
+                 /     \       \
+            ----b       c----   e
+           /     \     /     \
+    op3'a /  op2' \   / op1'  \ op3'b
+         /         \ /         \
+        g           d           h
+                   / \
+            op3''a | | op3''b
+                   \ /
+                    f
+</code></pre>
+<h2 id="ressels-transformation-functions"><a class="header" href="#ressels-transformation-functions">Ressel's Transformation Functions</a></h2>
+<p>These are some proposed operators for collaborative editing, and a proposed transformation function.  I mention them here because they are similar to exact three-way-merge, and yet can be shown NOT to satisfy the above properties.</p>
+<p>In this formalism, priorities are fixed attributes of the user than makes the change.  They are used to resolve conflicts (it allows both changes to be made in the order defined by the priorities).</p>
+<p>There are two operations:</p>
+<p><code>Ins(p, c, pr)</code> inserts character <code>c</code> at position <code>p</code> with priority <code>pr</code>.  <code>Del(p, pr)</code> deletes the character at location <code>p</code> with priority <code>pr</code>.</p>
+<p>And the definition of the transformation function is relatively straight forward:</p>
+<pre><code>T(Ins(p1, c1, u1), Ins(p2, c2, u2)) :-
+   if (p1 &lt; p2) or (p1 == p2 and u1 &lt; u2) return Ins(p1, c1, u1)
+   else return Ins(p1 + 1, c1, u1)
+
+T(Ins(p1, c1, u1), Del(p2, u2)) :-
+   if (p1 &lt;= p2) return Ins(p1, c1, u1)
+   else return Ins(p1 - 1, c1, u1)
+
+T(Del(p1, u1), Ins(p2, c2, u2)) :-
+   if (p1 &lt; p2) return Del(p1, u1)
+   else return Del(p1 + 1, u1)
+
+T(Del(p1, u1), Del(p2, u2)) :-
+   if (p1 &lt; p2) return Del(p1, u1)
+   else if (p1 &gt; p2) return Del(p1 - 1, u1)
+   else return Id()
+</code></pre>
+<p>The counter example of TP2 (from [http://hal.inria.fr/inria-00071213 Proving correctness of transformation functions in collaborative editing systems] by Oster et. al., but with typesetting errors corrected):</p>
+<pre><code>
+   Site 1              Site 2              Site 3
+
+   &quot;abc&quot;               &quot;abc&quot;               &quot;abc&quot;
+
+op1 = ins(3,x)     op2 = del(2)        op3 = ins(2,y)
+
+  &quot;abxc&quot;               &quot;ac&quot;                &quot;aybc&quot;
+
+                   op3' = ins(2,y)     op2' = del(3)
+
+                       &quot;ayc&quot;               &quot;ayc&quot;
+
+                   op1' = ins(2,x)     op1'' = ins(3,x)
+
+                       &quot;axyc&quot;              &quot;ayxc&quot;
+
+</code></pre>
+<h2 id="tombstone-transformation-functions"><a class="header" href="#tombstone-transformation-functions">Tombstone Transformation Functions</a></h2>
+<p>Having shown other systems incorrect, Oster et. al. then go on to describe the Tombstone Transformation Functions, or TTF.  In version control parlance, this is a weave (see <a href="SimpleWeaveMerge.html">SimpleWeaveMerge</a>).  No characters are ever deleted, but rather they are marked invisible (these invisible characters are the 'tombstones').  Ordering ties are broken by user-ID.  They show that this system satisfies TP2 when many other systems do not.</p>
+<h2 id="strengths-4"><a class="header" href="#strengths-4">Strengths</a></h2>
+<p>Can provably merge correctly.</p>
+<h2 id="weaknesses-4"><a class="header" href="#weaknesses-4">Weaknesses</a></h2>
+<p>Does not mark conflicts at all.</p>
+<h2 id="used-by-4"><a class="header" href="#used-by-4">Used by</a></h2>
+<ul>
+<li>A good summary paper is available from INRIA: http://hal.inria.fr/inria-00071213</li>
+<li>The [http://dev.libresource.org/home/doc/so6-user-manual so6 revision control system] (pronounced saucisse)</li>
+</ul>
+<h2 id="related-4"><a class="header" href="#related-4">Related</a></h2>
+<p>Operational Transformation theory is related to Darcs theory of patches.  Darcs is based on commuting patches:</p>
+<pre><code>op1.op2 &lt;-&gt; op2'.op1'
+</code></pre>
+<p>As described in [http://www.abridgegame.org/pipermail/darcs-users/2003/000221.html this thread], this effect can be achieved using the OT transformation operator as long as you can invert an operation.  We'll define <code>Inv(op)</code> to be another operation that has the opposite effect of <code>op</code>.  This means that <code>Inv(op).op</code> is the identity.  <code>Inv(op)</code> is both a left and a right inverse, so <code>op.Inv(op)</code> is also the identity.</p>
+<p>We can then define the commuted op1 and op2, those being op1' and op2', as:</p>
+<pre><code>op2' = T(op2, Inv(op1))
+op1' = T(op1, op2')
+</code></pre>
+<p>Rather than inverting operators, it is also possible to view this as having an inverse Transformation function, <code>T⁻¹</code>.  Imagine <code>opA</code> and <code>opB</code> are parallel ops that need to be merged; then we get <code>opB' = T(opB, opA)</code>.  And then <code>opB = T⁻¹(opB', opA)</code>.  The commutation of <code>op1</code> and <code>op2</code> then becomes:</p>
+<pre><code>op2' = T-1(op2, op1)
+op1' = T(op1, op2')
+</code></pre>
+<p><a href="http://hal.inria.fr/inria-00109039/en/">This paper</a> describes partial <code>T⁻¹</code> functions for the tombstone transformation operators.</p>
+<hr />
+<p><a href="CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="scalar-merge"><a class="header" href="#scalar-merge">Scalar Merge</a></h1>
+<h2 id="what-is-scalar-merge"><a class="header" href="#what-is-scalar-merge">What is Scalar Merge?</a></h2>
+<p>There are a number of different types of merge algorithm.  In order to introduce more theory into merge algorithms, these can be subdivided into a number of types.  One type of merge algorithm is the <em>scalar merge</em>, so called because it assumes that each revision consists of only a single scalar.</p>
+<p>Whereas traditional textual merge algorithms allow two different changes to a document to be merged, scalar merge simply decides which scalar wins cleanly, or that there is a conflict for the user to resolve.</p>
+<p>A special case of scalar merge is the <a href="BooleanMergeAlgorithm.html">BooleanMergeAlgorithm</a>.  <a href="DieDieDieMerge.html">DieDieDieMerge</a> is one example of such a boolean scalar merge algorithm.</p>
+<h2 id="converting-to-full-merge"><a class="header" href="#converting-to-full-merge">Converting to full merge</a></h2>
+<p>There is a general theory of building complex merge algorithms using a scalar merger as a primitive.  This description originated with Nathaniel Smith in a <a href="http://article.gmane.org/gmane.comp.version-control.revctrl/189">revctrl mailing list post</a>:</p>
+<p>You provide:</p>
+<ul>
+<li>the data structure you want to define a merger for.  E.g., directory trees, or sets, or something.  Note the invariants of this structure.  (E.g., in a directory tree, you cannot have two distinct files with the same name.)</li>
+<li>a scheme to decompose any instance of this structure into a collection of scalar fields.  (E.g., for directory trees, you could have one scalar associated with each file, this scalar being a (parent directory pointer, basename) pair; for sets, you could have a scalar associated with each possible item which takes on the values True or False for whether that value is in the set at hand.)</li>
+<li>a scheme to, given two structures A and B in a history graph, determine which scalar fields in the decomposition of A are &quot;the same&quot; as the which scalar fields in the decomposition of B.  (We can call this step Self:Resolution.)  (E.g., if you have arch/bzr-style directory trees, you associate a global unique id with each file/dir, and two fields match up if they go with the same entity id; or if you have monotone-style directory trees, you look at the add/rename/drop stanzas in the changeset between two trees and it tells you which files match up.)</li>
+</ul>
+<p>Then to merge two structures:</p>
+<ul>
+<li>for each scalar field in the result object, use the Self:Resolution to find all the corresponding fields in all the structures in the history graph; this gives you a scalar DAG.  Use your favorite scalar merge algorithm on this graph.  This may give a conflict, call this a primitive conflict if it happens.</li>
+<li>after you have merged all the scalar fields, put your overall structure back together and check to see if any structural invariants from (1) are violated.  If so, flag these as conflicts (&quot;structural conflicts&quot;) too.</li>
+</ul>
+<p>This works perfectly well to get excellent tree mergers and set mergers, and probably other things.  I don't know how to use this approach to get a sequence merger (which is really the structure involved in text merging).  The obvious approach is to model a sequence as some kind of linked list, with the link pointers the scalar fields, and I played around with this some and it actually works more or less (and is very closely related to edge versioning, actually).  It might even work; I stopped playing with it because:</p>
+<ul>
+<li>I wasn't sure how to get a good handle on the structural conflicts -- in principle after scalar merging your &quot;linked list&quot; could have arbitrarily wacky structure, complete with loops and stuff, and it's not clear how to turn this into a nice file-with-conflict-marked-sections representation for the user. Maybe in practice you can limit how wacky the structure gets, though, I dunno.</li>
+<li>What I really want is a user model for text merging; this wasn't necessarily getting me any closer to that, so even if it all worked out, I wouldn't know whether I'd actually accomplished anything anyway.</li>
+<li>Merge algorithms are fun, but we were already far enough developing all this theory that it was time to stop and actually implement stuff and come back to all this later, when there weren't a million other more practical things to spend time on :-).  (3-way text merging kind of sucks, but it's not like an urgent bug that users complain about every day.)</li>
+</ul>
+<p><a href="Weave.html">Weave</a> merging can also be seen as a special case of this formalism, with the scalar fields being the boolean &quot;does this line in the weave currently exist&quot; values.</p>
+<h2 id="scalar-merge-algorithms"><a class="header" href="#scalar-merge-algorithms">Scalar Merge Algorithms</a></h2>
+<ul>
+<li><a href="ConvergentScalarMerge.html">ConvergentScalarMerge</a></li>
+<li><a href="MarkMerge.html">MarkMerge</a></li>
+<li><a href="PreciseCodevilleMerge.html">PreciseCodevilleMerge</a></li>
+</ul>
+<hr />
+<p><a href="CategoryCategory.html">CategoryCategory</a> <a href="CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="convergent-scalar-merge"><a class="header" href="#convergent-scalar-merge">Convergent Scalar Merge</a></h1>
+<p>Convergent scalar merge is a <a href="ScalarMerge.html">ScalarMerge</a> algorithm based on the property that if A and B are merged and A has an ancestor whose history is isomorphic to B's history, then A should win. It's similar to <a href="MarkMerge.html">MarkMerge</a>, and can be thought of as the scalar version of <a href="PreciseCodevilleMerge.html">PreciseCodevilleMerge</a> (in fact, they were developed in tandem).</p>
+<p>attachment: <a href="attachments/ConvergentScalarMerge.py">ConvergentScalarMerge.py</a></p>
+<h2 id="strengths-5"><a class="header" href="#strengths-5">Strengths</a></h2>
+<ul>
+<li>supports <a href="Convergence.html">Convergence</a></li>
+<li>handles <a href="StaircaseMerge.html">StaircaseMerge</a></li>
+<li>has a conceptually simple motivation</li>
+</ul>
+<h2 id="weaknesses-5"><a class="header" href="#weaknesses-5">Weaknesses</a></h2>
+<ul>
+<li>doesn't support <a href="ImplicitUndo.html">ImplicitUndo</a></li>
+</ul>
+<h2 id="used-by-5"><a class="header" href="#used-by-5">Used by</a></h2>
+<ul>
+<li>Will be used by <a href="Codeville.html">Codeville</a></li>
+</ul>
+<h2 id="related-5"><a class="header" href="#related-5">Related</a></h2>
+<ul>
+<li><a href="MarkMerge.html">MarkMerge</a></li>
+</ul>
+<hr />
+<p><a href="CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mark-merge"><a class="header" href="#mark-merge">Mark Merge</a></h1>
+<p>A scalar merge algorithm, related to <a href="CodevilleMerge.html">CodevilleMerge</a>.  Generally referred to as &quot;mark-merge&quot; or &quot;*-merge&quot; (but never <a href="StarMerge.html">StarMerge</a>, which is something else entirely).</p>
+<p>Detailed writeup of original version: http://thread.gmane.org/gmane.comp.version-control.monotone.devel/4297 (&quot;unique-*-merge&quot;)</p>
+<p>Detailed writeup of updated version (handles accidental clean merges): http://article.gmane.org/gmane.comp.version-control.revctrl/93 (&quot;multi-*-merge&quot;)</p>
+<p>Other links: http://article.gmane.org/gmane.comp.version-control.revctrl/92, http://article.gmane.org/gmane.comp.version-control.revctrl/197 (&quot;deterministic-*-merge&quot;)</p>
+<p>The most interesting things about *-merge are:</p>
+<ul>
+<li>has a <a href="UserModel.html">UserModel</a></li>
+<li>has a formal analysis showing that it is fully well-defined, and implements the <a href="UserModel.html">UserModel</a></li>
+</ul>
+<h2 id="strengths-6"><a class="header" href="#strengths-6">Strengths</a></h2>
+<ul>
+<li>best formal analysis of any current merge algorithm</li>
+<li>believed to never clean merge without justification (conservative)</li>
+<li>&quot;deterministic *-merge&quot; (basically multi-*-merge but easier to make formal statements about) is commutative and associative (i.e., satisfies <a href="OperationalTransformation.html">OperationalTransformation</a> theory's properties TP1 and TP2).</li>
+</ul>
+<h2 id="weaknesses-6"><a class="header" href="#weaknesses-6">Weaknesses</a></h2>
+<ul>
+<li>unique-*-merge does not handle accidental clean merges; multi-*-merge does</li>
+<li>does not handle <a href="StaircaseMerge.html">StaircaseMerge</a></li>
+<li>does not attempt <a href="Convergence.html">Convergence</a></li>
+<li>does not attempt implicit rollback</li>
+</ul>
+<h2 id="used-by-6"><a class="header" href="#used-by-6">Used by</a></h2>
+<p><a href="Monotone.html">Monotone</a></p>
+<h2 id="related-6"><a class="header" href="#related-6">Related</a></h2>
+<p><a href="CodevilleMerge.html">CodevilleMerge</a></p>
+<hr />
+<p><a href="CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a> <a href="CategoryScalarMerge.html">CategoryScalarMerge</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="precise-codeville-merge"><a class="header" href="#precise-codeville-merge">Precise Codeville Merge</a></h1>
+<p>PreciseCodevilleMerge is the combination of a weave-based merge with a resolution algorithm based on unique lines, plus <a href="Convergence.html">Convergence</a>, <a href="GenerationCounting.html">GenerationCounting</a>, <a href="LivingLinesFirst.html">LivingLinesFirst</a>, and <a href="EdgeVersioning.html">EdgeVersioning</a>. If you wish to answer the existential question of whether a particular piece of merge code is a version of <a href="PreciseCodevilleMerge.html">PreciseCodevilleMerge</a>, go over that checklist of features and if they're all there then it qualifies.</p>
+<p><a href="ImplicitUndo.html">ImplicitUndo</a> isn't included because it conflicts with other features and has internal inconsistencies. Dynamic line ordering isn't included because of technical difficulties, although it's hoped that eventually somebody will figure out how to implement a weave which does partial ordering.</p>
+<p><a href="ConvergentScalarMerge.html">ConvergentScalarMerge</a> can be thought of as the scalar (and thus much simpler) cousin of <a href="PreciseCodevilleMerge.html">PreciseCodevilleMerge</a>.</p>
+<p>attachment: <a href="attachments/precisecodevillemerge.py">precisecodevillemerge.py</a></p>
+<p>Those wishing to understand how the code works can start by reading through the no frills code, which doesn't support resolving to living lines first and <a href="EdgeVersioning.html">EdgeVersioning</a>, and thus is simpler to understand, and still gives the same answer as the full version most of the time.</p>
+<p>attachment: <a href="attachments/nofrillsprecisemerge.py">nofrillsprecisemerge.py</a></p>
+<p>An even less featureful merge algorithm than no frills is <a href="SimpleWeaveMerge.html">SimpleWeaveMerge</a>, which, oddly, is more complicated to implement than no frills.</p>
+<h2 id="strengths-7"><a class="header" href="#strengths-7">Strengths</a></h2>
+<ul>
+<li>supports <a href="Convergence.html">Convergence</a></li>
+<li>supports <a href="StaircaseMerge.html">StaircaseMerge</a></li>
+<li>supports <a href="EdgeVersioning.html">EdgeVersioning</a></li>
+</ul>
+<h2 id="weaknesses-7"><a class="header" href="#weaknesses-7">Weaknesses</a></h2>
+<ul>
+<li>doesn't support <a href="ImplicitUndo.html">ImplicitUndo</a></li>
+</ul>
+<h2 id="used-by-7"><a class="header" href="#used-by-7">Used by</a></h2>
+<ul>
+<li>will be used by <a href="Codeville.html">Codeville</a></li>
+<li>available for <a href="Mercurial.html">Mercurial</a></li>
+<li>has been prototyped for <a href="Vesta.html">Vesta</a></li>
+</ul>
+<h2 id="related-7"><a class="header" href="#related-7">Related</a></h2>
+<p>This uses the <a href="http://en.wikipedia.org/wiki/Patience_sorting">Patience sorting</a> algorithm  to find the longest common subset.</p>
+<hr />
+<p><a href="CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="simple-weave-merge"><a class="header" href="#simple-weave-merge">Simple Weave Merge</a></h1>
+<p>This algorithm has sometimes been known as <a href="PreciseCodevilleMerge.html">PreciseCodevilleMerge</a>; however, as the <a href="Codeville.html">Codeville</a> developers wish to reserve the pcdv name for whatever algorithm they eventually decide to implement, a new name was chosen.  It is the first complete algorithm to temporarily bear the name <a href="PreciseCodevilleMerge.html">PreciseCodevilleMerge</a>, and the eventual <a href="PreciseCodevilleMerge.html">PreciseCodevilleMerge</a> will most likely be a variation on it, with the addition of such features as <a href="Convergence.html">Convergence</a>, <a href="ImplicitUndo.html">ImplicitUndo</a>, and fixes for certain CrissCrossMerge <a href="CrissCrossMerge.html#orderingambiguities">ordering ambiguities</a>.</p>
+<p>See also http://bazaar.canonical.com/BzrWeaveFormat for a nice and detailed description.</p>
+<h2 id="strengths-8"><a class="header" href="#strengths-8">Strengths</a></h2>
+<h2 id="weaknesses-8"><a class="header" href="#weaknesses-8">Weaknesses</a></h2>
+<h2 id="used-by-8"><a class="header" href="#used-by-8">Used by</a></h2>
+<h2 id="related-8"><a class="header" href="#related-8">Related</a></h2>
+<p><a href="SCCSMerge.html">SCCSMerge</a>, <a href="BKMerge.html">BKMerge</a>, <a href="PreciseCodevilleMerge.html">PreciseCodevilleMerge</a></p>
+<hr />
+<p><a href="CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="three-way-merge"><a class="header" href="#three-way-merge">Three-Way Merge</a></h1>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>Three-way merge is a staple of revision control systems such as CVS and Bazaar.  It takes three inputs: THIS, BASE, and OTHER.  THIS is the current value in the user's tree.  OTHER is the current value in the tree to be merged.  BASE is a basis for comparison between THIS and OTHER, and is usually an ancestor of them.</p>
+<p>The operation of three way merge can be paraphrased as &quot;keep my changes, but apply the changes OTHER made to my copy&quot;.</p>
+<p>Consider the values in each version in a scalar merge context.</p>
+<table><thead><tr><th>Case</th><th>THIS</th><th>BASE</th><th>OTHER</th><th>RESULT</th></tr></thead><tbody>
+<tr><td>1.</td><td>A</td><td>A</td><td>A</td><td>A (Boring case)</td></tr>
+<tr><td>2.</td><td>B</td><td>A</td><td>A</td><td>B (Take change from THIS)</td></tr>
+<tr><td>3.</td><td>A</td><td>A</td><td>B</td><td>B (Take change from OTHER)</td></tr>
+<tr><td>4.</td><td>A</td><td>B</td><td>A</td><td>A (<a href="AccidentalCleanMerge.html">AccidentalCleanMerge</a>)</td></tr>
+<tr><td>5.</td><td>A</td><td>B</td><td>C</td><td><strong>Conflict</strong></td></tr>
+</tbody></table>
+<p>As long as any two versions have the same value, the algorithm produces a result.  A conflict happens when all versions are have different values, because it is not clear whether OTHER or THIS (or some combination) should be taken. It is not universally accepted that case 4 should merge cleanly, so this case is sometimes an exception.</p>
+<p>Conceptually, in a textual merge context <a href="Resolution.html">Resolution</a> is performed between BASE and the other 2 versions in turn (at merge time, ignoring changes in between). Discrete sections of the versions can then be compared according the above chart.</p>
+<p>Gnu diff3 is a common implementation of three-way text merging.</p>
+<p>The selection of an appropriate base is important in three-way merges, because three-way works best when the base is similar to THIS and OTHER.  The less similar it is, the more chance that it will have a different value from either THIS or BASE, causing unnecessary conflicts. In addition, less similarity can result in <a href="Resolution.html">Resolution</a> errors, which can cause confusing conflicts and bad clean merges.</p>
+<p>See <a href="ThreeWayTextMergeImplementation.html">ThreeWayTextMergeImplementation</a> for implementation details.</p>
+<h2 id="diff--patch"><a class="header" href="#diff--patch">Diff &amp; Patch</a></h2>
+<p>Diff and patch can be used to perform something like a three-way merge.  One simply performs a diff from BASE to OTHER, and then uses patch to apply it to THIS.  This approach is more limited than diff3.  In case 4, instead of reporting a clean merge, it necessarily produces a conflict. This approach is also prone to even worse <a href="Resolution.html">Resolution</a> errors than more intelligent implementations.</p>
+<h2 id="strengths-9"><a class="header" href="#strengths-9">Strengths</a></h2>
+<ul>
+<li>Requires just three inputs</li>
+<li>Reasonably simple to understand and implement (ignoring BASE selection)</li>
+<li>Implementations widely available</li>
+</ul>
+<h2 id="weaknesses-9"><a class="header" href="#weaknesses-9">Weaknesses</a></h2>
+<ul>
+<li>Prone to <a href="Resolution.html">Resolution</a> errors due to not being fully history-aware</li>
+<li>A <a href="CrissCrossMerge.html">CrissCrossMerge</a> produces a strange later three-way-merge</li>
+<li>Some scenarios can cause text to be lost that should not be</li>
+<li>Difficult to choose a decent BASE in arbitrary history graphs</li>
+<li>Cannot support <a href="Convergence.html">Convergence</a></li>
+</ul>
+<h2 id="used-by-9"><a class="header" href="#used-by-9">Used by</a></h2>
+<p><a href="CVS.html">CVS</a>, <a href="Arch.html">Arch</a>, <a href="Bazaar.html">Bazaar</a>, <a href="Bazaar-NG.html">Bazaar-NG</a>, <a href="Monotone.html">Monotone</a>, many others</p>
+<h2 id="related-9"><a class="header" href="#related-9">Related</a></h2>
+<p>Patch/diff merge</p>
+<hr />
+<p><a href="CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="category-merge-example"><a class="header" href="#category-merge-example">Category: Merge Example</a></h1>
+<p>The various pathological and not-so-pathological cases that merge algorithms must deal with.</p>
+<h2 id="list-of-pages-in-this-category-1"><a class="header" href="#list-of-pages-in-this-category-1">List of pages in this category</a></h2>
+<ul>
+<li><a href="AccidentalCleanMerge.html">AccidentalCleanMerge</a></li>
+<li><a href="CrissCrossMerge.html">CrissCrossMerge</a></li>
+<li><a href="ImplicitUndo.html">ImplicitUndo</a></li>
+<li><a href="Rollback.html">Rollback</a></li>
+<li><a href="StaircaseMerge.html">StaircaseMerge</a></li>
+</ul>
+<hr />
+<p><a href="CategoryCategory.html">CategoryCategory</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="accidental-clean-merge"><a class="header" href="#accidental-clean-merge">Accidental Clean Merge</a></h1>
+<p>When &quot;the same change&quot; is made independently on two branches, and they are then merged:</p>
+<pre><code>    a
+   / \
+  b   b
+</code></pre>
+<p>A change was made on both sides, so arguably this should be a conflict; however, the changes happen to be identical, so &quot;accidentally&quot; we get a clean merge after all.</p>
+<p>An algorithm is said to support accidental clean merge if it gives no
+conflict in this case.  <a href="Convergence.html">Convergence</a> implies <a href="AccidentalCleanMerge.html">AccidentalCleanMerge</a>.</p>
+<p>There are cases where <a href="AccidentalCleanMerge.html">AccidentalCleanMerge</a> will perform a semantically 
+incorrect merge. For example, two different people may add a line saying <code>i++;</code>
+to the same location, and the correct merge of those two may be two lines both saying <code>i++;</code> rather than
+a single line saying <code>i++;</code>. The frequency of such semantic errors is comparable to
+the frequency of semantically invalid merges of code changes to lines of code
+in disparate locations, which clean merge under all merge-based version control
+systems.</p>
+<p>Almost all systems support accidental clean merging of file deletion.
+Systems which view a file's location as an integral part of its identity,
+such as CVS, generally support accidental clean merge of file addition.
+Systems which support file renames generally don't support accidental
+clean merge of file addition, even if two files with identical contents were
+added to identical trees. Ideally, one would like to be able to clean up
+such conflicts with a suture command (if the files were in fact the same),
+but nothing currently supports that feature.</p>
+<h2 id="supported-by"><a class="header" href="#supported-by">Supported by</a></h2>
+<p>Many implementations of <a href="ThreeWayMerge.html">ThreeWayMerge</a> (as a special case); multi-<a href="MarkMerge.html">MarkMerge</a></p>
+<h2 id="not-supported-by"><a class="header" href="#not-supported-by">Not supported by</a></h2>
+<p><a href="DarcsMerge.html">DarcsMerge</a> sees this as a conflict.</p>
+<hr />
+<p><a href="CategoryMergeExample.html">CategoryMergeExample</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="criss-cross-merge"><a class="header" href="#criss-cross-merge">Criss Cross Merge</a></h1>
+<p>A criss-cross merge is an ancestry graph in which minimal common ancestors are not unique.  The simplest example with scalars is something like:</p>
+<pre><code>   a
+  / \
+ b1  c1
+ |\ /|
+ | X |
+ |/ \|
+ b2  c2
+</code></pre>
+<p>The story one can tell here is that Bob and Claire made some change independently, then each merged the changes together.  They conflicted, and Bob (of course) decided his change was better, while Claire (typically) picked her version.  Now, we need to merge again.  This should be a conflict.</p>
+<p>Note that this can happen equally well with a textual merger -- they have each edited the same place in the file, and when resolving the conflict  they each choose to make the resulting text identical to their original version (i.e., they don't munge the two edits together somehow, they just pick one to win).</p>
+<p>This is one of the key examples that has driven development of merge algorithms; there is currently no textual merge algorithm that fully handles this case (probably - see below).</p>
+<h2 id="three-way-merge-1"><a class="header" href="#three-way-merge-1">Three way merge</a></h2>
+<p><a href="ThreeWayMerge.html">ThreeWayMerge</a> has obvious problems here -- there are two &quot;least&quot; (or more properly, &quot;minimal&quot;) common ancestors it could use.</p>
+<p>Furthermore, using <em>either</em> of them as a base for the merge will give an incorrectly clean merge -- if b1 as used as a base, it will appear that b2 is unchanged while c2 has changed, therefore c2 will win.  If c1 is used as a base, the opposite occurs.</p>
+<p>One possible solution is to use 'a' as the common ancestor for the merge; this is the approach taken by <a href="Monotone.html">Monotone</a>, when it uses the <a href="LCA+DOM.html">LCA+DOM</a> rather than <a href="LCA.html">LCA</a> as a merge base.  However, this approach has its own problems.</p>
+<h3 id="recursive-three-way-merge"><a class="header" href="#recursive-three-way-merge">Recursive three-way merge</a></h3>
+<p>Another possible solution is to first merge 'b1' and 'c1' to a temporary node (basically, imagine that the 'X' in the diagram is actually a revision, not just edges crossing) and then use that as a base for merging 'b2' and 'c2'. The interesting part is when merging 'b1' and 'c1' results in conflicts - the trick is that in that case, 'X' is included <em>with the conflicts recorded inside</em> (e.g. using the classical conflict markers). Since both 'b2' and 'c2' had to resolve the same conflict, in the case they resolved it the same way they both remove the conflicts from 'X' in the same way and a clean merge results; if they resolved it in different ways, the conflicts from 'X' get propagated to the final merge result. If a merge would result in more than two bases ('b1', 'c1, 'd1'), they are merged consecutively - first 'b1' with 'c1' and then the result with 'd1' .</p>
+<p>This is what <a href="Git.html">Git</a>'s &quot;recursive merge&quot; strategy does.</p>
+<p>Recursive three-way merge <em>usually</em> provides the right answer, however there are some edge cases. For example, conflict markers can be matched incorrectly, because they aren't given any special semantic meaning for the merge algorithm, and are simply treated as lines. In particular, there are (somewhat complicated) cases where the conflict markers of two unrelated conflicts get matched against each other, even though the content sections of them are totally unrelated.</p>
+<p>Also, recursive merge can do some of the same invalid merges as <a href="SimpleWeaveMerge.html">SimpleWeaveMerge</a> does, which are described below, although exactly what it does under those circumstances is highly dependant on the details of the 3 way merge algorithm, but it isn't clear that tweaking the 3-way merge algorithm to be more conservative about showing conflicts will make such problems go away. Basically, including the conflict is creating a weave, and that introduces the problems which weaves have.</p>
+<p>Finally, recursive three-way merge has all the inherent problems of <a href="ImplicitUndo.html">ImplicitUndo</a>. In particular, merging together multiple things which merge cleanly will sometimes give different answers depending on the order in which the merges happen. In fact, it's possible in a never-ending criss-cross case for a value to flip-flop until the end of time without ever getting a single unclean merge. This is a very fundamental problem, and fixing it requires first deciding what one wants to have happen in such cases, because what is appropriate behavior is unclear.</p>
+<h2 id="scalar-codeville-merge"><a class="header" href="#scalar-codeville-merge">Scalar codeville merge</a></h2>
+<p>Traditional <a href="CodevilleMerge.html">CodevilleMerge</a> on scalar values gives an <a href="AmbiguousCleanMerge.html">AmbiguousCleanMerge</a> here -- the last-changed revision for b2 is b1, which is an ancestor of c2, and thus c2 should win cleanly; similarly, the last-changed revision for c2 is c1, which is an ancestor of b2, and thus b2 should win cleanly.</p>
+<p>This somewhat anomalous case is normally presented to the user as a conflict (what else can one do?), which is the right result.  But there is a more subtle problem:</p>
+<pre><code>   a
+  / \
+ b1  c1
+ |\ /|
+ | X |
+ |/ \|
+ b2  c2
+  \ / \
+   b3  c3
+</code></pre>
+<p>Suppose someone else commits another version under c2, in which they didn't touch this scalar at all -- they are blissfully ignorant of Bob and Claire's shenanigans.  Now, this should merge cleanly -- someone has resolved the b2/c2 conflict, someone else has made no changes at all, all should be fine. But it's not; it's another ambiguous clean merge, because the last-changed revisions for b3 and c3 are still b1 and c1, respectively.  In fact, this can continue arbitrarily long:</p>
+<pre><code>   a
+  / \
+ b1  c1
+ |\ /|
+ | X |
+ |/ \|
+ b2  c2
+  \ / \
+   b3  c3
+    \ / \
+     b4  c4
+</code></pre>
+<p>This is yet another conflict.  These conflicts continue so long as new versions are committed that do not have the ambiguous-clean resolution as an ancestor.</p>
+<p>(Of course, if at any point someone resolves one of these repeated conflicts in favor of c, then things get even more complicated.</p>
+<h2 id="-merge"><a class="header" href="#-merge">*-merge</a></h2>
+<p><a href="MarkMerge.html">MarkMerge</a> *-merge handles this case well.  The graph, annotated with *s, is:</p>
+<pre><code>   a*
+  / \
+ b1* c1*
+ |\ /|
+ | X |
+ |/ \|
+ b2* c2*
+</code></pre>
+<p>Note that the two conflicting merges at the end cause b2 and c2 to be marked. This the key to *-merge's success in this case.  *(b2) = b2, and *(c2) = c2, neither of c2 and b2 are an ancestor of the other, so a conflict is reported.</p>
+<p>Nor does *-merge suffer from the indefinite procession of repeated conflicts:</p>
+<pre><code>   a*
+  / \
+ b1* c1*
+ |\ /|
+ | X |
+ |/ \|
+ b2* c2*
+  \ / \
+   b3* c3
+</code></pre>
+<p>Because b2 and c2 conflicted, b3 is marked; c3, however, is not changed from its parent, so it is not marked.  Therefore b3 wins this merge cleanly.</p>
+<p>*-merge does perform sub-optimally in a similar case:</p>
+<pre><code>    a*
+   / \
+  b1* c1*
+  |\ /|
+  | X |
+  |/ \|
+  b2* c2*
+ / \ /
+d*  b3*
+</code></pre>
+<p>Here it reports a conflict, rather than merging cleanly to d.  However, this is because this is a <a href="StaircaseMerge.html">StaircaseMerge</a>, and has nothing to do with the criss-cross merge at all. </p>
+<h2 id="span-idorderingambiguitiesspansimple-weave-merge"><a class="header" href="#span-idorderingambiguitiesspansimple-weave-merge"><span id="orderingambiguities"></span>Simple weave merge</a></h2>
+<p><a href="SimpleWeaveMerge.html">SimpleWeaveMerge</a> handles the simple form of criss-cross correctly.  However, it runs into problems on a slightly different example, that only arise in the textual merging case:</p>
+<pre><code>    xy
+   /  \
+ xby  xcy
+  | \/ |
+  | /\ |
+  |/  \|
+xbcy  xcby
+</code></pre>
+<p>(each letter represents a line in a file)</p>
+<p>Here Bob and Claire have managed to overcome their differences somewhat -- they each actually include the other's new lines when they merge -- but they both insist that their own line must come <em>first</em>.</p>
+<p><a href="SimpleWeaveMerge.html">SimpleWeaveMerge</a> will silently clean merge this to either <code>xcby</code> or <code>xbcy</code> -- which it picks is somewhat random, and depends on the details of the <a href="Resolution.html">Resolution</a> and global ordering it uses.</p>
+<h2 id="darcs-merge-1"><a class="header" href="#darcs-merge-1">DARCS merge</a></h2>
+<p>The DARCS merge algorithm would generate something like this:</p>
+<pre><code>      a
+     / \
+    b1  c1
+    |\ /|
+    | X |
+    |/ \|
+m(b,c) m(b,c)
+    |   |
+    b2  c2
+</code></pre>
+<p>Where <code>m(b,c)</code> is a &quot;merger&quot; patch for <code>b1</code> and <code>c1</code>.  The end result is that DARCS behaves the same as Git does with its recursive three way merge, except that DARCS uses a special form for its 'merger patch' rather than normal conflict markers.  This makes sure that there are no problems with textual merge and conflict markers (such as mis-matched delimiters, etc).</p>
+<hr />
+<p><a href="CategoryMergeExample.html">CategoryMergeExample</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="implicit-undo"><a class="header" href="#implicit-undo">Implicit Undo</a></h1>
+<p>An (arguably) beneficial property for a merge algorithm to have.</p>
+<p>An algorithm that supports implicit undo is one in which someone can make a change, and then revert that change, and the merge algorithm will act as if the change never happened.</p>
+<p>The simplest scalar example is:</p>
+<pre><code>   a
+  / \
+ b   c
+ |
+ a
+</code></pre>
+<p>An implicit undo supporting algorithm will make this a clean merge to <code>c</code>.</p>
+<p>To make things trickier, the case:</p>
+<pre><code>   a
+   |
+   b
+  / \
+ a   b
+</code></pre>
+<p>should also be a clean merge, but with <code>a</code> winning.  The intuition is that if I undo some changes back to an earlier version, the undo should beat all the things that are undone, but should lose to all the things that beat the earlier version.</p>
+<h2 id="discussion"><a class="header" href="#discussion">Discussion</a></h2>
+<p>This is a problem that has arisen only with the development of more advanced merge algorithms; 3-way merge does not have this problem, because it simply ignores almost all historical information.  However, there is a direct trade-off -- 3-way merge faces more <a href="Resolution.html">resolution</a> ambiguities as a result. More disturbingly, a series of clean merges using 3-way merge can cause an undo of a change to silently disappear, with no user editing whatsoever.</p>
+<p>The use case for this is reasonably common (people making changes, and then reverting them), and users have some expectation that it will work, since 3-way merge works this way.  Not supporting implicit undo also puts a heavier burden on conflict resolution UIs, because it may be entirely obscure to the user why they are seeing a particular conflict.</p>
+<p>However, it is a somewhat controversial feature, because its is not clear what effect supporting it will have on the global stability and transparency of the merge system -- if not done carefully, there is a danger of introducing new failure modes, extremely complex causes, and spooky action at a distance.  There is not yet consensus on whether the possible benefits outweigh the possible risks, especially as no-one has yet produced a fully working algorithm that supports implicit undo.  This is an active research area.</p>
+<p>Implicit undo in its strongest form has been shown to be internally inconsistent. See http://article.gmane.org/gmane.comp.version-control.revctrl/89. A weaker version may still prove workable.</p>
+<p>Handling implicit undo is particularly tricky for textual merge algorithms, because it is not enough to build on top of an implicit undo supporting scalar merge algorithm; one must also modify one's <a href="Resolution.html">resolution</a> algorithm.</p>
+<p>In some cases implicit undo and <a href="Convergence.html">&quot;convergence&quot;</a> give conflicting answers. The following is the simplest example:</p>
+<pre><code>   a
+  / \
+ b   b
+ |
+ a
+</code></pre>
+<p>Convergence clearly dictates that the above should merge to a, while implicit undo indicates that it should merge to b. The general consensus is that convergence is more important in this case than implicit undo.</p>
+<p>Partially because of this case, the best hope of having working implicit undo at this point is to make a conservative implementation whose only behavior is to in some cases take conflicts given by a convergence-supporting merge algorithm and resolve them cleanly.</p>
+<p>The above example is particularly bad for textual merges, because a line deletion may or may not count as being convergent depending on whether it's done as part of another change. For example with <code>AXB -&gt; AB -&gt; AXB</code> versus <code>AXB -&gt; AYB</code>, the <code>AYB</code> wins by implicit undo, but with <code>AXB -&gt; AB -&gt; AXB</code> versus <code>AXB -&gt; AB -&gt; AYB</code>, there is convergence, but each individual line has the same history in both examples.</p>
+<p>Implicit undo can cause a descendant with is different from either ancestor, for example:</p>
+<pre><code>   a
+  / \
+ b   b
+ |\ /|
+ a X a
+ |/ \|
+ b   b
+</code></pre>
+<p>If one supports full-blown implicit undo, then in this case both b's at the bottom were clean merges, because they were examples of the previous example, but since both b's have already been overridden, then merging these two b's together should result in a. This example doesn't hit an internal inconsistency in implicit undo, but it does conflict with the obvious principle that the descendant of two identical ancestors should cleanly merge to those ancestors, and it's a much simpler example than the one which demonstrates an internal inconsistency.</p>
+<p>Fortunately this example is also one which heavily relies on a case where implicit undo doesn't conflict with convergence, so applying convergence first and only if that doesn't give an answer applying implicit undo continues to appear promising.</p>
+<p>The following is a case where convergence prevents implicit undo from working:</p>
+<pre><code>   a
+  / \
+ c   c
+ |   |
+ a   b
+</code></pre>
+<p>Here's a strange edge case:</p>
+<pre><code>        a
+        |\
+        | \
+        |  \
+        |   p
+        |   |
+        b   a
+        |\ /|
+        | X |
+        |/ \|
+        b   a
+</code></pre>
+<p>Note that there is no convergence here.</p>
+<p>In this case, if we assume no implicit undo then we clearly have a conflict, but if we assume implicit undo then both nodes at the bottom would have resolved to the same b, and one of them was overwritten by a, so clearly a should win. The problem here is that we're making strong assumptions about what merge algorithms were used in the construction of ancestor nodes, and those assumptions are likely to be violated in practice.</p>
+<p>Here is another edge case:</p>
+<pre><code>        a
+       / \
+      /   \
+     b     p
+     |\    |
+     | \   a
+     r  \ /|
+     |   X |
+     b  / \|
+     | /   q
+     |/    |
+     b     a
+</code></pre>
+<p>Again note the lack of convergence.</p>
+<p>This is sort of like an ambiguous clean merge for implicit undo - each side has defeated an identical ancestor of the other, so we have a conflict by both sides winning.</p>
+<p>The above examples in aggregate seem to indicate that supporting implicit undo is a fairly sketchy proposition. Perhaps it's better to support explicit undo, by having a command which rewrites local history (which hasn't been commited elsewhere) to pretend that a particular section of code never got changed in the first place.</p>
+<h2 id="supported-by-1"><a class="header" href="#supported-by-1">Supported by</a></h2>
+<p><a href="ThreeWayMerge.html">ThreeWayMerge</a></p>
+<h2 id="not-supported-by-1"><a class="header" href="#not-supported-by-1">Not supported by</a></h2>
+<p><a href="DarcsMerge.html">DarcsMerge</a>, <a href="MarkMerge.html">MarkMerge</a>, <a href="SimpleWeaveMerge.html">SimpleWeaveMerge</a>, others</p>
+<hr />
+<p><a href="CategoryMergeExample.html">CategoryMergeExample</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rollback"><a class="header" href="#rollback">Rollback</a></h1>
+<p>A desirable feature for VCSes/merge algorithms -- temporary rejection of integrated changes.  This is a use case that is very poorly supported by all basic DAG+merge systems.</p>
+<p>To go into more detail: Imagine you have two branches, let's call them &quot;stable&quot; and &quot;ultragizmo&quot;.  At some point, it's determined that the new ultragizmo feature is stable enough to integrate, so &quot;ultragizmo&quot; is merged into &quot;stable&quot;.  A few days later, someone discovers a huge, horrible bug in the new code, that will take some time to fix.  We want to be able to do the following:</p>
+<ul>
+<li>Back out the changes to &quot;stable&quot;, to get back to a, well, stable state, while the bug is worked on</li>
+<li>Continue to be able to merge stable-&gt;ultragizmo (so that the feature branch can track other changes occuring in the stable branch)</li>
+<li>Continue to work on the ultragizmo branch, fixing the bugs.</li>
+<li>Eventually repeat the merge from ultragizmo-&gt;stable.</li>
+</ul>
+<h2 id="the-problem"><a class="header" href="#the-problem">The problem</a></h2>
+<p>So suppose we do this naively:</p>
+<pre><code>    a
+   /|
+  / |
+ b  a
+ |\ |
+ | \|
+ |  b
+ |  |
+ b  a
+</code></pre>
+<p>Here 'b' is the unstable value and 'a' is the stable value.  The problem is that in backing out the change to the stable line, we reverted the a-&gt;b change by creating an &quot;anti-patch&quot; for it, and injecting that into the system.  Now that there is a b-&gt;a patch in the system, our merger will happily kill all 'b's, whereever they are found.  For instance, if we merge stable-&gt;ultragizmo, all of the work done on the ultragizmo will be silently reverted.  Even if we don't merge stable-&gt;ultragizmo, when we later try again to integrate the (now bug-free) ultragizmo code by merging from ultragizmo-&gt;stable, the changes will be stripped out and we will fail to actually get our changes into the stable branch.  Oops.</p>
+<p>It's important to stress that in other cases, this is exactly the right behavior -- if we revert a patch because we have realized that it is simply a bad idea, and are rejecting it, then we <em>want</em> this anti-patch to go out and kill every instance of 'b' that is is merged into.  It is also consistent with the rest of the system (e.g., if 'b' was replaced with 'c' instead of 'a', then obviously 'c' beating 'b' would be the right behavior).</p>
+<p>This suggests that systems should, perhaps, provide some extra way for the user to indicate what behavior they want -- e.g., some way to say &quot;I am only temporarily backing out this patch; I want my new 'a' to beat any 'b's that are descendents of the old 'a' -- e.g.:</p>
+<pre><code>    a
+   /|
+  / |
+ b  a
+  \ |
+   \|
+    b
+    |\
+    a b
+</code></pre>
+<p>here 'a' should win -- but it should lose to all other 'b's.&quot;</p>
+<p>In real cases, of course, things are made more complex because we are generally dealing with textual merging rather than scalar merging, and so we need to think about situations where only certain hunks are being rolled back, etc.</p>
+<p>Support rollback can create some counter-intuitive properties.  For instance, if the edge labeled R is a rollback, then the following case should be a clean win for 'b':</p>
+<pre><code>   a
+  / \
+ b   a
+ |\  |
+ | \ |
+ |  \|
+ |   b
+ |   |R
+ |   a
+  \ /
+   ?
+</code></pre>
+<p>which violates a rule of thumb used when evaluating merge algorithms -- that when merging A and B, where A is an ancestor of B, B should win unconditionally.</p>
+<h2 id="workarounds"><a class="header" href="#workarounds">Workarounds</a></h2>
+<h3 id="double-revert"><a class="header" href="#double-revert">Double-revert</a></h3>
+<p>One way to work around this problem is to:</p>
+<ul>
+<li>revert the changes to stable</li>
+<li>merge from stable-&gt;ultragizmo</li>
+<li>revert ultragizmo back to what it was before the merge
+I.e., we essentially create an anti-anti-patch, and work off of that.  Doing this in such a way that we do not wipe out independent changes made on the stable branch, or interfere with any newer changes made on the unstable branch, requires care.  Here's one approach.  Given a complex situation like:</li>
+</ul>
+<pre><code>
+ S1
+ | \
+ |  \
+ S2  U1
+ |  / \
+ | /   \
+ S3     \
+ |       U2
+ S4
+</code></pre>
+<p>We want to preserve both the S1-&gt;S2 and S3-&gt;S4 changes (and leave open the possibility of merging them into the unstable branch), preserve the S1-&gt;U2 changes (and leave open the possibility of later merging them into the stable branch), while getting the U1-&gt;S3 changes out of the stable branch.</p>
+<p>First, re-commit the S1 state as a child of S3, and then re-commit the S2 state as a child of that, both into the stable branch (or into a temporary branch, if your VCS only supports linear branches):</p>
+<pre><code> S1
+ | \
+ |  \
+ S2  U1
+ |  / \
+ | /   \
+ S3     \
+ | \     U2
+ S4 \
+     S1'
+     |
+     S2'
+</code></pre>
+<p>Now, re-commit the U1 state as child of S1', into the unstable branch (or, again, another temporary branch):</p>
+<pre><code> S1
+ | \
+ |  \
+ S2  U1
+ |  / \
+ | /   \
+ S3     \
+ | \     U2
+ S4 \
+     S1'
+     |  \
+     S2' \
+         U1'
+</code></pre>
+<p>Now we can merge U1' and U2 into the unstable branch; the result should be identical to U2.  (Either because this happens naturally, as ImplicitUndo would produce, or because we force this result.)  We can also merge S2' with S4 into the stable branch; the result should contain the S1-&gt;S2 and S3-&gt;S4 changes, but not the bad S2-&gt;S3 changes:</p>
+<pre><code> S1
+ | \
+ |  \
+ S2  U1
+ |  / \
+ | /   \
+ S3     \
+ | \     U2
+ S4 \     \
+ |   S1'   \
+ |   |  \   \
+ |   S2' \   \
+  \ /    U1' /
+   S5      \/
+           U2'
+</code></pre>
+<p>As you can see, we've essentially reproduced the entire old revision graph, but with the badness left out.  Fortunately, this trick does not require one to reproduce arbitrarily large graphs -- even if there were multiple commits between S1 and S2, they could be compressed down into a single one -- the trick is to re-commit the last stable-&gt;unstable branch point.</p>
+<p>Adapting this trick to situations in which there is no unique branch point, where the stable and unstable graph are both bushier, when there has already been another merge from stable-&gt;unstable since the offending merge, etc., is left as an exercise for the reader.</p>
+<p>Contrariwise, I'm pretty sure the approach can be simplified if we do want to merge stable-&gt;unstable (commonly true, but not fair to assume in the general case), and especially if the intermediate commits don't exist.</p>
+<p>All of this requires a VCS that supports:</p>
+<ul>
+<li>merging between arbitrary historical revisions, not just branch heads</li>
+<li><a href="AccidentalCleanMerge.html">AccidentalCleanMerge</a> (see below)
+One also has to take care with things like invertibility -- in many systems, a delete is not truly invertible; all that can be done is create a new file with the same name and contents as the old one.</li>
+</ul>
+<p>An alternative is to simply discard the original development branch, and recreate it from the double-reverted base:</p>
+<pre><code> S1
+ | \
+ |  \
+ S2  U1
+ |  / \
+ | /   \
+ S3     \
+ | \     U2   (everyone pretend this revision doesn't exist!)
+ S4 \
+ |   S1'
+ |   |  \
+ |   S2' \
+  \ /    U1' (double-revert)
+   S5      \
+           U2' (everyone should use this)
+</code></pre>
+<p>This may be appropriate in some cases, though care should be taken: it causes tricky coordination problems, may lose history, and may not be possible if, for instance, the two branches are controlled by different people/organizations (say the &quot;stable&quot; branch is Bob's Kernel Distro's kernel branch, and the &quot;ultragizmo&quot; branch is Linus's branch, and Linus doesn't care about Bob's travails).  The biggest advantage of the complex dance done above is that ordinary merge tools will work, even if more work has been done against U2 -- you can simply merge U3 and U2'.  (This is why <a href="AccidentalCleanMerge.html">AccidentalCleanMerge</a> is important here, or possibly <a href="Convergence.html">Convergence</a>.)</p>
+<p>The situation is symmetrical enough that you can also do things the other way around, discarding the bad part of the stable branch and recreating it:</p>
+<pre><code>    S1
+    | \
+    |  \
+    S2  U1
+   /|  / \
+S4' | /   \
+    S3     \
+    |       U2
+    |
+    S4 (everyone ignore this!  use S4' instead!)
+</code></pre>
+<h2 id="other"><a class="header" href="#other">Other</a></h2>
+<p>BramCohen says he has a way to punt on supporting this inside the merge algorithm, and can get the desired behavior entirely outside.  The purpose of this paragraph is to shame him into sharing it on the wiki ;-).</p>
+<h2 id="supported-by-2"><a class="header" href="#supported-by-2">Supported by</a></h2>
+<p>DARCS.</p>
+<h2 id="not-supported-by-2"><a class="header" href="#not-supported-by-2">Not supported by</a></h2>
+<p>Everything but DARCS.</p>
+<hr />
+<p><a href="CategoryMergeExample.html">CategoryMergeExample</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="staircase-merge"><a class="header" href="#staircase-merge">Staircase Merge</a></h1>
+<p>Name for the following merge example:</p>
+<pre><code>    a
+   / \
+  b   c
+   \ / \
+    c   d
+</code></pre>
+<p>An algorithm that supports StaircaseMerge will cleanly merge c and d to d.  The reasoning is that d, when created, defeated c; therefore, it should win cleanly.</p>
+<p>This behavior is similar to <a href="ImplicitUndo.html">ImplicitUndo</a> because b was added and reverted, but while <a href="ImplicitUndo.html">ImplicitUndo</a> appears to be quite dangerous and tricky to implement, StaircaseMerge doesn't appear to cause any nasty edge cases and at least one technique for implementing it straightforwardly is known.</p>
+<h2 id="example-repeated-staircase-merge"><a class="header" href="#example-repeated-staircase-merge">Example: Repeated Staircase Merge</a></h2>
+<p>It's possible to have a repeated staircase merge</p>
+<pre><code>    a
+   / \
+  b   c
+   \ / \
+    c   d
+     \ / \
+      d   e
+</code></pre>
+<p>Note that this can easily continue as you repeatedly merge changes to a development branch into an unaltered branch. Most people agree that the user shouldn't have to repeatedly fix conflicts in this case, so it creates a compelling argument for clean merging of staircase.</p>
+<h2 id="example-staircase-vs-convergence"><a class="header" href="#example-staircase-vs-convergence">Example: Staircase vs. Convergence</a></h2>
+<p>This related case illustrates interesting complications which can arise:</p>
+<pre><code>    a
+   / \
+  b   c
+   \ / \
+    c   b
+     \ / \
+      b   e
+</code></pre>
+<p>Note that this is the same as the previous examples but with the <code>d</code>s changed to <code>b</code>s. Analogy with the previous example indicates that e should win cleanly, but <a href="GenerationCounting.html">GenerationCounting</a> raises a conflict, because on the left <code>b</code> has been resurrected, and on the right it's alive for the first time). The theory behind this can be seen by comparing to the following case:</p>
+<pre><code>    a
+   / \
+  b   c
+   \   \
+    c   b
+     \   \
+      b   e
+</code></pre>
+<p>By <a href="Convergence.html">Convergence</a> we can ignore the <code>c</code>s, but since <code>b</code> was born, died, and re-born on the left, that's <a href="Convergence.html">Convergence</a> plus further history with the single birth of <code>b</code> on the right, so we have a conflict.</p>
+<h2 id="example-convergence-gets-confused-by-staircase"><a class="header" href="#example-convergence-gets-confused-by-staircase">Example: Convergence gets confused by Staircase</a></h2>
+<p>The following example illustrates a potential ambiguity in the semantics of <a href="Convergence.html">Convergence</a> when mixed with Staircase:</p>
+<pre><code>    a
+    |\
+    | \
+    |  b
+    |  |
+    |  c
+    d  |
+    |\ |
+    | \|
+    |  d
+    |  |
+    c  |
+    |  |
+    b  c
+</code></pre>
+<p>In this case the decision of the branch on the right to go with d indicates that d wins over all of its history, so intuitively it would make sense for b to cleanly win at the bottom, because after d there is strictly convergent history with b winning. However, if <a href="GenerationCounting.html">GenerationCounting</a> is used, then c wins cleanly.</p>
+<p>Fixing this problem for a general text merger doesn't appear to be impossible. The following example clearly illustrates how this case should affect a boolean value, as is the case for line include/exclude as used in generation counting of text files:</p>
+<pre><code>    a
+    |\
+    | \
+    |  b
+    |  |
+    b  a
+    |\ |
+    | \|
+    |  b
+    |  |
+    a  |
+    |  |
+    b  a
+</code></pre>
+<p>A general algorithm for getting this right is unknown, although it feels notably similar to the problem of supporting staircase in a non-convergent scalar merge, which also doesn't have a good known algorithm.</p>
+<h2 id="supported-by-3"><a class="header" href="#supported-by-3">Supported by</a></h2>
+<p><a href="CodevilleMerge.html">CodevilleMerge</a>, <a href="ThreeWayMerge.html">ThreeWayMerge</a></p>
+<h2 id="not-supported-by-3"><a class="header" href="#not-supported-by-3">Not supported by</a></h2>
+<p><a href="MarkMerge.html">MarkMerge</a></p>
+<hr />
+<p><a href="CategoryMergeExample.html">CategoryMergeExample</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uncategorised-pages"><a class="header" href="#uncategorised-pages">Uncategorised pages</a></h1>
+<p>The <code>revctrl.org</code> wiki followed the original C2 WikiWiki convention of
+tagging pages with any number of <code>Category[Something]</code> links, relying
+on backlinks and the search facility to produce useful indexes.
+Unfortunately, because only a few of the wiki's pages were rescuable,
+and not all were categorised, only a limited amount of index structure
+is available to us. The following pages are those that fall outside of
+the categories discernable from the rescued wiki markup.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ambiguous-clean-merge"><a class="header" href="#ambiguous-clean-merge">Ambiguous Clean Merge</a></h1>
+<p>A case which causes considerable problems for many merge algorithms. Specificaly:</p>
+<pre><code>    a
+   / \
+  b   c
+  |\ /|
+  | X |
+  |/ \|
+  b   c
+</code></pre>
+<p>While everyone agrees that this case should be a conflict, it can be difficult to implement because b and c both beat each other. b wins because of the following path:</p>
+<pre><code>    a
+     \
+      c
+     /
+    /
+   /
+  b
+</code></pre>
+<p>While c wins because of the following path:</p>
+<pre><code>    a
+   /
+  b
+   \
+    \
+     \
+      c
+</code></pre>
+<p>See <a href="CrissCrossMerge.html">CrissCrossMerge</a> for more discussion.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="convergence"><a class="header" href="#convergence">Convergence</a></h1>
+<p>Convergence is the behavior where an identical change is made in two different branches, like this:</p>
+<pre><code>    a
+   / \
+  b   b
+</code></pre>
+<p>Version control systems are said to support convergence if they view both b's in the above example as being the same change. In practice this means that if one of the b's is modified and then the two are merged, the modification wins.</p>
+<p>So the following example:</p>
+<pre><code>    a
+   / \
+  b   b
+  |
+  c
+</code></pre>
+<p>Should cleanly merge to c, assuming the standard interpretation of <a href="AccidentalCleanMerge.html">AccidentalCleanMerge</a>.</p>
+<p>Currently hardly any version control system properly supports convergence.</p>
+<p>Convergence is sometimes referred to as 'implicit cherry-picking' because it allows cherry-picking to be done offline using diff and patch, and the system figures out what happened. This is in contrast to explicit cherry-picking, which requires the user give semantic input describing the cherry-pick to the system, which is the style supported by Darcs.</p>
+<p>Properly supporting convergence leads to extraordinarily powerful support of cherry-picking. It allows cherry-picks to simply be done, possibly even via offline distribution of patches, and the system implicitly realizes what happened, even with a simple snapshot-based history.</p>
+<p>There are some inherent limitations to what convergence can do. Specifically, in cases like the following:</p>
+<pre><code>  a
+  |
+  b
+  |
+  a
+  |
+  b
+</code></pre>
+<p>If a user does an offline cherry-pick from the first state to the last state and applies it elsewhere, then the system will have no idea that the intermediary states happened, and that branch will tend to lose or conflict in some cases which it should outright win.</p>
+<p>One way to handle these limitations is to do cherry-picking within the version control system, and have cherry-picks of multiple sequential changes create revisions for all of the intervening values.</p>
+<p>The following case involves some subtlety:</p>
+<pre><code>  a
+  |\
+  | \
+  x  y
+  |  |
+  b  |
+  |  |
+  z  b
+</code></pre>
+<p>In this case, y appeared on the right but doesn't any longer, creating a 'phantom' conflict. The most compelling argument about whether to support phantom conflicts is that they cause <a href="StaircaseMerge.html">StaircaseMerge</a> to become a conflict, which indicates that they should be ignored.</p>
+<pre><code>  a
+  |\
+  | \
+  b  c
+  |  |
+  c  b
+  |
+  z
+</code></pre>
+<p>In this case, if we assume setting to b to mean 'b defeats x' then we have a conflict, but if we assume it to mean 'b wins' then we have a convergent case and z wins. Using the 'b defeats x' definition is more complicated, and particularly difficult for line-based data where there is no one-to-one mapping between old lines and new lines. The general feeling seems to be that 'b wins' is a better approach.</p>
+<p>Contrast the above with the following case, which is a clean merge regardless of whether a change means 'b defeats a' or 'b wins'. One could also interpret it to mean 'b defeats this exact history', which would result in this case being a conflict.</p>
+<pre><code>  a
+  |\
+  | \
+  b  c
+  |  |
+  a  a
+  |  |
+  c  b
+  |  |
+  a  a
+  |
+  z
+</code></pre>
+<p>See the <a href="ImplicitUndo.html">ImplicitUndo</a> page for a discussion of interactions with convergence.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="edge-versioning"><a class="header" href="#edge-versioning">Edge Versioning</a></h1>
+<p>BramCohen said:</p>
+<p>the basic idea is that if you have XY -&gt; XAY and XY -&gt; XBY and XAY, XBY -&gt; XABY and XAY -&gt; XCY and XCY, XBY -&gt; XCY, then XABY, XCY -&gt; X&lt;AB=C&gt;Y on the grounds that AB never appeared next to each other in the history of the other side</p>
+<p>Or, to put it graphically:</p>
+<p><img src="attachments/edge-versioning.png" alt="Edge versioning DAG illustration" /></p>
+<p>In this case, the user has indicated that C beats A and that C beats B, but never that C beats AB, so presenting the conflict &quot;AB&quot; vs. &quot;C&quot; makes more sense than silently picking C.</p>
+<p>The motivating case for edge versioning is when there's a conflict between A and B which one user resolves as XABY and another resolves as XBAY. When their resolutions are merged together, <a href="SimpleWeaveMerge.html">SimpleWeaveMerge</a> will arbitrarily pick either XABY or XBAY, without a conflict, depending on the weave ordering. With edge versioning, a conflict such as X&lt;A=&gt;BAY will be given, which while arguably not the best conflict to give in this situation is at least a conflict rather than an arbitrary erroneous clean merge.</p>
+<p>The word &quot;edge&quot; in the name refers to a boundary between sections of text.  For example, if &quot;ABC&quot; and &quot;DEF&quot; are merged to create &quot;ABCDEF&quot;, then something <strong>new</strong> has happened because &quot;CD&quot; was created.  &quot;CD&quot; is an <em>edge</em> between two regions of text which were not previously adjacent.  With edge versioning, &quot;CD&quot; would be versioned just as lines are in CodevilleMerge.</p>
+<p>Another simpler case that illustrates this is ABC -&gt; AC being merged with ABC -&gt; AXC (i.e. deleting a line vs. editing the same line).  Without edge versioning the result would be a clean merge to AXC, as &quot;B&quot; was deleted on both sides.  With edge versioning the result would be  A&lt;=X&gt;C (i.e. a conflict between an empty region and the inserted &quot;X&quot;).</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="generation-counting"><a class="header" href="#generation-counting">Generation Counting</a></h1>
+<p><a href="GenerationCounting.html">GenerationCounting</a> is a the technique for supporting <a href="Convergence.html">Convergence</a> used by <a href="ConvergentScalarMerge.html">ConvergentScalarMerge</a> and <a href="PreciseCodevilleMerge.html">PreciseCodevilleMerge</a>. It involves keeping a 'generation count' for every possible value. Generation counts start out at 0 for everything, then go to 1 when the thing appears, then 2 when it's deleted again, then 3 when it's re-added, etc. When two different versions are merged together, the higher number wins.</p>
+<p><a href="GenerationCounting.html">GenerationCounting</a> clearly has the definitional property of <a href="Convergence.html">Convergence</a> that when one side of a merge has the other one as a subset of its history, then the superset wins. It also somewhat controversially clean merges in other cases, for example the following:</p>
+<pre><code>  a
+  |\
+  | \
+  b  c
+  |  |
+  c  b
+  |
+  z
+</code></pre>
+<p><a href="GenerationCounting.html">GenerationCounting</a> will make z win cleanly in this case, as discussed on the <a href="ConvergentScalarMerge.html">ConvergentScalarMerge</a> page.</p>
+<p>Do I understand <a href="GenerationCounting.html">GenerationCounting</a> correctly in the following two cases:</p>
+<pre><code>  (Case II)
+  a
+  |\
+  b c
+  | |
+  c b
+  | |
+  z c
+
+  (Case III)
+  a
+  |\
+  b c
+  | |
+  c b
+  | |
+  z c
+    |
+    b
+</code></pre>
+<p>Do both case II and case III result in a conflict? If so, then regardless of the judgement as to whether the first example case should merge to z, <a href="GenerationCounting.html">GenerationCounting</a> seems counterintuitive to me.  Both of these cases should be at least as likely or more likely to clean merge to z than the first example case. In case II, after all, both sides seem to have agreed that c beats b, i.e. converged on c, and then one side offers z as a further change on c.  In case III, the right hand side has simply dithered longer about which of b or c is better -- why does that make it harder to merge with z, which the left-hand side implicitly thinks is better than both b and c?  Generally speaking, in two long-sundered branches, why is it relevant how many times a branch has considered and dropped a value?  Perhaps it would make more sense to cap the count at 2, and return to 1 upon a further reappearance?  Then all three cases would cleanly merge to z. This would roughly say that a node's value wins over everything considered in its history, which seemed to be the consensus on the <a href="Convergence.html">Convergence</a> page. Thanks for any thoughts. -- GlenWhitney</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="living-lines-first"><a class="header" href="#living-lines-first">Living Lines First</a></h1>
+<p>LivingLinesFirst is a refinement of having <a href="Convergence.html">Convergence</a> in a <a href="Weave.html">Weave</a>. It involves ignoring lines which aren't alive in ancestors (or aren't alive in the combination of ancestors, as per <a href="GenerationCounting.html">GenerationCounting</a>) and then having a second pass which does include non-living lines and looks for matches of lines between matches which were found in the last pass.</p>
+<p>For example, let's say we start with this:</p>
+<pre><code>         ACB
+        /   \
+    ACPQB   AXCB
+</code></pre>
+<p>and then add a new version like so:</p>
+<pre><code>         ACB
+        /   \
+    ACPQB   AXCB
+             |
+            APQXB
+</code></pre>
+<p>Now we wish to perform resolution on APQXB on the right. The weave looks like AXCPQB, so if we did a longest common substring against the weave the commonality would be APQB and a new X would be added to the weave, resulting in a weave of AXCPQXB. But with living lines first, we first match against the living lines, which are AXCB, for a common substring in the first pass of AXB, so the PQ is regarded as new and we have a weave of APQXCPQB.</p>
+<p>If in contrast we add the same version in a different place we get a different answer:</p>
+<pre><code>         ACB
+        /   \
+    ACPQB   AXCB
+       |
+    APQXB
+</code></pre>
+<p>In this case the PQ is alive and the X isn't, so we have matching lines of APQB and a new weave of AXCPQXB.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="merging"><a class="header" href="#merging">Merging</a></h1>
+<p>(what is merging)</p>
+<p>(classical merging, cherrypicking)</p>
+<p>(ancestry tree (or dag) of merge algorithms)</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="neutral-interface"><a class="header" href="#neutral-interface">Neutral Interface</a></h1>
+<p>To make various GUI tools usable with multiple SCM backends, 
+I propose creating an intermediary program (or programs or libraries) to present the 
+SCM data to the GUI application in an easily parsed, neutral format.
+This will simultaneously make things easier for the GUI and make it work for more users.</p>
+<h2 id="sample-implementations"><a class="header" href="#sample-implementations">Sample implementations</a></h2>
+<p>Tiny sample GIT implementation is available at
+http://pasky.or.cz/~xpasky/neutral.sh</p>
+<h3 id="strawman-functionality"><a class="header" href="#strawman-functionality">Strawman functionality</a></h3>
+<pre><code>$ scm identify
+type:9:Mercurial
+project-name:9:linux-2.6
+...
+$ scm changeset 9938
+identifier:17:9938:e63c00676ed5
+parent:17:9937:d0ab52bb481d
+tag:3:tip
+date:17:1130273508 -25200
+user:29:Andrew Morton &lt;akpm@osdl.org&gt;
+file:29:drivers/scsi/qla2xxx/qla_os.c
+description:532:[PATCH] qlogic lockup fix
+
+If qla2x00_probe_one()'s call to qla2x00_iospace_config() fails, we call
+qla2x00_free_device() to clean up.  But because ha-&gt;dpc_pid hasn't been set
+yet, qla2x00_free_device() tries to stop a kernel thread which hasn't started
+yet.  It does wait_for_completion() against an uninitialised completion struct
+and the kernel hangs up.
+
+Fix it by initialising ha-&gt;dpc_pid a bit earlier.
+
+Cc: Andrew Vasquez &lt;andrew.vasquez@qlogic.com&gt;
+Cc: James Bottomley &lt;James.Bottomley@steeleye.com&gt;
+Signed-off-by: Andrew Morton &lt;akpm@osdl.org&gt;
+Signed-off-by: Linus Torvalds &lt;torvalds@osdl.org&gt;
+
+$ scm -s project-name identify
+project-name:9:linux-2.6
+$ scm -i
+identify+type,project-name
+
+type:3:GIT
+:
+^D
+$ 
+</code></pre>
+<h3 id="proposed-format"><a class="header" href="#proposed-format">Proposed format</a></h3>
+<p>Output consists of zero or more tag/value pairs. Some tags are optional, some tags may be repeated.
+Each pair is output as <code>&lt;tag&gt;:&lt;value length&gt;:&lt;value&gt;\n</code>. This allows values to contain embedded newlines.
+Tag names are all ASCII, values are ASCII/UTF-8.</p>
+<p>If the <code>-s &lt;field&gt;[,&lt;field&gt;...]</code> argument is passed before the command name,
+it suggests that you are interested only in certain fields of the output,
+and the program should not output any other fields. Users are encouraged to
+always list all the fields they want here, since various field values may be
+expensive to compute based on the particular underlying SCM (e.g. in
+Git, it is relatively expensive to get the value of the 'file' field).</p>
+<h3 id="suggested-commands-and-associated-output-fields"><a class="header" href="#suggested-commands-and-associated-output-fields">Suggested commands and associated output fields</a></h3>
+<p>version:</p>
+<ul>
+<li>version - the interface version; for the foreseeable future, this will have the value of 0</li>
+</ul>
+<p>identify:</p>
+<ul>
+<li>type - the type of SCM in use in the current directory</li>
+<li>project-name - the name of the project (optional)</li>
+<li>user - the user associated with this instance of the project (optional)</li>
+</ul>
+<p>changeset:</p>
+<ul>
+<li>identifier - a string that identifies this revision</li>
+<li>parent - a string that identifies a parent of this revision (optional, multiple)</li>
+<li>tag - a string that identifies a tag associated with this revision (optional, multiple)</li>
+<li>description - the description text associated with this commit</li>
+<li>date - the date this commit occurred (decimal seconds from UTC epoch, seconds offset from UTC)</li>
+<li>file - a file modified in this changeset (optional, multiple)</li>
+<li>user - a string identifying the user who created the commit (multiple)</li>
+<li>...</li>
+</ul>
+<p>...</p>
+<h3 id="shell-mode--i"><a class="header" href="#shell-mode--i">shell mode (-i)</a></h3>
+<p>It'd be nice to have a shell mode, where a client can open a pipe to a subprocess and pass commands.
+This would reduce fork and other setup overhead.</p>
+<p>To allow for arbitrary data in arguments, shell mode passes arguments as follows:</p>
+<pre><code>&lt;command&gt;['+'&lt;field&gt;','&lt;field&gt;','...]&lt;newline&gt;
+&lt;argument length&gt;':'&lt;argument&gt;&lt;newline&gt;
+...
+&lt;newline&gt;
+</code></pre>
+<p>example:</p>
+<pre><code>command\n
+14:first argument\n
+15:second argument\n
+\n
+</code></pre>
+<p>Results are returned as in command line mode, followed by a newline.</p>
+<p>In the command line, the <code>+</code> marker and the field list afterwards is optional.
+If it is present, the field list after the <code>+</code> marker (non-inclusive; <code>+</code> and
+no field list means empty field list) is parsed in the same way as the <code>-s</code>
+argument, and the same considerations apply - it is recommended to always
+specify the field list.</p>
+<h3 id="library-future"><a class="header" href="#library-future">library (future)</a></h3>
+<p>Once some implementations exist, it should be easy to wrap all calls into a library. This library can initially call the stand-alone command, or possibly shell mode if available. Once the interface is well-established, the shim library can be replaced with direct calls to the SCM backend for improved performance.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="renaming"><a class="header" href="#renaming">Renaming</a></h1>
+<p>Renaming is supported to varying degrees by different version control systems. The simplest approach is to not support renaming at all. In CVS this is done by having the path from root be part of a file's name. If two different people create the same file with the same name, the two versions are simply merged together. In CVS there's no coherent concept of directories. Directories can be created but not removed, and as a mostly workable hack when one updates with the <code>-P</code> option (which everybody does) then any empty directories get deleted. CVS also has the quirk that if one person deletes a file and another modifies it, then that's treated as a conflict (most other systems quietly merge to the file being deleted).</p>
+<p>More functionality can be added by supporting file but not directory renames. In this case paths are still treated as part of a file's name, and directories only have implicit existence, but files have real identifiers and can be moved around. A new conflict case is added where two files are moved onto the same location. Directory moves are somewhat hackishly supporting by moving all the files under that directory, as a result of which if one person moves a directory and another person adds a file to it, the merge is to have the new file in the old place.</p>
+<p>The most powerful approach is to support renaming both files and directories. A file has a name and a parent, which is the directory it immediately sits under, and the same properties apply to directories. This creates a whole slew of new conflict cases. For example, a file can be moved to a deleted directory, and two directories each can be moved to be the child of the other. Also, it's a not uncommon use case to want to import one project into another one as a subdirectory, so there's general agreement that it should be possible to rename the root directory as well, although no version control systems actually support that yet, mostly because it introduces a whole new bunch of edge cases. It's tempting to view name and parent as two separate properties, and allow one person changing name and the other changing parent to clean merge, but the general consensus is that that should be treated as a conflict.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="resolution"><a class="header" href="#resolution">Resolution</a></h1>
+<p>Resolution is the process where a version control system takes a file which has been edited by a user and implicitly heuristically determines what the changes which have been made are. All version control systems (except for distant relatives which hook into editors like microsoft word) must perform resolution at some point.</p>
+<p>Most version control systems have to do some kind of resolution to do regular merging, which sometimes makes the distinction between merging and resolution unclear. As a rule of thumb, if something has to do a diff-like operation, it's doing resolution.</p>
+<p>Resolution is generally done against either one or two ancestors. When there are two ancestors, it's frequently done as separate diffs against either one, or sometimes as a single diff against a combination of the two (or a combination of all ancestors, in the case of a weave). As a result, most version control systems manage to have a single function for comparing two line-delimited files against each other and pairing up matching lines. Many of them literally use an external diff program.</p>
+<h2 id="approaches-to-diff"><a class="header" href="#approaches-to-diff">approaches to diff</a></h2>
+<p>There are two basic approaches to doing a diff. One is to find a longest common substring on the two files, then fix that substring as a match and do divide and conquer on the sections before and after. This approach can be led very astray if there are two files with a lot of short matching sequences throughout but a single slightly longer matching sequence at the beginning of one and the end of the other.</p>
+<p>The other approach is to find a longest common subsequence on the two files.
+This can sometimes result in very bad matches which pair up lots of unrelated open and close curly bracket lines. An improvement to this approach is to do a longest common subsequence on only the lines which appear exactly once in both files, then extend matches forward and backward, and do divide and conquer on the unmatched sections (because lines might be unique within a subsection even if they aren't unique for the whole file). It may be necessary to have a final regular LCS pass in that case to reasonably handle files which are almost entirely repeated lines.</p>
+<p><em>(Is there a diff algorithm that recognizes &quot;moves&quot; of entire paragraphs (or functions) from one location to another as &quot;less of a change&quot; than a delete followed by an insert?)</em></p>
+<h2 id="further-reading"><a class="header" href="#further-reading">further reading</a></h2>
+<ul>
+<li>the <a href="http://en.wikipedia.org/wiki/longest_common_subsequence_problem">longest common subsequence</a> is the longest sequence of items that is present in both original sequences in the same order.</li>
+<li>the longest common substring is the longest <em>consecutive</em> sequence of items that is present in both original sequences.</li>
+<li><a href="http://bramcohen.livejournal.com/37690.html">&quot;The diff problem has been solved&quot;</a>.</li>
+<li><a href="http://en.wikipedia.org/wiki/diff">Wikipedia:diff</a></li>
+<li>The <a href="http://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a> between two strings is given by the minimum number of operations needed to transform one string into the other, where an operation is an insertion, deletion, or substitution of a single character.</li>
+<li><a href="http://en.wikibooks.org/wiki/Algorithm_implementation/Strings/Longest_common_subsequence">Wikibooks: Algorithm implementation/Strings/Longest common subsequence</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="revctrl-talks"><a class="header" href="#revctrl-talks">Revctrl Talks</a></h1>
+<p>Revctrl TV!</p>
+<h2 id="darcs"><a class="header" href="#darcs">darcs</a></h2>
+<ul>
+<li><a href="http://ftp.belnet.be/mirror/FOSDEM/video/2006/FOSDEM2006-darcs.avi">David Roundy at FOSDEM 2006</a> (avi)</li>
+</ul>
+<h2 id="git"><a class="header" href="#git">git</a></h2>
+<ul>
+<li><a href="http://www.youtube.com/watch?v=4XpnKHJAok8">Linus Torvalds Google TechTalk</a></li>
+<li><a href="https://www.youtube.com/watch?v=8dhZ9BXQgc4">Randal Schwartz Google TechTalk</a></li>
+</ul>
+<h2 id="mercurial"><a class="header" href="#mercurial">mercurial</a></h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=1sV8Z_Lmpt4">Bryan O'Sullivan Google TechTalk</a></li>
+</ul>
+<h2 id="subversion"><a class="header" href="#subversion">subversion</a></h2>
+<ul>
+<li><a href="http://ftp.belnet.be/mirror/FOSDEM/video/2006/FOSDEM2006-subversion.avi">Greg Stein FOSDEM 2006</a> (avi)</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="star-merge"><a class="header" href="#star-merge">Star Merge</a></h1>
+<p><code>star-merge</code> is the merge command used by tla.  It refers to a star topology, where both branches participating in the merge have a common ancestor or merge point.  The merge base selected is always<sup class="footnote-reference"><a href="#1">1</a></sup> an ancestor in one of the two branches.  The limited selection of base revisions and the fact that merges are, by default, applied with diff and patch, mean that there are more conflicts than a <a href="ThreeWayMerge.html">ThreeWayMerge</a> would necessarily have.</p>
+<p>Documented at: http://wiki.gnuarch.org/Merging_20with_20Arch</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>The documentation of star-merge is nearly impossible to decipher, and it does appear that in some rare cases it will accidentally pick a non-ancestor.</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="three-way-text-merge-implementation"><a class="header" href="#three-way-text-merge-implementation">Three-Way Text Merge Implementation</a></h1>
+<p>Three way merge is the old workhorse of version control systems. When a merge is to be done between THIS and OTHER, it picks a common ancestor, BASE, and uses it as a guide in determining how the merge should be done.</p>
+<p>Selecting BASE can be very tricky, and sometimes there isn't any single correct ancestor, especially in the case of <a href="CrissCrossMerge.html">CrissCrossMerge</a>.</p>
+<p>There are several ways to implement three-way merging.</p>
+<h2 id="inexact-patching"><a class="header" href="#inexact-patching">Inexact Patching</a></h2>
+<p>Since the goal of merging is to apply the changes made in another branch to your own, a fairly direct approach is to diff BASE and OTHER, and apply the resulting patch to THIS.</p>
+<p>Since this approach uses context diffs, it can sometimes apply patches to the wrong place, a problem fixed by exact patching.</p>
+<p>This has the failing that it does not recognize when THIS and OTHER have both made the same change, thus it will produce more conflicts than other approaches.</p>
+<h2 id="exact-patching"><a class="header" href="#exact-patching">Exact patching</a></h2>
+<p>Exact patching is similar to inexact patching, except it makes two diffs, one from BASE to THIS, and one from BASE to OTHER, then uses the patch from BASE to OTHER to determine the line offsets to apply the patch from BASE to THIS to. It doesn't have to use context lines like inexact patching does, and can recognize <a href="AccidentalCleanMerge.html">AccidentalCleanMerge</a> as a special case (especially important for 3way, since it runs into lots of erroneous accidental clean merges when BASE is selected too conservatively).  This is known in the subversion world as <a href="http://subversion.tigris.org/variance-adjusted-patching.html">Variance Adjusted Patching</a>.  The same concept can also be extended to work with binary diffs.  In the binary case you usually want a 'buffer' around the edges of the patch that is used to catch conflicts.  Interestingly, this buffer could be extended using the semantics of the file being edited - either to the nearest newline, or the nearest set of braces, etc.</p>
+<h2 id="three-way-compare"><a class="header" href="#three-way-compare">Three-way compare</a></h2>
+<p>This approach compares all three texts, and divides them up into sections where</p>
+<ul>
+<li>all agree</li>
+<li>this and other agree</li>
+<li>this and base agree</li>
+<li>base and other agree</li>
+<li>none agree</li>
+</ul>
+<p>A drawback of this approach is that it is hard to determine section breaks;  If none agree, and later THIS and OTHER agree, which lines of BASE belong in the first section, and which in the second?  As a result, this case is treated as a single 'none agree' section, increasing the number of conflict lines.</p>
+<p>In some sense all these techniques are variants of three way compare, but with the details fleshed out in different ways.</p>
+<h2 id="two-way-tie-break"><a class="header" href="#two-way-tie-break">Two-way tie-break</a></h2>
+<p>This approach first compares THIS and OTHER.  Only the differences are processed further.  In areas where THIS and OTHER differ, the THIS and OTHER texts are both compared to the BASE text to break the tie.  If THIS text is the same as the BASE text, it loses.  If the OTHER text is the same as the BASE text, it loses.  If neither matches BASE, it is considered a conflict.</p>
+<p>A drawback of this approach is that conflicts are not clearly associated with particular lines in Base.</p>
+<h2 id="bzr-implementation-of-three-way-compare"><a class="header" href="#bzr-implementation-of-three-way-compare">Bzr implementation of three-way compare</a></h2>
+<p>The bzr implementation does a three-way comparison like so:</p>
+<ol>
+<li>Compare BASE to OTHER</li>
+<li>Compare BASE to THIS</li>
+<li>Combine the comparisons so that the section breaks happen in the same places, relative to BASE</li>
+<li>In sections where THIS and BASE coincide, pick OTHER</li>
+<li>In sections where OTHER and BASE coincide, pick THIS</li>
+<li>Sections in which both OTHER and THIS differ from BASE are treated as conflicts</li>
+<li>(Optional) a two-way merge is performed in conflict regions, to reduce conflicts.  (This step is optional, because it loses the connection between BASE and conflict regions)</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="user-model"><a class="header" href="#user-model">User Model</a></h1>
+<h2 id="concept"><a class="header" href="#concept">Concept</a></h2>
+<p>A User Model is formal model of how a user understands their changes, and what they expect to cause a clean merge or a conflict.  This concept was first defined and articulated in the original <a href="MarkMerge.html">MarkMerge</a> paper: http://article.gmane.org/gmane.comp.version-control.codeville.devel/6</p>
+<p>As that paper states:</p>
+<blockquote>
+<p>Traditionally, merge algorithms are evaluated by coming up with some
+set of examples, eyeballing them to make some guess as to what the
+&quot;correct&quot; answer was, comparing that to the algorithm's output, and
+then arguing with people whose intuitions were different.
+Fundamentally, merging is about deterministically guessing the user's
+intent in situations where the user has not expressed any intent.
+Humans are very good at guessing intent; we have big chunks of squishy
+hardware designed to form sophisticated models of others intents, and
+it's completely impossible for a VCS to try and duplicate that in
+full.  My suggestion here, with my &quot;user model&quot;, is to seriously and
+explicitly study this part of the problem.  There are complicated
+trade-offs between accuracy (correctly modeling intention),
+conservatism (avoiding incorrectly modeling intention), and
+implementability (describing the user's thought processes exactly
+isn't so useful if you can't apply it in practice).  It's hard to make
+an informed judgement when we don't have a name for the thing we're
+trying to optimize, and hard to evaluate an algorithm when we can't
+even say what it's supposed to be doing.</p>
+</blockquote>
+<p>In short, if we're going to have to make guesses about squishy things like &quot;intention&quot;, we had better be very explicit about our assumptions.  Otherwise, we continue to invent algorithms that look great, until someone suggests a new example.  This is fundamentally non-viable, because we never know whether we've seen &quot;all the bad examples&quot; (especially since historically, every time we think this someone has come up with new ones).  If we keep progressing from one example to another, we're doomed, because there are infinitely many examples.  The hope is that by defining our assumptions about the user, critiques of merge algorithms can be reduced to arguments that the algorithm implements a user model that does not accurately reflect users (example: <a href="MarkMerge.html">MarkMerge</a>'s failure to handle <a href="StaircaseMerge.html">StaircaseMerge</a>), or arguments that the algorithm does not properly implement its user model (example: unique-<a href="MarkMerge.html">MarkMerge</a>'s failure to handle <a href="AccidentalCleanMerge.html">AccidentalCleanMerge</a>).</p>
+<p>If this works, then every nasty example will turn out to be signaling a general problem of one of these two types.  We like general problems <em>much</em> more than specific problems.</p>
+<h2 id="practice"><a class="header" href="#practice">Practice</a></h2>
+<p>The only merge algorithm so far to adopt this approach explicitly is <a href="MarkMerge.html">MarkMerge</a>, and the only developer or analyst to have used the concept in writing is NathanielSmith.  He earnestly (and third-person-ly) hopes that future work will find the concept useful.</p>
+<p>The user model used by MarkMerge is:</p>
+<pre><code>  1) whenever a user explicitly sets the value, they express a claim
+     that their setting is superior to the old setting
+  2) whenever a user chooses to commit a new revision, they implicitly
+     affirm the validity of the decisions that led to that revision's
+     parents
+    Corollary of (1) and (2): whenever a user explicitly sets the
+     value, they express that they consider their new setting to be
+     superior to _all_ old settings
+  3) A &quot;conflict&quot; should occur if, and only if, the settings on each
+     side of the merge express parallel claims.
+</code></pre>
+<p>This language is necessarily pretty fuzzy, which opens the whole concept of a user model to objections.  Especially since, ideally, a user model should entirely determine the results of a full algorithm implementing it... it might be claimed that a user model is simply a fuzzy high-level description of the algorithm proper.  Nonetheless, it has shown some practical benefits in at least the <a href="MarkMerge.html">MarkMerge</a> case.</p>
+<p>This model described is for scalar merge.  No potential user model has been formulated for textual merge, which may be part of why we have no predictably reliable textual mergers...</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="weave"><a class="header" href="#weave">Weave</a></h1>
+<p>A &quot;weave&quot; is a data structure useful in version control. It consists of all lines which have ever been in a file, in order. For example, if a file went from having lines AB to AXB to AYB to ZAB, the weave would consist of ZAXYB. The method of storing which lines appear in which versions varies from implementation to implementation.</p>
+<p>Weaves are used for three different purposes: efficient retrieval of any past version, doing <a href="Resolution.html">Resolution</a>, and doing <a href="Merging.html">Merging</a>. Weaves were originally invented with the primary motivation of efficient retrieval for <a href="SCCS.html">SCCS</a>, and were reinvented decades later with the primary motivation of improving merging and resolution.</p>
+<p>If a file in parallel goes from AB to AXB in one branch and from AB to AYB in another branch, then the weave will generally arbitrarily pick between the orderings AXYB and AYXB. In principle it should be possible to keep the weave as a partial ordering so that if the file was merged together as either AXYB or AYXB then the weave will be updated to reflect that specific full ordering. This is complicated to do, and hasn't been implemented to date. See <a href="EdgeVersioning.html">EdgeVersioning</a> for a more detailed discussion of this case.</p>
+<p>Most weave implementations have a very fast indexing structure for determining what lines are present in every past version, typically resulting in a single linear scan of past history to retrieve any past version. The indexing structures for doing so are markedly different, for example, <a href="SCCS.html">SCCS</a> uses <a href="http://web.mit.edu/ghudson/thoughts/file-versioning">inline</a> information in the weave, since it was based on the now dated assumption that the whole file couldn't be held in memory, while <a href="Codeville.html">Codeville</a> (will use/uses) mapping from versions to new line states.</p>
+<p>A weave can be used for <a href="Resolution.html">Resolution</a> by taking all ancestors of the current node and merging them together to produce a 'mash-up', which is the result of merging each line individually, without regard to whether sections conflict as a result, then <a href="Resolution.html">Resolution</a> can be done between the mash-up and the edited version. A more powerful approach is to support <a href="Convergence.html">Convergence</a> by having the current version be resolved directly against the entire weave, and bringing back to life any lines which matched but would be dead in a mash-up. The convergent version is actually easier to implement, because it involves fewer passes.</p>
+<p>To merge using a weave, go through the weave a line at a time, throwing out lines which are dead on both ancestors and pulling in lines which are alive in both ancestors. Sections between lines which are alive in both ancestors are potential conflict sections. For a potential conflict section, check which side would win in a conflict for each line individually (that is, merge together the fact of that line's being present or not). If the same side would win all of those, then that side wins the conflict, otherwise the conflict has to be escalated to the user.</p>
+<p>Some merge GUIs present common ancestors in conflict sections. In a distributed system there may be no single common ancestor of a particular section, but a reasonable facsimile of one can be produced by determining whether each individual line would be present in a 'common ancestor', then put together all the ones which would. The method of determining common ancestors is completely dependant on the particulars of line versioning in a given weave implementation.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="wiki-node"><a class="header" href="#wiki-node">Wiki Node</a></h1>
+<p>Welcome to the Revctrl wiki, where we discuss various revision control systems, and the software and algorithms used to implement them.</p>
+<h2 id="key-pages"><a class="header" href="#key-pages">key pages</a></h2>
+<ul>
+<li><a href="FrontPage.html">FrontPage</a></li>
+<li><a href="Glossary.html">Glossary</a> -- some technical terms we casually throw around here</li>
+<li><a href="ConceptTable.html">ConceptTable</a> -- some of the technical terms other revision control systems used. Helps when 2 systems use different terms for the same idea.</li>
+<li><a href="CategoryMergeAlgorithm.html">CategoryMergeAlgorithm</a> lists the various merge algorithms we've discussed</li>
+<li><a href="RevctrlTalks.html">RevctrlTalks</a> -- Revctrl TV!</li>
+<li><a href="NeutralInterface.html">NeutralInterface</a></li>
+</ul>
+<h2 id="neighboring-wiki-with-wikinodes"><a class="header" href="#neighboring-wiki-with-wikinodes">neighboring wiki with wikinodes</a></h2>
+<ul>
+<li><a href="http://communitywiki.org/odd/SoftwareBazaar/WikiNode">the Software Bazaar wiki</a> mentions <a href="http://communitywiki.org/odd/SoftwareBazaar/distributed_wiki">the distributed wiki</a> which has some similarities to a distributed version control system.</li>
+<li><a href="http://alliance.seas.upenn.edu/%7Ebcpierce/wiki/index.php?n=Main.WikiNode">the Unison wiki</a> discusses Unison, a tool for rapidly synchronizing 2 directories over a slow network connection. It can be used as a crude revision control system (backups), or it can be used in conjunction with a standard revision control system to speed up check-ins and check-outs over a slow connection.</li>
+<li><a href="http://wiki.linuxquestions.org/wiki/WikiNode">the Linux Questions wiki</a> briefly <a href="http://wiki.linuxquestions.org/wiki/Revision_control">mentions revision control</a></li>
+<li><a href="http://wiki.synchroedit.com/index.php/WikiNode">the SynchroEdit wiki</a> discusses Synchro Edit, an editor that allows multiple users to share a single X(HT)ML or text document, edit the document the same time, and synchronize changes so that all users have the same version.</li>
+</ul>
+<h2 id="neighboring-wiki-that-alas-still-lack-wikinodes"><a class="header" href="#neighboring-wiki-that-alas-still-lack-wikinodes">neighboring wiki that, alas, still lack wikinodes</a></h2>
+<ul>
+<li><a href="http://wiki.darcs.net/">the darcs wiki</a> discusses the &quot;darcs&quot; version control system. <em>needs wikinode</em></li>
+<li><a href="http://wikiindex.org/Arch_Wiki">the Arch wiki</a> discusses the Arch Revision Control Systems such as GNU Arch and Bazaar and ArX. Arch is a distributed revision control system. <em>needs wikinode</em></li>
+<li><a href="http://venge.net/mtn-wiki/">the monotone wiki</a></li>
+<li><a href="http://git.or.cz/gitwiki/">the git wiki</a></li>
+<li><a href="http://selenic.com/mercurial/wiki/">the mercurial wiki</a> discusses the mercurial version control system. <em>needs wikinode</em></li>
+<li><a href="http://svk.elixus.org/">the Svk wiki</a> discusses the SVK distributed version control system. <em>needs wikinode</em></li>
+<li><a href="http://swik.net/rsync">the rsync wiki</a> discusses rsync, often used for rapidly backing up or synchronizing directories over slow network connections.</li>
+<li><a href="http://multisync.sourceforge.net/wiki/">the MultiSync wiki</a> ...</li>
+</ul>
+<p>Please add closely-related wiki to this page (preferably linking directly to their wikinodes).
+Prune less-related wiki, moving information about them to the <a href="http://wikiindex.org/">WikiIndex</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>

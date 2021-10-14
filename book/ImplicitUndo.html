@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ImplicitUndo - Revision Control</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="FrontPage.html"><strong aria-hidden="true">2.</strong> FrontPage</a></li><li class="chapter-item expanded "><a href="Glossary.html"><strong aria-hidden="true">3.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="ConceptTable.html"><strong aria-hidden="true">4.</strong> ConceptTable</a></li><li class="chapter-item expanded "><a href="CategoryMergeAlgorithm.html"><strong aria-hidden="true">5.</strong> CategoryMergeAlgorithm</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="BKMerge.html"><strong aria-hidden="true">5.1.</strong> BKMerge</a></li><li class="chapter-item expanded "><a href="CodevilleMerge.html"><strong aria-hidden="true">5.2.</strong> CodevilleMerge</a></li><li class="chapter-item expanded "><a href="DarcsMerge.html"><strong aria-hidden="true">5.3.</strong> DarcsMerge</a></li><li class="chapter-item expanded "><a href="DieDieDieMerge.html"><strong aria-hidden="true">5.4.</strong> DieDieDieMerge</a></li><li class="chapter-item expanded "><a href="OperationalTransformation.html"><strong aria-hidden="true">5.5.</strong> OperationalTransformation</a></li><li class="chapter-item expanded "><a href="ScalarMerge.html"><strong aria-hidden="true">5.6.</strong> ScalarMerge</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ConvergentScalarMerge.html"><strong aria-hidden="true">5.6.1.</strong> ConvergentScalarMerge</a></li><li class="chapter-item expanded "><a href="MarkMerge.html"><strong aria-hidden="true">5.6.2.</strong> MarkMerge</a></li><li class="chapter-item expanded "><a href="PreciseCodevilleMerge.html"><strong aria-hidden="true">5.6.3.</strong> PreciseCodevilleMerge</a></li></ol></li><li class="chapter-item expanded "><a href="SimpleWeaveMerge.html"><strong aria-hidden="true">5.7.</strong> SimpleWeaveMerge</a></li><li class="chapter-item expanded "><a href="ThreeWayMerge.html"><strong aria-hidden="true">5.8.</strong> ThreeWayMerge</a></li></ol></li><li class="chapter-item expanded "><a href="CategoryMergeExample.html"><strong aria-hidden="true">6.</strong> CategoryMergeExample</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="AccidentalCleanMerge.html"><strong aria-hidden="true">6.1.</strong> AccidentalCleanMerge</a></li><li class="chapter-item expanded "><a href="CrissCrossMerge.html"><strong aria-hidden="true">6.2.</strong> CrissCrossMerge</a></li><li class="chapter-item expanded "><a href="ImplicitUndo.html" class="active"><strong aria-hidden="true">6.3.</strong> ImplicitUndo</a></li><li class="chapter-item expanded "><a href="Rollback.html"><strong aria-hidden="true">6.4.</strong> Rollback</a></li><li class="chapter-item expanded "><a href="StaircaseMerge.html"><strong aria-hidden="true">6.5.</strong> StaircaseMerge</a></li></ol></li><li class="chapter-item expanded "><a href="uncategorised.html"><strong aria-hidden="true">7.</strong> Uncategorised pages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="AmbiguousCleanMerge.html"><strong aria-hidden="true">7.1.</strong> AmbiguousCleanMerge</a></li><li class="chapter-item expanded "><a href="Convergence.html"><strong aria-hidden="true">7.2.</strong> Convergence</a></li><li class="chapter-item expanded "><a href="EdgeVersioning.html"><strong aria-hidden="true">7.3.</strong> EdgeVersioning</a></li><li class="chapter-item expanded "><a href="GenerationCounting.html"><strong aria-hidden="true">7.4.</strong> GenerationCounting</a></li><li class="chapter-item expanded "><a href="LivingLinesFirst.html"><strong aria-hidden="true">7.5.</strong> LivingLinesFirst</a></li><li class="chapter-item expanded "><a href="Merging.html"><strong aria-hidden="true">7.6.</strong> Merging</a></li><li class="chapter-item expanded "><a href="NeutralInterface.html"><strong aria-hidden="true">7.7.</strong> NeutralInterface</a></li><li class="chapter-item expanded "><a href="Renaming.html"><strong aria-hidden="true">7.8.</strong> Renaming</a></li><li class="chapter-item expanded "><a href="Resolution.html"><strong aria-hidden="true">7.9.</strong> Resolution</a></li><li class="chapter-item expanded "><a href="RevctrlTalks.html"><strong aria-hidden="true">7.10.</strong> RevctrlTalks</a></li><li class="chapter-item expanded "><a href="StarMerge.html"><strong aria-hidden="true">7.11.</strong> StarMerge</a></li><li class="chapter-item expanded "><a href="ThreeWayTextMergeImplementation.html"><strong aria-hidden="true">7.12.</strong> ThreeWayTextMergeImplementation</a></li><li class="chapter-item expanded "><a href="UserModel.html"><strong aria-hidden="true">7.13.</strong> UserModel</a></li><li class="chapter-item expanded "><a href="Weave.html"><strong aria-hidden="true">7.14.</strong> Weave</a></li><li class="chapter-item expanded "><a href="WikiNode.html"><strong aria-hidden="true">7.15.</strong> WikiNode</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Revision Control</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="implicit-undo"><a class="header" href="#implicit-undo">Implicit Undo</a></h1>
+<p>An (arguably) beneficial property for a merge algorithm to have.</p>
+<p>An algorithm that supports implicit undo is one in which someone can make a change, and then revert that change, and the merge algorithm will act as if the change never happened.</p>
+<p>The simplest scalar example is:</p>
+<pre><code>   a
+  / \
+ b   c
+ |
+ a
+</code></pre>
+<p>An implicit undo supporting algorithm will make this a clean merge to <code>c</code>.</p>
+<p>To make things trickier, the case:</p>
+<pre><code>   a
+   |
+   b
+  / \
+ a   b
+</code></pre>
+<p>should also be a clean merge, but with <code>a</code> winning.  The intuition is that if I undo some changes back to an earlier version, the undo should beat all the things that are undone, but should lose to all the things that beat the earlier version.</p>
+<h2 id="discussion"><a class="header" href="#discussion">Discussion</a></h2>
+<p>This is a problem that has arisen only with the development of more advanced merge algorithms; 3-way merge does not have this problem, because it simply ignores almost all historical information.  However, there is a direct trade-off -- 3-way merge faces more <a href="Resolution.html">resolution</a> ambiguities as a result. More disturbingly, a series of clean merges using 3-way merge can cause an undo of a change to silently disappear, with no user editing whatsoever.</p>
+<p>The use case for this is reasonably common (people making changes, and then reverting them), and users have some expectation that it will work, since 3-way merge works this way.  Not supporting implicit undo also puts a heavier burden on conflict resolution UIs, because it may be entirely obscure to the user why they are seeing a particular conflict.</p>
+<p>However, it is a somewhat controversial feature, because its is not clear what effect supporting it will have on the global stability and transparency of the merge system -- if not done carefully, there is a danger of introducing new failure modes, extremely complex causes, and spooky action at a distance.  There is not yet consensus on whether the possible benefits outweigh the possible risks, especially as no-one has yet produced a fully working algorithm that supports implicit undo.  This is an active research area.</p>
+<p>Implicit undo in its strongest form has been shown to be internally inconsistent. See http://article.gmane.org/gmane.comp.version-control.revctrl/89. A weaker version may still prove workable.</p>
+<p>Handling implicit undo is particularly tricky for textual merge algorithms, because it is not enough to build on top of an implicit undo supporting scalar merge algorithm; one must also modify one's <a href="Resolution.html">resolution</a> algorithm.</p>
+<p>In some cases implicit undo and <a href="Convergence.html">&quot;convergence&quot;</a> give conflicting answers. The following is the simplest example:</p>
+<pre><code>   a
+  / \
+ b   b
+ |
+ a
+</code></pre>
+<p>Convergence clearly dictates that the above should merge to a, while implicit undo indicates that it should merge to b. The general consensus is that convergence is more important in this case than implicit undo.</p>
+<p>Partially because of this case, the best hope of having working implicit undo at this point is to make a conservative implementation whose only behavior is to in some cases take conflicts given by a convergence-supporting merge algorithm and resolve them cleanly.</p>
+<p>The above example is particularly bad for textual merges, because a line deletion may or may not count as being convergent depending on whether it's done as part of another change. For example with <code>AXB -&gt; AB -&gt; AXB</code> versus <code>AXB -&gt; AYB</code>, the <code>AYB</code> wins by implicit undo, but with <code>AXB -&gt; AB -&gt; AXB</code> versus <code>AXB -&gt; AB -&gt; AYB</code>, there is convergence, but each individual line has the same history in both examples.</p>
+<p>Implicit undo can cause a descendant with is different from either ancestor, for example:</p>
+<pre><code>   a
+  / \
+ b   b
+ |\ /|
+ a X a
+ |/ \|
+ b   b
+</code></pre>
+<p>If one supports full-blown implicit undo, then in this case both b's at the bottom were clean merges, because they were examples of the previous example, but since both b's have already been overridden, then merging these two b's together should result in a. This example doesn't hit an internal inconsistency in implicit undo, but it does conflict with the obvious principle that the descendant of two identical ancestors should cleanly merge to those ancestors, and it's a much simpler example than the one which demonstrates an internal inconsistency.</p>
+<p>Fortunately this example is also one which heavily relies on a case where implicit undo doesn't conflict with convergence, so applying convergence first and only if that doesn't give an answer applying implicit undo continues to appear promising.</p>
+<p>The following is a case where convergence prevents implicit undo from working:</p>
+<pre><code>   a
+  / \
+ c   c
+ |   |
+ a   b
+</code></pre>
+<p>Here's a strange edge case:</p>
+<pre><code>        a
+        |\
+        | \
+        |  \
+        |   p
+        |   |
+        b   a
+        |\ /|
+        | X |
+        |/ \|
+        b   a
+</code></pre>
+<p>Note that there is no convergence here.</p>
+<p>In this case, if we assume no implicit undo then we clearly have a conflict, but if we assume implicit undo then both nodes at the bottom would have resolved to the same b, and one of them was overwritten by a, so clearly a should win. The problem here is that we're making strong assumptions about what merge algorithms were used in the construction of ancestor nodes, and those assumptions are likely to be violated in practice.</p>
+<p>Here is another edge case:</p>
+<pre><code>        a
+       / \
+      /   \
+     b     p
+     |\    |
+     | \   a
+     r  \ /|
+     |   X |
+     b  / \|
+     | /   q
+     |/    |
+     b     a
+</code></pre>
+<p>Again note the lack of convergence.</p>
+<p>This is sort of like an ambiguous clean merge for implicit undo - each side has defeated an identical ancestor of the other, so we have a conflict by both sides winning.</p>
+<p>The above examples in aggregate seem to indicate that supporting implicit undo is a fairly sketchy proposition. Perhaps it's better to support explicit undo, by having a command which rewrites local history (which hasn't been commited elsewhere) to pretend that a particular section of code never got changed in the first place.</p>
+<h2 id="supported-by"><a class="header" href="#supported-by">Supported by</a></h2>
+<p><a href="ThreeWayMerge.html">ThreeWayMerge</a></p>
+<h2 id="not-supported-by"><a class="header" href="#not-supported-by">Not supported by</a></h2>
+<p><a href="DarcsMerge.html">DarcsMerge</a>, <a href="MarkMerge.html">MarkMerge</a>, <a href="SimpleWeaveMerge.html">SimpleWeaveMerge</a>, others</p>
+<hr />
+<p><a href="CategoryMergeExample.html">CategoryMergeExample</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="CrissCrossMerge.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="Rollback.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="CrissCrossMerge.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="Rollback.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
