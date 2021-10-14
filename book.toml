@@ -4,3 +4,7 @@ editor = "Tony Garnock-Jones"
 language = "en"
 multilingual = false
 src = "src"
+
+[output.html]
+git-repository-url = "https://github.com/tonyg/revctrl.org/"
+site-url = "https://tonyg.github.io/revctrl.org/"
