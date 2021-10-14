@@ -6,10 +6,12 @@ This is an attempt at extracting what remains of value.
 
 Produced partly by hand, partly using the `pull` script in this
 directory, then removed obvious spam links from the files in
-`output-raw`.
+`output-raw` and converted to Markdown..
 
 The page contents were downloaded on the 12th July 2012.
 
-Perhaps I'll make a PDF or a TiddlyWiki of the content or something.
+Perhaps it would make sense to make a PDF or a TiddlyWiki of the
+content or something.
 
- -- Tony Garnock-Jones <tonygarnockjones@gmail.com>
+ - originally scraped and archived by Tony Garnock-Jones <tonyg@leastfixedpoint.com>
+ - spam cleanup and improvements to formatting by Michael Haggerty <mhagger@alum.mit.edu>
